@@ -1,7 +1,7 @@
-import React from "react";
-import Head from "next/head";
+import React from 'react';
+import Head from 'next/head';
 
-import Layout from "../components/layout";
+import Layout from '../components/layout';
 
 const Blog = () => (
   <Layout>
@@ -11,4 +11,5 @@ const Blog = () => (
     </Head>
   </Layout>
 );
+
 export default Blog;

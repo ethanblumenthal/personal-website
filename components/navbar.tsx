@@ -1,8 +1,8 @@
-import React from "react";
-import Link from "next/link";
-import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCode, faSearch, faSun } from "@fortawesome/free-solid-svg-icons";
+import React from 'react';
+import Link from 'next/link';
+import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCode, faSearch, faSun } from '@fortawesome/free-solid-svg-icons';
 
 const Nav = styled.div`
   display: flex;
@@ -35,10 +35,10 @@ const Button = styled.button`
 `;
 
 const PAGES = [
-  { title: "Home", slug: "/" },
-  { title: "Blog", slug: "/blog" },
-  { title: "About", slug: "/about" },
-  { title: "Work", slug: "/work" },
+  { title: 'Home', slug: '/' },
+  { title: 'Blog', slug: '/blog' },
+  { title: 'About', slug: '/about' },
+  { title: 'Work', slug: '/work' },
 ];
 
 const NavBar = () => (
