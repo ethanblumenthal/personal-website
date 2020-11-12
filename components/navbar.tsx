@@ -1,12 +1,13 @@
 import React from "react";
+import Link from "next/link";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode, faSearch, faSun } from "@fortawesome/free-solid-svg-icons";
 
-const Nav = styled.nav`
+const Nav = styled.div`
   display: flex;
-  flex-direction: row;
   align-items: center;
+  width: 100%;
 `;
 
 const Container = styled.div`
@@ -22,6 +23,7 @@ const UnorderedList = styled.ul`
 const ListItem = styled.li`
   font-size: 1.2rem;
   margin-right: 1rem;
+  cursor: pointer;
 `;
 
 const Button = styled.button`
@@ -32,6 +34,13 @@ const Button = styled.button`
   padding: 1rem;
 `;
 
+const PAGES = [
+  { title: "Home", slug: "/" },
+  { title: "Blog", slug: "/blog" },
+  { title: "About", slug: "/about" },
+  { title: "Work", slug: "/work" },
+];
+
 const NavBar = () => (
   <Nav>
     <Container>
@@ -40,10 +49,11 @@ const NavBar = () => (
     </Container>
 
     <UnorderedList>
-      <ListItem>Home</ListItem>
-      <ListItem>Articles</ListItem>
-      <ListItem>About</ListItem>
-      <ListItem>Work</ListItem>
+      {PAGES.map(({ title, slug }) => (
+        <Link href={slug} key={slug}>
+          <ListItem>{title}</ListItem>
+        </Link>
+      ))}
     </UnorderedList>
 
     <Container>
