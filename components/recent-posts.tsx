@@ -28,7 +28,7 @@ const POSTS = [
 
 const Container = styled.div`
   background-color: #f5f5f5;
-  padding: 4rem 4rem;
+  padding: 4rem 8rem;
 `;
 
 const FlexContainer = styled.div`
@@ -62,7 +62,8 @@ const RecentPosts = () => (
     <FlexContainer>
       <h2>Recent Posts</h2>
       <ArrowButton>
-        View all <FontAwesomeIcon icon={faArrowRight} />
+        View all
+        <FontAwesomeIcon icon={faArrowRight} />
       </ArrowButton>
     </FlexContainer>
 

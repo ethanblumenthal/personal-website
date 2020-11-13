@@ -6,7 +6,7 @@ const Row = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 4rem;
+  padding: 2rem 8rem;
 `;
 
 const Column = styled.div``;

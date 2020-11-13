@@ -1,16 +1,16 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCode, faSearch, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faSearch, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
-import { Button } from '../elements/buttons';
+import { OutlineButton } from '../elements/buttons';
 
 const Nav = styled.nav`
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 4rem;
+  padding: 0 8rem;
 `;
 
 const Container = styled.div`
@@ -19,7 +19,7 @@ const Container = styled.div`
 
   & > svg {
     cursor: pointer;
-    margin-right: 1rem;
+    margin-right: 1.5rem;
   }
 `;
 
@@ -33,7 +33,7 @@ const UnorderedList = styled.ul`
 
 const ListItem = styled.li`
   font-size: 1.2rem;
-  margin-right: 1rem;
+  margin-right: 1.5rem;
   cursor: pointer;
 
   &:hover {
@@ -51,7 +51,6 @@ const PAGES = [
 const NavBar = ({ theme, setTheme }) => (
   <Nav>
     <Container>
-      <FontAwesomeIcon icon={faCode} />
       <Link href="/">
         <Header>Ethan Blumenthal</Header>
       </Link>
@@ -66,9 +65,9 @@ const NavBar = ({ theme, setTheme }) => (
     </Container>
 
     <Container>
-      <FontAwesomeIcon icon={faSearch} />
-      <FontAwesomeIcon icon={theme === 'dark' ? faMoon : faSun} onClick={setTheme} />
-      <Button>Subscribe</Button>
+      <FontAwesomeIcon icon={faSearch} size="lg" />
+      <FontAwesomeIcon icon={theme === 'dark' ? faMoon : faSun} size="lg" onClick={setTheme} />
+      <OutlineButton>Subscribe</OutlineButton>
     </Container>
   </Nav>
 );

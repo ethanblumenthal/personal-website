@@ -4,11 +4,11 @@ import styled from 'styled-components';
 import { Button } from '../elements/buttons';
 
 const Container = styled.div`
-  height: 70vh;
-  max-width: 30rem;
+  height: 80vh;
+  max-width: 40rem;
   position: relative;
   top: 10rem;
-  padding: 0 4rem;
+  padding: 0 8rem;
 `;
 
 const Header = styled.h1``;
@@ -24,7 +24,7 @@ const Hero = () => (
       high-quality code. I share what I’ve learned in my technical blog.
     </Text>
     <Link href="/about">
-      <Button>Learn More</Button>
+      <Button>Learn more</Button>
     </Link>
   </Container>
 );
