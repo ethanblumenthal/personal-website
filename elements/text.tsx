@@ -17,3 +17,10 @@ export const Text = styled.p`
   font-size: 1.1rem;
   line-height: 1.5rem;
 `;
+
+export const SubText = styled.p`
+  color: ${({ theme }) => theme.colors.grey};
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-bottom: 0;
+`;

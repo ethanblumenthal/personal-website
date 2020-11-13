@@ -26,6 +26,13 @@ export const INVOLVEMENT = [
   },
 ];
 
+export const CERTIFICATIONS = [
+  { title: 'BA Economics', description: 'University of Illinois' },
+  { title: 'Software Engineering', description: 'Fullstack Academy' },
+  { title: 'Solutions Architect', description: 'Amazon Web Services' },
+  { title: 'Cloud Engineer', description: 'Google Cloud Platform' },
+];
+
 export const SKILLSET = [
   'React',
   'Next',

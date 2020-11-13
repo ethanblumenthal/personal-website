@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
+import { SectionHeader, CardHeader, Text, SubText } from '../elements/text';
 import { ArrowButton } from '../elements/buttons';
 
 const POSTS = [
@@ -59,22 +60,6 @@ const Card = styled.div`
   }
 `;
 
-const Date = styled.p`
-  color: ${({ theme }) => theme.colors.grey};
-  font-size: 0.8rem;
-  margin-bottom: 0;
-`;
-
-const Heading = styled.h3`
-  font-size: 1.8rem;
-  margin-bottom: 0;
-`;
-
-const Text = styled.p`
-  line-height: 1.5rem;
-  font-size: 1.1rem;
-`;
-
 interface IPost {
   date: string;
   title: string;
@@ -84,7 +69,7 @@ interface IPost {
 const RecentPosts = () => (
   <Container>
     <FlexContainer>
-      <h2>Recent Articles</h2>
+      <SectionHeader>Recent Articles</SectionHeader>
       <Link href="/blog">
         <ArrowButton>
           View all
@@ -97,8 +82,8 @@ const RecentPosts = () => (
       {POSTS &&
         POSTS.map(({ date, title, description }: IPost) => (
           <Card key={title}>
-            <Date>{date.toUpperCase()}</Date>
-            <Heading>{title}</Heading>
+            <SubText>{date}</SubText>
+            <CardHeader>{title}</CardHeader>
             <Text>{description}</Text>
           </Card>
         ))}
