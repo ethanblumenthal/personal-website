@@ -8,6 +8,7 @@ const Container = styled.div`
   max-width: 30rem;
   position: relative;
   top: 10rem;
+  padding: 0 4rem;
 `;
 
 const Header = styled.h1``;

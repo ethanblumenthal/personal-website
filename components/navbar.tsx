@@ -10,6 +10,7 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 4rem;
 `;
 
 const Container = styled.div`

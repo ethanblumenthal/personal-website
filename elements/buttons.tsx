@@ -10,3 +10,15 @@ export const Button = styled.button`
   outline: none;
   padding: 0 1rem;
 `;
+
+export const ArrowButton = styled.button`
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  & > svg {
+    margin-left: 0.25rem;
+  }
+`;
