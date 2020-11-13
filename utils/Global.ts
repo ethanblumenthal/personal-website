@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
 		box-sizing: inherit;
 	}
 	body {
-        font-family: 'Roboto';
+        /* font-family: 'Roboto'; */
 		background-color: white;
     	color: black;
 		padding: 0;

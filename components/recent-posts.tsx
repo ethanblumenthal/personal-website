@@ -28,7 +28,7 @@ const POSTS = [
 
 const Container = styled.div`
   background-color: #f5f5f5;
-  padding: 2rem 4rem;
+  padding: 4rem 4rem;
 `;
 
 const FlexContainer = styled.div`
