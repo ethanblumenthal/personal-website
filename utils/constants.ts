@@ -1,3 +1,10 @@
+export const BIO = {
+  title: "Hi, I'm Ethan",
+  description:
+    'Im a designer and developer committed to making the web a more empowering and accessible place. I create engaging user experiences and bring them to life through maintainable, high-quality code. I share what I’ve learned in my technical blog.',
+  image: '/ethanblumenthal.jpg',
+};
+
 export const INVOLVEMENT = [
   {
     title: 'Rightpoint',
@@ -23,7 +30,7 @@ export const SKILLSET = [
   'React',
   'Next',
   'Vue',
-  'Nuxt',
+  'TypeScript',
   'GraphQL',
   'Serverless',
   'Node',
