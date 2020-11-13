@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCode, faSearch, faSun } from '@fortawesome/free-solid-svg-icons';
+import { faCode, faSearch, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 import { Button } from '../elements/buttons';
 
@@ -48,7 +48,7 @@ const PAGES = [
   { title: 'Work', slug: '/work' },
 ];
 
-const NavBar = () => (
+const NavBar = ({ theme, setTheme }) => (
   <Nav>
     <Container>
       <FontAwesomeIcon icon={faCode} />
@@ -67,7 +67,7 @@ const NavBar = () => (
 
     <Container>
       <FontAwesomeIcon icon={faSearch} />
-      <FontAwesomeIcon icon={faSun} />
+      <FontAwesomeIcon icon={theme === 'dark' ? faMoon : faSun} onClick={setTheme} />
       <Button>Subscribe</Button>
     </Container>
   </Nav>

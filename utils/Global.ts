@@ -10,8 +10,8 @@ export const GlobalStyle = createGlobalStyle`
 	}
 	body {
         /* font-family: 'Roboto'; */
-		background-color: white;
-    	color: black;
+		color: ${({ theme }) => theme.colors.text};
+		background-color: ${({ theme }) => theme.colors.background};
 		padding: 0;
   		margin: 0;
 	}

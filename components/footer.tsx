@@ -1,9 +1,6 @@
-import Link from 'next/link';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faMedium, faGithub } from '@fortawesome/free-brands-svg-icons';
-
-const Container = styled.div``;
 
 const Row = styled.div`
   display: flex;
@@ -23,7 +20,7 @@ const Socials = styled.div`
 `;
 
 const Footer = () => (
-  <Container>
+  <footer>
     <Row style={{ backgroundColor: '#0074B7' }}>
       <p>&copy; {new Date().getFullYear()} Ethan Blumenthal</p>
 
@@ -53,7 +50,7 @@ const Footer = () => (
         <button>Subscribe</button>
       </Column>
     </Row>
-  </Container>
+  </footer>
 );
 
 export default Footer;

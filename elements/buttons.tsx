@@ -4,6 +4,7 @@ export const Button = styled.button`
   height: 2.5rem;
   font-size: 1.2rem;
   cursor: pointer;
+  color: ${({ theme }) => theme.colors.text};
   background-color: transparent;
   border: 1px solid grey;
   border-radius: 2rem;

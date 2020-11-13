@@ -20,7 +20,7 @@ const POSTS = [
   },
   {
     date: 'April 9, 2020',
-    title: 'System-Based Theming with Styled Components',
+    title: 'Component Reusability in React & Vue',
     description:
       'Learn how to support system-based theming in Styled Components, while allowing a user to select their preferred theme and persist that choice.',
   },
@@ -69,7 +69,7 @@ const RecentPosts = () => (
     <CardContainer>
       {POSTS &&
         POSTS.map(({ date, title, description }: IPost) => (
-          <Card>
+          <Card key={title}>
             <p>{date.toUpperCase()}</p>
             <h3>{title}</h3>
             <p>{description}</p>
