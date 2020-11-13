@@ -6,6 +6,7 @@ const Row = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: ${({ theme, top }) => (top ? theme.colors.primary : theme.colors.secondary)};
   padding: 2rem 8rem;
 `;
 
@@ -21,7 +22,7 @@ const Socials = styled.div`
 
 const Footer = () => (
   <footer>
-    <Row style={{ backgroundColor: '#0074B7' }}>
+    <Row top>
       <p>&copy; {new Date().getFullYear()} Ethan Blumenthal</p>
 
       <Socials>
@@ -39,7 +40,7 @@ const Footer = () => (
       </Socials>
     </Row>
 
-    <Row style={{ backgroundColor: '#003B73' }}>
+    <Row>
       <Column>
         <p>Want more tips and tricks?</p>
         <p>Sign up for the newsletter to stay up-to-date</p>

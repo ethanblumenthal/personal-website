@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
+import { SectionHeader, CardHeader } from '../elements/text';
 import { INVOLVEMENT } from '../utils';
 
 const Container = styled.div`
-  background-color: #f5f5f5;
+  background-color: ${({ theme }) => theme.colors.offset};
   padding: 5rem 8rem;
 `;
 
@@ -14,10 +15,10 @@ const CardContainer = styled.div`
 
 const Card = styled.div`
   position: relative;
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.colors.background};
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   border-radius: 0.25rem;
-  height: 20rem;
+  height: 16rem;
   width: 23rem;
   padding: 1rem 2rem;
   transition: ${({ theme }) => theme.transitions.ease};
@@ -28,11 +29,6 @@ const Card = styled.div`
     box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.1);
     top: -0.5rem;
   }
-`;
-
-const Heading = styled.h3`
-  font-size: 1.8rem;
-  margin-bottom: 0;
 `;
 
 const Text = styled.p`
@@ -48,14 +44,14 @@ interface IInvolvement {
 
 const Involvement = () => (
   <Container>
-    <h2>Involvement</h2>
+    <SectionHeader>Involvement</SectionHeader>
 
     <CardContainer>
       {INVOLVEMENT &&
         INVOLVEMENT.map(({ title, description, link }: IInvolvement) => (
           <a href={link} target="_blank" key={title}>
             <Card>
-              <Heading>{title}</Heading>
+              <CardHeader>{title}</CardHeader>
               <Text>{description}</Text>
             </Card>
           </a>

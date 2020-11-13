@@ -18,3 +18,22 @@ export const INVOLVEMENT = [
     link: 'https://www.rightpoint.com/',
   },
 ];
+
+export const SKILLSET = [
+  'React',
+  'Next',
+  'Vue',
+  'Nuxt',
+  'GraphQL',
+  'Serverless',
+  'Node',
+  'Express',
+  'Python',
+  'Rust',
+  'Go',
+  'Docker',
+  'Kubernetes',
+  'Terraform',
+  'AWS',
+  'GCP',
+];
