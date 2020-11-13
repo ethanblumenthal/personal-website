@@ -10,12 +10,17 @@ export const Button = styled.button`
   border: none;
   outline: none;
   padding: 0 1rem;
+  transition: ${({ theme }) => theme.transitions.ease};
+
+  &:hover {
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  }
 `;
 
 export const OutlineButton = styled(Button)`
   color: ${({ theme }) => theme.colors.text};
   background-color: transparent;
-  border: 1px solid grey;
+  border: 1px solid ${({ theme }) => theme.colors.outline};
 `;
 
 export const ArrowButton = styled.button`
@@ -28,7 +33,7 @@ export const ArrowButton = styled.button`
 
   & > svg {
     margin-left: 0.5rem;
-    transition: all 300ms ease-in-out;
+    transition: ${({ theme }) => theme.transitions.ease};
   }
 
   &:hover > svg {

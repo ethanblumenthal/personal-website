@@ -34,10 +34,11 @@ const UnorderedList = styled.ul`
 const ListItem = styled.li`
   font-size: 1.2rem;
   margin-right: 1.5rem;
+  transition: ${({ theme }) => theme.transitions.ease};
   cursor: pointer;
 
   &:hover {
-    color: grey;
+    color: ${({ theme }) => theme.colors.grey};
   }
 `;
 

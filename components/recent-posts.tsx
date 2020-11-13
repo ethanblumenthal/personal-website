@@ -28,7 +28,7 @@ const POSTS = [
 
 const Container = styled.div`
   background-color: #f5f5f5;
-  padding: 4rem 8rem;
+  padding: 5rem 8rem;
 `;
 
 const FlexContainer = styled.div`
@@ -42,13 +42,37 @@ const CardContainer = styled.div`
 `;
 
 const Card = styled.div`
+  position: relative;
   background-color: #ffffff;
-  box-shadow: 10px 10px 8px 10px #888888;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   border-radius: 0.25rem;
-  border: 1px soldi black;
-  height: 22.5rem;
-  width: 20rem;
+  height: 20rem;
+  width: 23rem;
   padding: 1rem 2rem;
+  transition: ${({ theme }) => theme.transitions.ease};
+  cursor: pointer;
+  top: 0;
+
+  &:hover {
+    box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.1);
+    top: -0.5rem;
+  }
+`;
+
+const Date = styled.p`
+  color: ${({ theme }) => theme.colors.grey};
+  font-size: 0.8rem;
+  margin-bottom: 0;
+`;
+
+const Heading = styled.h3`
+  font-size: 1.8rem;
+  margin-bottom: 0;
+`;
+
+const Text = styled.p`
+  line-height: 1.5rem;
+  font-size: 1.1rem;
 `;
 
 interface IPost {
@@ -60,20 +84,22 @@ interface IPost {
 const RecentPosts = () => (
   <Container>
     <FlexContainer>
-      <h2>Recent Posts</h2>
-      <ArrowButton>
-        View all
-        <FontAwesomeIcon icon={faArrowRight} />
-      </ArrowButton>
+      <h2>Recent Articles</h2>
+      <Link href="/blog">
+        <ArrowButton>
+          View all
+          <FontAwesomeIcon icon={faArrowRight} />
+        </ArrowButton>
+      </Link>
     </FlexContainer>
 
     <CardContainer>
       {POSTS &&
         POSTS.map(({ date, title, description }: IPost) => (
           <Card key={title}>
-            <p>{date.toUpperCase()}</p>
-            <h3>{title}</h3>
-            <p>{description}</p>
+            <Date>{date.toUpperCase()}</Date>
+            <Heading>{title}</Heading>
+            <Text>{description}</Text>
           </Card>
         ))}
     </CardContainer>

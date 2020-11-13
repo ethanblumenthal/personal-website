@@ -26,15 +26,15 @@ const Footer = () => (
 
       <Socials>
         <a href="https://www.linkedin.com/in/ethanblumenthal/" target="_blank">
-          <FontAwesomeIcon icon={faLinkedin} />
+          <FontAwesomeIcon icon={faLinkedin} size="2x" />
         </a>
 
         <a href="https://medium.com/@ethanblumenthal" target="_blank">
-          <FontAwesomeIcon icon={faMedium} />
+          <FontAwesomeIcon icon={faMedium} size="2x" />
         </a>
 
         <a href="https://github.com/ethanblumenthal" target="_blank">
-          <FontAwesomeIcon icon={faGithub} />
+          <FontAwesomeIcon icon={faGithub} size="2x" />
         </a>
       </Socials>
     </Row>
