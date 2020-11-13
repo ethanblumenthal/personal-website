@@ -1,22 +1,32 @@
-import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCode, faSearch, faSun } from '@fortawesome/free-solid-svg-icons';
 
-const Nav = styled.div`
-  display: flex;
-  align-items: center;
+import { Button } from '../elements/buttons';
+
+const Nav = styled.nav`
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const Container = styled.div`
   display: flex;
   align-items: center;
+
+  & > svg {
+    cursor: pointer;
+    margin-right: 1rem;
+  }
+`;
+
+const Header = styled.h1`
+  cursor: pointer;
 `;
 
 const UnorderedList = styled.ul`
-  list-style: none;
   display: flex;
 `;
 
@@ -24,14 +34,10 @@ const ListItem = styled.li`
   font-size: 1.2rem;
   margin-right: 1rem;
   cursor: pointer;
-`;
 
-const Button = styled.button`
-  cursor: pointer;
-  background-color: transparent;
-  border: 1px solid black;
-  outline: none;
-  padding: 1rem;
+  &:hover {
+    color: grey;
+  }
 `;
 
 const PAGES = [
@@ -45,16 +51,18 @@ const NavBar = () => (
   <Nav>
     <Container>
       <FontAwesomeIcon icon={faCode} />
-      <h1>Ethan Blumenthal</h1>
-    </Container>
+      <Link href="/">
+        <Header>Ethan Blumenthal</Header>
+      </Link>
 
-    <UnorderedList>
-      {PAGES.map(({ title, slug }) => (
-        <Link href={slug} key={slug}>
-          <ListItem>{title}</ListItem>
-        </Link>
-      ))}
-    </UnorderedList>
+      <UnorderedList>
+        {PAGES.map(({ title, slug }) => (
+          <Link href={slug} key={slug}>
+            <ListItem>{title}</ListItem>
+          </Link>
+        ))}
+      </UnorderedList>
+    </Container>
 
     <Container>
       <FontAwesomeIcon icon={faSearch} />

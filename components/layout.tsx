@@ -1,6 +1,5 @@
-import React from 'react';
-
 import NavBar from '../components/navbar';
+import { GlobalStyle } from '../utils/Global';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -8,6 +7,7 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => (
   <>
+    <GlobalStyle />
     <NavBar />
     <main>{children}</main>
   </>
