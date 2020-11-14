@@ -4,38 +4,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import { SectionHeader, CardHeader, Text, SubText } from '../elements/text';
+import { SectionContainer, FlexContainer } from '../elements/containers';
 import { ArrowButton } from '../elements/buttons';
-
-const POSTS = [
-  {
-    date: 'April 9, 2020',
-    title: 'System-Based Theming with Styled Components',
-    description:
-      'Learn how to support system-based theming in Styled Components, while allowing a user to select their preferred theme and persist that choice.',
-  },
-  {
-    date: 'November 5, 2018',
-    title: 'Implicit State Sharing in React & Vue',
-    description:
-      'Learn to use React’s Context API and provide/inject in Vue to share state between related components without resorting to a global data store.',
-  },
-  {
-    date: 'April 9, 2020',
-    title: 'Component Reusability in React & Vue',
-    description:
-      'Learn how to support system-based theming in Styled Components, while allowing a user to select their preferred theme and persist that choice.',
-  },
-];
-
-const Container = styled.div`
-  background-color: #f5f5f5;
-  padding: 5rem 8rem;
-`;
-
-const FlexContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
+import { IPost } from '../utils';
 
 const CardContainer = styled.div`
   display: flex;
@@ -60,14 +31,8 @@ const Card = styled.div`
   }
 `;
 
-interface IPost {
-  date: string;
-  title: string;
-  description: string;
-}
-
-const RecentPosts = () => (
-  <Container>
+const RecentPosts = ({ posts }) => (
+  <SectionContainer>
     <FlexContainer>
       <SectionHeader>Recent Articles</SectionHeader>
       <Link href="/blog">
@@ -79,16 +44,16 @@ const RecentPosts = () => (
     </FlexContainer>
 
     <CardContainer>
-      {POSTS &&
-        POSTS.map(({ date, title, description }: IPost) => (
-          <Card key={title}>
-            <SubText>{date}</SubText>
-            <CardHeader>{title}</CardHeader>
-            <Text>{description}</Text>
+      {posts &&
+        posts.slice(0, 3).map(({ fields }: IPost) => (
+          <Card key={fields.title}>
+            <SubText>{fields.date}</SubText>
+            <CardHeader>{fields.title}</CardHeader>
+            <Text>{fields.description}</Text>
           </Card>
         ))}
     </CardContainer>
-  </Container>
+  </SectionContainer>
 );
 
 export default RecentPosts;
