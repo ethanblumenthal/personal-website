@@ -5,8 +5,8 @@ import Header from '../components/header';
 import RecentPosts from '../components/recent-posts';
 import { getAllPostsForHome } from '../api/contentful';
 
-const Home = ({ posts }) => {
-  console.log(posts);
+const Home = ({ allPosts }) => {
+  console.log(allPosts);
   return (
     <Layout>
       <Head>
@@ -14,7 +14,7 @@ const Home = ({ posts }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <RecentPosts posts={posts} />
+      <RecentPosts posts={allPosts} />
     </Layout>
   );
 };

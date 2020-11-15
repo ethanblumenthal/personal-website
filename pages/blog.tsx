@@ -1,10 +1,10 @@
 import Head from 'next/head';
 
 import Layout from '../components/layout';
-import { getAllPostsForHome } from '../api/contentful';
 import Posts from '../components/posts';
+import { getAllPostsForHome } from '../api/contentful';
 
-const Blog = ({ preview, allPosts }) => {
+const Blog = ({ allPosts }) => {
   console.log(allPosts);
 
   return (

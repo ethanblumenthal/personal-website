@@ -14,6 +14,10 @@ const Container = styled.header`
   height: 80vh;
 `;
 
+const StyledImage = styled(Image)`
+  border-radius: 50%;
+`;
+
 const Content = styled.div`
   max-width: 30rem;
   margin-left: 3rem;
@@ -21,13 +25,7 @@ const Content = styled.div`
 
 const Header = () => (
   <Container>
-    <Image
-      src={BIO.image}
-      alt={BIO.title}
-      width={400}
-      height={400}
-      style={{ borderRadius: '50%' }}
-    />
+    <StyledImage src={BIO.image} alt={BIO.title} width={400} height={400} />
 
     <Content>
       <PageHeader>{BIO.title}</PageHeader>
