@@ -4,14 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import { ArrowButton } from '../elements/buttons';
-import { SectionHeader } from '../elements/text';
-import { FlexContainer } from '../elements/containers';
+import { ColorContainer, FlexContainer } from '../elements/containers';
 import { SKILLSET } from '../utils';
-
-const Container = styled.div`
-  background-color: ${({ theme }) => theme.colors.primary};
-  padding: 5rem 8rem;
-`;
 
 const SkillContainer = styled.div`
   display: flex;
@@ -21,18 +15,26 @@ const SkillContainer = styled.div`
 
 const Skill = styled.div`
   width: 17rem;
-  background-color: ${({ theme }) => theme.colors.secondary};
+  background-color: ${({ theme }) => theme.colors.tertiery};
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
   margin: 1rem 0;
 `;
 
+export const SectionHeader = styled.h2`
+  font-size: 2.25rem;
+  color: ${({ theme }) => theme.colors.white};
+  margin-top: 0;
+`;
+
 const Text = styled.p`
-  color: #ffffff;
   font-size: 1.75rem;
+  color: ${({ theme }) => theme.colors.white};
   padding-left: 1.5rem;
 `;
 
 const Skillset = () => (
-  <Container>
+  <ColorContainer>
     <FlexContainer>
       <SectionHeader>Skillset</SectionHeader>
 
@@ -47,12 +49,12 @@ const Skillset = () => (
     <SkillContainer>
       {SKILLSET &&
         SKILLSET.map((skill) => (
-          <Skill>
+          <Skill key={skill}>
             <Text>{skill}</Text>
           </Skill>
         ))}
     </SkillContainer>
-  </Container>
+  </ColorContainer>
 );
 
 export default Skillset;

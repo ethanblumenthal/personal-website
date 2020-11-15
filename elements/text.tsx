@@ -6,6 +6,7 @@ export const PageHeader = styled.h1`
 
 export const SectionHeader = styled.h2`
   font-size: 2.25rem;
+  margin-top: 0;
 `;
 
 export const CardHeader = styled.h3`

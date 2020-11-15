@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import { SectionHeader, CardHeader, Text, SubText } from '../elements/text';
-import { SectionContainer, FlexContainer } from '../elements/containers';
+import { OffsetContainer, FlexContainer } from '../elements/containers';
 import { ArrowButton } from '../elements/buttons';
 import { IPost } from '../utils';
 
@@ -32,7 +32,7 @@ const Card = styled.div`
 `;
 
 const RecentPosts = ({ posts }) => (
-  <SectionContainer>
+  <OffsetContainer>
     <FlexContainer>
       <SectionHeader>Recent Articles</SectionHeader>
       <Link href="/blog">
@@ -53,7 +53,7 @@ const RecentPosts = ({ posts }) => (
           </Card>
         ))}
     </CardContainer>
-  </SectionContainer>
+  </OffsetContainer>
 );
 
 export default RecentPosts;

@@ -1,12 +1,8 @@
 import styled from 'styled-components';
 
 import { SectionHeader, Text, SubText } from '../elements/text';
+import { BackgroundContainer } from '../elements/containers';
 import { CERTIFICATIONS } from '../utils';
-
-const Container = styled.div`
-  background-color: ${({ theme }) => theme.colors.white};
-  padding: 5rem 8rem;
-`;
 
 const CardContainer = styled.div`
   display: flex;
@@ -15,7 +11,7 @@ const CardContainer = styled.div`
 
 const Card = styled.div`
   position: relative;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.card};
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   border-radius: 0.25rem;
   height: 10rem;
@@ -38,19 +34,19 @@ interface ICertifications {
 }
 
 const Certifications = () => (
-  <Container>
+  <BackgroundContainer>
     <SectionHeader>Certifications</SectionHeader>
 
     <CardContainer>
       {CERTIFICATIONS &&
         CERTIFICATIONS.map(({ title, description }: ICertifications) => (
-          <Card>
+          <Card key={title}>
             <SubText>{description}</SubText>
             <Text>{title}</Text>
           </Card>
         ))}
     </CardContainer>
-  </Container>
+  </BackgroundContainer>
 );
 
 export default Certifications;

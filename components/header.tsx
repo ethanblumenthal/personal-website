@@ -7,6 +7,7 @@ import { Button } from '../elements/buttons';
 import { BIO } from '../utils';
 
 const Container = styled.header`
+  background-color: ${({ theme }) => theme.colors.background};
   display: flex;
   justify-content: center;
   align-items: center;

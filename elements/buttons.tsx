@@ -23,6 +23,11 @@ export const OutlineButton = styled(Button)`
   border: 1px solid ${({ theme }) => theme.colors.outline};
 `;
 
+export const SquareButton = styled(Button)`
+  border-radius: 0.25rem;
+  /* padding: 1rem 1rem; */
+`;
+
 export const ArrowButton = styled.button`
   font-size: 1.2rem;
   cursor: pointer;

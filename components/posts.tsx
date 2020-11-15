@@ -3,7 +3,7 @@ import Image from 'next/image';
 import styled from 'styled-components';
 
 import { CardHeader, Text, SubText } from '../elements/text';
-import { SectionContainer } from '../elements/containers';
+import { BackgroundContainer } from '../elements/containers';
 import { IPost } from '../utils';
 
 const CardContainer = styled.div`
@@ -30,7 +30,7 @@ const Card = styled.div`
 `;
 
 const Posts = ({ posts }) => (
-  <SectionContainer>
+  <BackgroundContainer>
     <CardContainer>
       {posts &&
         posts.map(({ fields }: IPost) => (
@@ -49,7 +49,7 @@ const Posts = ({ posts }) => (
           </Link>
         ))}
     </CardContainer>
-  </SectionContainer>
+  </BackgroundContainer>
 );
 
 export default Posts;

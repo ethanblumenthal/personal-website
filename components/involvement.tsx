@@ -1,12 +1,8 @@
 import styled from 'styled-components';
 
 import { SectionHeader, CardHeader } from '../elements/text';
+import { OffsetContainer } from '../elements/containers';
 import { INVOLVEMENT } from '../utils';
-
-const Container = styled.div`
-  background-color: ${({ theme }) => theme.colors.offset};
-  padding: 5rem 8rem;
-`;
 
 const CardContainer = styled.div`
   display: flex;
@@ -15,7 +11,7 @@ const CardContainer = styled.div`
 
 const Card = styled.div`
   position: relative;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.card};
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   border-radius: 0.25rem;
   height: 16rem;
@@ -43,7 +39,7 @@ interface IInvolvement {
 }
 
 const Involvement = () => (
-  <Container>
+  <OffsetContainer>
     <SectionHeader>Involvement</SectionHeader>
 
     <CardContainer>
@@ -57,7 +53,7 @@ const Involvement = () => (
           </a>
         ))}
     </CardContainer>
-  </Container>
+  </OffsetContainer>
 );
 
 export default Involvement;

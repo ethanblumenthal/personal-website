@@ -6,6 +6,7 @@ import RecentPosts from '../components/recent-posts';
 import { getAllPostsForHome } from '../api/contentful';
 
 const Home = ({ posts }) => {
+  console.log(posts);
   return (
     <Layout>
       <Head>

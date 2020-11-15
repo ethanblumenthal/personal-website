@@ -1,12 +1,15 @@
 export const lightTheme = {
   colors: {
-    primary: '#82A4E3',
-    secondary: '#52688F',
-    grey: '#737581',
+    primary: '#091C2E',
+    secondary: '#081726',
+    tertiery: '#0C2037',
+    white: '#ffffff',
+    grey: '#8A99A8',
     text: '#000000',
+    card: '#ffffff',
     background: '#ffffff',
-    offset: '#f5f5f5',
-    button: '#D95980',
+    offset: '#F8F9FA',
+    button: '#E6594C',
     outline: 'rgba(0, 0, 0, 0.1)',
   },
   transitions: {
@@ -16,13 +19,16 @@ export const lightTheme = {
 
 export const darkTheme = {
   colors: {
-    primary: '#82A4E3',
-    secondary: '#52688F',
-    grey: '#737581',
+    primary: '#0F0F0F',
+    secondary: '#0A0A0A',
+    tertiery: '#1A1A1A',
+    white: '#ffffff',
+    grey: '#8A99A8',
     text: '#ffffff',
-    background: '#000000',
-    offset: '#f5f5f5',
-    button: '#D95980',
+    card: '#1F1F1F',
+    background: '#141414',
+    offset: '#1A1A1A',
+    button: '#E6594C',
     outline: '#ffffff',
   },
   transitions: {

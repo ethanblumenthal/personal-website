@@ -30,28 +30,33 @@ const Card = styled.div`
   }
 `;
 
-const Posts = ({ posts }) => (
-  <SectionContainer>
-    <CardContainer>
-      {posts &&
-        posts.map(({ fields }: IPost) => (
-          <Link href={`/${fields.slug}`}>
-            <Card key={fields.title}>
-              <img
-                src={`https:${fields.image.fields.file.url}`}
-                alt={fields.title}
-                width={300}
-                height={200}
-              />
-              <SubText>{fields.date}</SubText>
-              <CardHeader>{fields.title}</CardHeader>
-              <Text>{fields.description}</Text>
-            </Card>
-          </Link>
-        ))}
-    </CardContainer>
-  </SectionContainer>
-);
+const Posts = ({ posts }) => {
+  console.log(posts);
+  return (
+    <SectionContainer>
+      <CardContainer>
+        {posts &&
+          posts.map(({ fields }: IPost) => (
+            <Link href={`/${fields.slug}`}>
+              <Card key={fields.title}>
+                <img
+                  src={`https:${fields.image.fields.file.url}`}
+                  alt={fields.title}
+                  width={300}
+                  height={200}
+                />
+                <SubText>{fields.date}</SubText>
+                <CardHeader>{fields.title}</CardHeader>
+                <Text>{fields.description}</Text>
+              </Card>
+            </Link>
+          ))}
+      </CardContainer>
+    </SectionContainer>
+  );
+};
+
+export default Posts;
 
 export async function getStaticProps({ params, preview = false }) {
   const data = await getPostAndMorePosts(params.slug, preview);
