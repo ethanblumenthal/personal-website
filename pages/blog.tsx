@@ -4,19 +4,15 @@ import Layout from '../components/layout';
 import Posts from '../components/posts';
 import { getAllPostsForHome } from '../api/contentful';
 
-const Blog = ({ allPosts }) => {
-  console.log(allPosts);
-
-  return (
-    <Layout>
-      <Head>
-        <title>Blog</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      {/* <Posts posts={allPosts} /> */}
-    </Layout>
-  );
-};
+const Blog = ({ allPosts }) => (
+  <Layout>
+    <Head>
+      <title>Blog</title>
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
+    <Posts posts={allPosts} />
+  </Layout>
+);
 
 export default Blog;
 
