@@ -4,7 +4,7 @@ export const Button = styled.button`
   height: 2.5rem;
   font-size: 1rem;
   cursor: pointer;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.button};
   border-radius: 2rem;
   border: none;
@@ -24,8 +24,9 @@ export const OutlineButton = styled(Button)`
 `;
 
 export const SquareButton = styled(Button)`
+  height: 3rem;
   border-radius: 0.25rem;
-  /* padding: 1rem 1rem; */
+  padding: 0 1.5rem;
 `;
 
 export const ArrowButton = styled.button`
