@@ -1,20 +1,20 @@
 const POST_GRAPHQL_FIELDS = `
-slug
-title
-coverImage {
-  url
-}
-date
-author {
-  name
-  picture {
+  slug
+  title
+  coverImage {
     url
   }
-}
-excerpt
-content {
-  json
-}
+  date
+  author {
+    name
+    picture {
+      url
+    }
+  }
+  excerpt
+  content {
+    json
+  }
 `;
 
 async function fetchGraphQL(query, preview = false) {
