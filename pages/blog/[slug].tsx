@@ -6,6 +6,7 @@ import { getAllPostsWithSlug, getPostAndMorePosts } from '../../api/contentful';
 
 export default function Post({ post, morePosts, preview }) {
   const router = useRouter();
+  console.log(post);
 
   if (!router.isFallback && !post) {
     return <ErrorPage statusCode={404} />;
@@ -33,7 +34,7 @@ export async function getStaticProps({ params, preview = false }) {
 export async function getStaticPaths() {
   const allPosts = await getAllPostsWithSlug();
   return {
-    paths: allPosts?.map(({ slug }) => `/posts/${slug}`) ?? [],
+    paths: allPosts?.map(({ slug }) => `/blog/${slug}`) ?? [],
     fallback: true,
   };
 }

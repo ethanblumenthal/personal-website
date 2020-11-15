@@ -29,6 +29,25 @@ export const SquareButton = styled(Button)`
   padding: 0 1.5rem;
 `;
 
+export const ThinButton = styled.button`
+  height: 1.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: ${({ theme }) => theme.colors.grey};
+  background-color: ${({ theme }) => theme.colors.lightGrey};
+  text-transform: uppercase;
+  border-radius: 2rem;
+  border: none;
+  outline: none;
+  padding: 0 0.9rem;
+  transition: ${({ theme }) => theme.transitions.ease};
+  margin-right: 0.5rem;
+
+  &:hover {
+    background-color: rgba(233, 236, 239, 0.5);
+  }
+`;
+
 export const ArrowButton = styled.button`
   font-size: 1.2rem;
   cursor: pointer;

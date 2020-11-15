@@ -22,7 +22,7 @@ export const BlogCard = styled(Card)`
 `;
 
 export const ImageCard = styled(Card)`
-  height: 20rem;
+  height: 35rem;
 `;
 
 export const BaseCard = styled(Card)`
