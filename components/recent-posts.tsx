@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import moment from 'moment';
 
 import { SectionHeader, CardHeader, Text, SubText } from '../elements/text';
 import { OffsetContainer, FlexContainer } from '../elements/containers';
@@ -24,7 +25,7 @@ const RecentPosts = ({ posts }) => (
       {posts &&
         posts.slice(0, 3).map(({ title, date, excerpt }: IPost) => (
           <Card key={title}>
-            <SubText>{date}</SubText>
+            <SubText>{moment(date).format('MMMM D, YYYY')}</SubText>
             <CardHeader>{title}</CardHeader>
             <Text>{excerpt}</Text>
           </Card>

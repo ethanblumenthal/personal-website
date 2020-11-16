@@ -65,3 +65,18 @@ export const ArrowButton = styled.button`
     margin-left: 1rem;
   }
 `;
+
+export const ScrollButton = styled.button`
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 1.25rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+  color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.primary};
+  border: 1px solid ${({ theme }) => theme.colors.white};
+  border-radius: 50%;
+  outline: none;
+`;
