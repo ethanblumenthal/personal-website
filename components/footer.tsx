@@ -1,6 +1,7 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedinIn, faMediumM, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedinIn, faMediumM, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 import { SquareButton } from '../elements/buttons';
 import { SubText } from '../elements/text';
@@ -38,36 +39,53 @@ const Input = styled.input`
   }
 `;
 
-export const Header = styled.h3`
+const Header = styled.h3`
   font-size: 1.5rem;
   color: ${({ theme }) => theme.colors.white};
   margin-bottom: 0;
 `;
 
-export const Text = styled.p`
+const Text = styled.p`
   font-size: 1.1rem;
   color: ${({ theme }) => theme.colors.grey};
   line-height: 1.5rem;
   margin-top: 0.5rem;
 `;
 
+const Anchor = styled.a`
+  & > svg {
+    color: ${({ theme }) => theme.colors.grey};
+    transition: ${({ theme }) => theme.transitions.ease};
+  }
+
+  &:hover > svg {
+    color: ${({ theme }) => theme.colors.button};
+  }
+`;
+
 const Footer = () => (
   <footer>
     <Container top>
-      <SubText>&copy; {new Date().getFullYear()} Ethan Blumenthal</SubText>
+      <Link href="/">
+        <SubText>&copy; {new Date().getFullYear()} Ethan Blumenthal</SubText>
+      </Link>
 
       <Socials>
-        <a href="https://www.linkedin.com/in/ethanblumenthal/" target="_blank">
-          <FontAwesomeIcon icon={faLinkedinIn} size="lg" color={'#8A99A8'} />
-        </a>
+        <Anchor href="https://www.linkedin.com/in/ethanblumenthal/" target="_blank">
+          <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
+        </Anchor>
 
-        <a href="https://medium.com/@ethanblumenthal" target="_blank">
-          <FontAwesomeIcon icon={faMediumM} size="lg" color={'#8A99A8'} />
-        </a>
+        <Anchor href="https://medium.com/@ethanblumenthal" target="_blank">
+          <FontAwesomeIcon icon={faMediumM} size="lg" />
+        </Anchor>
 
-        <a href="https://github.com/ethanblumenthal" target="_blank">
-          <FontAwesomeIcon icon={faGithub} size="lg" color={'#8A99A8'} />
-        </a>
+        <Anchor href="https://github.com/ethanblumenthal" target="_blank">
+          <FontAwesomeIcon icon={faGithub} size="lg" />
+        </Anchor>
+
+        <Anchor href="https://www.instagram.com/ethan_blumenthal" target="_blank">
+          <FontAwesomeIcon icon={faInstagram} size="lg" />
+        </Anchor>
       </Socials>
     </Container>
 

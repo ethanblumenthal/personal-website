@@ -12,7 +12,7 @@ import { IPost } from '../utils';
 const RecentPosts = ({ allPosts }) => (
   <OffsetContainer>
     <FlexContainer>
-      <SectionHeader>Recent Articles</SectionHeader>
+      <SectionHeader>Recent Posts</SectionHeader>
       <Link href="/blog">
         <ArrowButton>
           View all

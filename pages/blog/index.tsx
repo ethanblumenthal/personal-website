@@ -9,7 +9,9 @@ import { getAllPosts } from '../../api/contentful';
 
 const TAGS = ['TypeScript', 'GraphQL', 'Serverless', 'DevOps', 'Vue'];
 
-const Header = styled.header``;
+const Header = styled.header`
+  text-align: center;
+`;
 
 const Blog = ({ allPosts }) => (
   <Layout>
@@ -19,7 +21,7 @@ const Blog = ({ allPosts }) => (
     </Head>
 
     <Header>
-      <PageHeader>Articles</PageHeader>
+      <PageHeader>Posts</PageHeader>
       {TAGS && TAGS.map((tag) => <ThinButton key={tag}>{tag}</ThinButton>)}
     </Header>
 
