@@ -1,4 +1,8 @@
+import Image from 'next/image';
+
+import { Button } from '../elements/buttons';
 import { BackgroundContainer, FlexContainer } from '../elements/containers';
+import { SectionHeader, Text } from '../elements/text';
 import { IProject } from '../utils';
 
 const Projects = ({ allProjects }) => (
@@ -7,9 +11,12 @@ const Projects = ({ allProjects }) => (
       {allProjects &&
         allProjects.map(({ title, description, coverImage }: IProject) => (
           <div>
-            <h1>{title}</h1>
-            <p>{description}</p>
-            <img src={coverImage.url} alt={title} />
+            <div>
+              <SectionHeader>{title}</SectionHeader>
+              <Text>{description}</Text>
+              <Button>Learn more</Button>
+            </div>
+            <Image src={coverImage.url} alt={title} height={200} width={350} />
           </div>
         ))}
     </FlexContainer>

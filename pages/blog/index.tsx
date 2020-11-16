@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import styled from 'styled-components';
 
-import Layout from '../components/layout';
-import Posts from '../components/posts';
-import { ThinButton } from '../elements/buttons';
-import { PageHeader } from '../elements/text';
-import { getAllPosts } from '../api/contentful';
+import Layout from '../../components/layout';
+import Posts from '../../components/posts';
+import { ThinButton } from '../../elements/buttons';
+import { PageHeader } from '../../elements/text';
+import { getAllPosts } from '../../api/contentful';
 
 const TAGS = ['TypeScript', 'GraphQL', 'Serverless', 'DevOps', 'Vue'];
 

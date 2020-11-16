@@ -18,6 +18,7 @@ const POST_GRAPHQL_FIELDS = `
 `;
 
 const PROJECT_GRAPHQL_FIELDS = `
+  date
   title
   description
   coverImage: {
@@ -28,6 +29,7 @@ const PROJECT_GRAPHQL_FIELDS = `
   }
   slug
 `;
+
 async function fetchGraphQL(query, preview = false) {
   return fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
@@ -43,7 +45,9 @@ async function fetchGraphQL(query, preview = false) {
       },
       body: JSON.stringify({ query }),
     },
-  ).then((response) => response.json());
+  ).then((response) => {
+    response.json();
+  });
 }
 
 function extractPost(fetchResponse) {
