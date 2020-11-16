@@ -29,6 +29,7 @@ const Header = styled.h1`
 
 const UnorderedList = styled.ul`
   display: flex;
+  list-style: none;
 `;
 
 const ListItem = styled.li`

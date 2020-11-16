@@ -10,14 +10,10 @@ export const GlobalStyle = createGlobalStyle`
 		box-sizing: inherit;
 	}
 	body {
-        /* font-family: 'Roboto'; */
 		color: ${({ theme }) => theme.colors.text};
 		background-color: ${({ theme }) => theme.colors.background};
 		padding: 0;
   		margin: 0;
-	}
-	ul, ol {
-		list-style: none;
 	}
 	a {
 		color: inherit;

@@ -26,6 +26,15 @@ export const INVOLVEMENT = [
   },
 ];
 
+export const EDUCATION = [
+  { title: 'BA Economics', description: 'University of Illinois', date: 'August 2011 - May 2015' },
+  {
+    title: 'Software Engineering',
+    description: 'Fullstack Academy',
+    date: 'Jan 2019 - April 2019',
+  },
+];
+
 export const CERTIFICATIONS = [
   { title: 'BA Economics', description: 'University of Illinois' },
   { title: 'Software Engineering', description: 'Fullstack Academy' },
@@ -50,4 +59,27 @@ export const SKILLSET = [
   'Terraform',
   'AWS',
   'GCP',
+];
+
+export const EXPERIENCE = [
+  {
+    company: 'Rightpoint',
+    position: 'Software Developer',
+    dates: 'July 2019 - Present',
+    accomplishments: [
+      'Launched publicity and marketing campaigns earning 10M+ impressions',
+      'Created content strategy for social media, advertising, and newsletters',
+      'Oversaw the design and development of artist websites and stores',
+    ],
+  },
+  {
+    company: 'Zeitgeist Artist Management',
+    position: 'Marketing Coordinator',
+    dates: 'July 2015 - Dec 2018',
+    accomplishments: [
+      'Launched publicity and marketing campaigns earning 10M+ impressions',
+      'Created content strategy for social media, advertising, and newsletters',
+      'Oversaw the design and development of artist websites and stores',
+    ],
+  },
 ];

@@ -2,15 +2,18 @@ import styled from 'styled-components';
 
 export const PageHeader = styled.h1`
   font-size: 2.75rem;
+  font-family: 'Ariel';
 `;
 
 export const SectionHeader = styled.h2`
   font-size: 2.25rem;
+  font-family: 'Ariel';
   margin-top: 0;
 `;
 
 export const CardHeader = styled.h3`
   font-size: 1.75rem;
+  font-family: 'Ariel';
   margin-bottom: 0;
 `;
 

@@ -21,10 +21,10 @@ const PROJECT_GRAPHQL_FIELDS = `
   date
   title
   description
-  coverImage: {
+  coverImage {
     url
   }
-  content: {
+  content {
     json
   }
   slug
