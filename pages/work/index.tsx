@@ -2,7 +2,7 @@ import Head from 'next/head';
 import styled from 'styled-components';
 
 import Layout from '../../components/layout';
-import Projects from '../../components/projects';
+import Project from '../../components/project';
 import { PageHeader } from '../../elements/text';
 import { getAllProjects } from '../../api/contentful';
 
@@ -20,7 +20,7 @@ const Work = ({ allProjects }) => (
       <PageHeader>Work</PageHeader>
     </Header>
 
-    <Projects allProjects={allProjects} />
+    {allProjects && allProjects.map((project, index) => <Project index={index} {...project} />)}
   </Layout>
 );
 

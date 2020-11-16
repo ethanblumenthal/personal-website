@@ -17,19 +17,6 @@ const POST_GRAPHQL_FIELDS = `
   }
 `;
 
-const PROJECT_GRAPHQL_FIELDS = `
-  date
-  title
-  description
-  coverImage {
-    url
-  }
-  content {
-    json
-  }
-  slug
-`;
-
 async function fetchGraphQL(query, preview = false) {
   return fetch(
     `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_SPACE_ID}`,
@@ -45,9 +32,7 @@ async function fetchGraphQL(query, preview = false) {
       },
       body: JSON.stringify({ query }),
     },
-  ).then((response) => {
-    response.json();
-  });
+  ).then((response) => response.json());
 }
 
 function extractPost(fetchResponse) {
@@ -56,14 +41,6 @@ function extractPost(fetchResponse) {
 
 function extractPostEntries(fetchResponse) {
   return fetchResponse?.data?.postCollection?.items;
-}
-
-function extractProject(fetchResponse) {
-  return fetchResponse?.data?.projectCollection?.items?.[0];
-}
-
-function extractProjectEntries(fetchResponse) {
-  return fetchResponse?.data?.projectCollection?.items;
 }
 
 export async function getAllPostsBySlug() {
@@ -122,7 +99,27 @@ export async function getPostBySlug(slug, preview) {
   };
 }
 
-// PROJECTS
+const PROJECT_GRAPHQL_FIELDS = `
+  date
+  title
+  description
+  coverImage {
+    url
+  }
+  content {
+    json
+  }
+  slug
+`;
+
+function extractProject(fetchResponse) {
+  return fetchResponse?.data?.projectCollection?.items?.[0];
+}
+
+function extractProjectEntries(fetchResponse) {
+  return fetchResponse?.data?.projectCollection?.items;
+}
+
 export async function getAllProjectsBySlug() {
   const entries = await fetchGraphQL(
     `query {
