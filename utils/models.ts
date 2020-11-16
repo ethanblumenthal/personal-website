@@ -6,7 +6,9 @@ export interface IPost {
   coverImage: {
     url: string;
   };
-  content: {};
+  content: {
+    json: {};
+  };
   slug: string;
 }
 

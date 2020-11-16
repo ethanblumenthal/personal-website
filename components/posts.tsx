@@ -17,7 +17,7 @@ const Posts = ({ posts }) => (
     <FlexContainer>
       {posts &&
         posts.map(({ date, title, excerpt, coverImage, slug }: IPost) => (
-          <Link href={`/${slug}`} key={slug}>
+          <Link href={`/blog/${slug}`} key={slug}>
             <ImageCard key={title}>
               <ImageContainer>
                 <Image src={coverImage.url} alt={title} height={200} width={350} />

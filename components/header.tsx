@@ -2,17 +2,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styled from 'styled-components';
 
+import { HeaderContainer } from '../elements/containers';
 import { PageHeader, Text } from '../elements/text';
 import { Button } from '../elements/buttons';
 import { BIO } from '../utils';
-
-const Container = styled.header`
-  background-color: ${({ theme }) => theme.colors.background};
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80vh;
-`;
 
 const StyledImage = styled(Image)`
   border-radius: 50%;
@@ -24,7 +17,7 @@ const Content = styled.div`
 `;
 
 const Header = () => (
-  <Container>
+  <HeaderContainer>
     <StyledImage src={BIO.image} alt={BIO.title} width={400} height={400} />
 
     <Content>
@@ -34,7 +27,7 @@ const Header = () => (
         <Button>Learn more</Button>
       </Link>
     </Content>
-  </Container>
+  </HeaderContainer>
 );
 
 export default Header;
