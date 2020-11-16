@@ -5,13 +5,11 @@ import Layout from '../components/layout';
 import Posts from '../components/posts';
 import { ThinButton } from '../elements/buttons';
 import { PageHeader } from '../elements/text';
-import { getAllPostsForHome } from '../api/contentful';
+import { getAllPosts } from '../api/contentful';
 
 const TAGS = ['TypeScript', 'GraphQL', 'Serverless', 'DevOps', 'Vue'];
 
-const Header = styled.div`
-  text-align: center;
-`;
+const Header = styled.header``;
 
 const Blog = ({ allPosts }) => (
   <Layout>
@@ -25,15 +23,15 @@ const Blog = ({ allPosts }) => (
       {TAGS && TAGS.map((tag) => <ThinButton key={tag}>{tag}</ThinButton>)}
     </Header>
 
-    <Posts posts={allPosts} />
+    <Posts allPosts={allPosts} />
   </Layout>
 );
 
 export default Blog;
 
 export async function getStaticProps({ preview = false }) {
-  const allPosts = (await getAllPostsForHome(preview)) ?? [];
+  const allPosts = (await getAllPosts(preview)) ?? [];
   return {
-    props: { preview, allPosts },
+    props: { allPosts },
   };
 }

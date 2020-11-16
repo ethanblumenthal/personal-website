@@ -7,11 +7,11 @@ import { CardHeader, Text, SubText } from '../elements/text';
 import { BackgroundContainer, FlexContainer } from '../elements/containers';
 import { IPost } from '../utils';
 
-const Posts = ({ posts }) => (
+const Posts = ({ allPosts }) => (
   <BackgroundContainer>
     <FlexContainer>
-      {posts &&
-        posts.map(({ date, title, excerpt, coverImage, slug }: IPost) => (
+      {allPosts &&
+        allPosts.map(({ date, title, excerpt, coverImage, slug }: IPost) => (
           <Link href={`/blog/${slug}`} key={slug}>
             <ImageCard key={title}>
               <Image src={coverImage.url} alt={title} height={200} width={350} />

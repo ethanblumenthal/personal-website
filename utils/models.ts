@@ -18,3 +18,16 @@ export interface IAuthor {
     url: string;
   };
 }
+
+export interface IProject {
+  date: string;
+  title: string;
+  description: string;
+  coverImage: {
+    url: string;
+  };
+  content: {
+    json: {};
+  };
+  slug: string;
+}

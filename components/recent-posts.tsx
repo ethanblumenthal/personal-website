@@ -9,7 +9,7 @@ import { ArrowButton } from '../elements/buttons';
 import { Card } from '../elements/cards';
 import { IPost } from '../utils';
 
-const RecentPosts = ({ posts }) => (
+const RecentPosts = ({ allPosts }) => (
   <OffsetContainer>
     <FlexContainer>
       <SectionHeader>Recent Articles</SectionHeader>
@@ -22,8 +22,8 @@ const RecentPosts = ({ posts }) => (
     </FlexContainer>
 
     <FlexContainer>
-      {posts &&
-        posts.slice(0, 3).map(({ title, date, excerpt }: IPost) => (
+      {allPosts &&
+        allPosts.slice(0, 3).map(({ title, date, excerpt }: IPost) => (
           <Card key={title}>
             <SubText>{moment(date).format('MMMM D, YYYY')}</SubText>
             <CardHeader>{title}</CardHeader>

@@ -8,7 +8,7 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import moment from 'moment';
 
 import Layout from '../../components/layout';
-import { getAllPostsWithSlug, getPostAndMorePosts, getAllPostsForHome } from '../../api/contentful';
+import { getAllPostsBySlug, getPostBySlug, getAllPosts } from '../../api/contentful';
 import { ScrollButton } from '../../elements/buttons';
 import { PageHeader, Text, SubText } from '../../elements/text';
 import { BlogContainer, FlexContainer, OffsetContainer } from '../../elements/containers';
@@ -45,7 +45,7 @@ export default function Post({ post, allPosts }) {
       </OffsetContainer>
 
       <BlogContainer>{documentToReactComponents(content.json)}</BlogContainer>
-      <RecentPosts posts={allPosts} />
+      <RecentPosts allPosts={allPosts} />
       <ScrollButton onClick={() => window.scrollTo(0, 0)}>
         <FontAwesomeIcon icon={faArrowUp} />
       </ScrollButton>
@@ -54,8 +54,8 @@ export default function Post({ post, allPosts }) {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const data = await getPostAndMorePosts(params.slug, preview);
-  const allPosts = (await getAllPostsForHome(preview)) ?? [];
+  const data = await getPostBySlug(params.slug, preview);
+  const allPosts = (await getAllPosts(preview)) ?? [];
 
   return {
     props: {
@@ -66,7 +66,7 @@ export async function getStaticProps({ params, preview = false }) {
 }
 
 export async function getStaticPaths() {
-  const allPosts = await getAllPostsWithSlug();
+  const allPosts = await getAllPostsBySlug();
   return {
     paths: allPosts?.map(({ slug }) => `/blog/${slug}`) ?? [],
     fallback: true,

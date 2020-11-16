@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+const BaseC = styled.header`
+  text-align: center;
+`;
+
 export const HeaderContainer = styled.header`
   background-color: ${({ theme }) => theme.colors.background};
   display: flex;
