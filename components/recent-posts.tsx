@@ -4,7 +4,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import moment from 'moment';
 
 import { SectionHeader, CardHeader, Text, SubText } from '../elements/text';
-import { OffsetContainer, FlexContainer } from '../elements/containers';
+import { OffsetContainer, FlexContainer, GridContainer } from '../elements/containers';
 import { ArrowButton } from '../elements/buttons';
 import { Card } from '../elements/cards';
 import { IPost } from '../utils';
@@ -21,7 +21,7 @@ const RecentPosts = ({ allPosts }) => (
       </Link>
     </FlexContainer>
 
-    <FlexContainer>
+    <GridContainer>
       {allPosts &&
         allPosts.slice(0, 3).map(({ title, date, excerpt }: IPost) => (
           <Card key={title}>
@@ -30,7 +30,7 @@ const RecentPosts = ({ allPosts }) => (
             <Text>{excerpt}</Text>
           </Card>
         ))}
-    </FlexContainer>
+    </GridContainer>
   </OffsetContainer>
 );
 export default RecentPosts;

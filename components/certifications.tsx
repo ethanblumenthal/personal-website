@@ -1,6 +1,6 @@
 import { SmallCard } from '../elements/cards';
 import { SectionHeader, Text, SubText } from '../elements/text';
-import { BackgroundContainer, FlexContainer } from '../elements/containers';
+import { BackgroundContainer, LgGridContainer } from '../elements/containers';
 import { CERTIFICATIONS } from '../utils';
 
 interface ICertification {
@@ -12,7 +12,7 @@ const Certifications = () => (
   <BackgroundContainer>
     <SectionHeader>Certifications</SectionHeader>
 
-    <FlexContainer>
+    <LgGridContainer>
       {CERTIFICATIONS &&
         CERTIFICATIONS.map(({ title, description }: ICertification) => (
           <SmallCard key={title}>
@@ -20,7 +20,7 @@ const Certifications = () => (
             <Text>{title}</Text>
           </SmallCard>
         ))}
-    </FlexContainer>
+    </LgGridContainer>
   </BackgroundContainer>
 );
 

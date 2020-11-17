@@ -33,4 +33,17 @@ export const ColorContainer = styled.div`
 export const FlexContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+`;
+
+export const GridContainer = styled.div`
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+`;
+
+export const LgGridContainer = styled.div`
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 `;

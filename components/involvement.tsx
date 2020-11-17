@@ -1,6 +1,6 @@
 import { BaseCard } from '../elements/cards';
 import { SectionHeader, CardHeader, Text } from '../elements/text';
-import { FlexContainer, OffsetContainer } from '../elements/containers';
+import { GridContainer, OffsetContainer } from '../elements/containers';
 import { INVOLVEMENT } from '../utils';
 
 interface IInvolvement {
@@ -13,7 +13,7 @@ const Involvement = () => (
   <OffsetContainer>
     <SectionHeader>Involvement</SectionHeader>
 
-    <FlexContainer>
+    <GridContainer>
       {INVOLVEMENT &&
         INVOLVEMENT.map(({ title, description, link }: IInvolvement) => (
           <a href={link} target="_blank" key={title}>
@@ -23,7 +23,7 @@ const Involvement = () => (
             </BaseCard>
           </a>
         ))}
-    </FlexContainer>
+    </GridContainer>
   </OffsetContainer>
 );
 

@@ -4,12 +4,12 @@ import moment from 'moment';
 
 import { ImageCard } from '../elements/cards';
 import { CardHeader, Text, SubText } from '../elements/text';
-import { BackgroundContainer, FlexContainer } from '../elements/containers';
+import { BackgroundContainer, GridContainer } from '../elements/containers';
 import { IPost } from '../utils';
 
 const Posts = ({ allPosts }) => (
   <BackgroundContainer>
-    <FlexContainer>
+    <GridContainer>
       {allPosts &&
         allPosts.map(({ date, title, excerpt, coverImage, slug }: IPost) => (
           <Link href={`/blog/${slug}`} key={slug}>
@@ -21,7 +21,7 @@ const Posts = ({ allPosts }) => (
             </ImageCard>
           </Link>
         ))}
-    </FlexContainer>
+    </GridContainer>
   </BackgroundContainer>
 );
 
