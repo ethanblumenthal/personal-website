@@ -1,11 +1,17 @@
 import styled from 'styled-components';
+import { devices } from '../utils';
 
 export const HeaderContainer = styled.header`
   background-color: ${({ theme }) => theme.colors.background};
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   height: 80vh;
+
+  @media ${devices.tablet} {
+    flex-direction: row;
+    justify-content: center;
+  }
 `;
 
 export const BackgroundContainer = styled.div`
@@ -49,6 +55,7 @@ export const ColorContainer = styled.div`
 export const FlexContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
 `;
 

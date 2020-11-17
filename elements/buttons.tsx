@@ -92,4 +92,16 @@ export const ExitButton = styled.button`
   border: none;
   border-radius: 50%;
   outline: none;
+  float: right;
+`;
+
+export const ThemeButton = styled.button`
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  height: 3rem;
+  width: 50%;
+  background-color: ${({ theme }) => theme.colors.lightGrey};
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
 `;

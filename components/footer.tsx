@@ -4,18 +4,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn, faMediumM, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 import { SquareButton } from '../elements/buttons';
+import { SubscribeInput } from '../elements/inputs';
 import { SubText } from '../elements/text';
+import { devices } from '../utils';
 
 const Container = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   background-color: ${({ theme, top }) => (top ? theme.colors.primary : theme.colors.secondary)};
-  padding: 2rem 8rem;
+  padding: 4rem 1rem;
 
-  @media screen and (max-width: 500px) {
-    padding: 4rem 1rem;
-    flex-direction: column;
+  @media ${devices.laptop} {
+    padding: 2rem 8rem;
+    flex-direction: row;
+    justify-content: space-between;
   }
 `;
 
@@ -25,22 +28,6 @@ const Socials = styled.div`
 
   & > a {
     margin-right: 0.75rem;
-  }
-`;
-
-const Input = styled.input`
-  width: 20rem;
-  border: none;
-  font-size: 1.1rem;
-  border-radius: 0.25rem;
-  background-color: ${({ theme }) => theme.colors.primary};
-  outline-color: ${({ theme }) => theme.colors.grey};
-  color: ${({ theme }) => theme.colors.grey};
-  padding: 1rem 1rem;
-  margin-right: 1rem;
-
-  &::placeholder {
-    color: ${({ theme }) => theme.colors.grey};
   }
 `;
 
@@ -101,7 +88,7 @@ const Footer = () => (
       </div>
 
       <div>
-        <Input placeholder="Enter your email address" />
+        <SubscribeInput placeholder="Enter your email address" />
         <SquareButton>Subscribe</SquareButton>
       </div>
     </Container>
