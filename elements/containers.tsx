@@ -11,11 +11,19 @@ export const HeaderContainer = styled.header`
 export const BackgroundContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.background};
   padding: 4rem 8rem;
+
+  @media screen and (max-width: 500px) {
+    padding: 4rem 1rem;
+  }
 `;
 
 export const OffsetContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.offset};
   padding: 4rem 8rem;
+
+  @media screen and (max-width: 500px) {
+    padding: 4rem 1rem;
+  }
 `;
 
 export const BlogContainer = styled.div`
@@ -23,11 +31,19 @@ export const BlogContainer = styled.div`
   max-width: 46rem;
   padding: 4rem 0;
   margin: 0 auto;
+
+  @media screen and (max-width: 500px) {
+    padding: 4rem 1rem;
+  }
 `;
 
 export const ColorContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.primary};
   padding: 4rem 8rem;
+
+  @media screen and (max-width: 500px) {
+    padding: 4rem 1rem;
+  }
 `;
 
 export const FlexContainer = styled.div`

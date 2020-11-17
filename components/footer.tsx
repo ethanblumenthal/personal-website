@@ -12,6 +12,11 @@ const Container = styled.div`
   align-items: center;
   background-color: ${({ theme, top }) => (top ? theme.colors.primary : theme.colors.secondary)};
   padding: 2rem 8rem;
+
+  @media screen and (max-width: 500px) {
+    padding: 4rem 1rem;
+    flex-direction: column;
+  }
 `;
 
 const Socials = styled.div`

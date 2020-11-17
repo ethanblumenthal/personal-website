@@ -80,3 +80,16 @@ export const ScrollButton = styled.button`
   border-radius: 50%;
   outline: none;
 `;
+
+export const ExitButton = styled.button`
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+  color: ${({ theme }) => theme.colors.black};
+  background-color: ${({ theme }) => theme.colors.lightGrey};
+  border: none;
+  border-radius: 50%;
+  outline: none;
+`;

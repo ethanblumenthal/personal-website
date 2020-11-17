@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 import { OutlineButton } from '../elements/buttons';
+import { PAGES } from '../utils';
 
 const Nav = styled.nav`
   width: 100%;
@@ -42,13 +43,6 @@ const ListItem = styled.li`
     color: ${({ theme }) => theme.colors.grey};
   }
 `;
-
-const PAGES = [
-  { title: 'Home', slug: '/' },
-  { title: 'Blog', slug: '/blog' },
-  { title: 'About', slug: '/about' },
-  { title: 'Work', slug: '/work' },
-];
 
 const NavBar = ({ theme, setTheme }) => (
   <Nav>

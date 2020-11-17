@@ -1,3 +1,10 @@
+export const PAGES = [
+  { title: 'Home', slug: '/' },
+  { title: 'Blog', slug: '/blog' },
+  { title: 'About', slug: '/about' },
+  { title: 'Work', slug: '/work' },
+];
+
 export const BIO = {
   title: "Hi, I'm Ethan",
   description:
