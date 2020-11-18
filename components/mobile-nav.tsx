@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -45,6 +46,7 @@ const ListItem = styled.li`
 
 const MobileNav = ({ setTheme }) => {
   const [modal, setModal] = useState(false);
+  const router = useRouter();
 
   if (modal) {
     return (
@@ -56,7 +58,7 @@ const MobileNav = ({ setTheme }) => {
         <UnorderedList>
           {PAGES.map(({ title, slug }) => (
             <Link href={slug} key={slug}>
-              <ListItem>
+              <ListItem style={{ color: router.pathname === slug ? '#8A99A8' : '' }}>
                 <SectionHeader>{title}</SectionHeader>
               </ListItem>
             </Link>

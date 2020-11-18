@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
@@ -44,28 +45,34 @@ const ListItem = styled.li`
   }
 `;
 
-const NavBar = ({ theme, setTheme }) => (
-  <Nav>
-    <Container>
-      <Link href="/">
-        <Header>Ethan Blumenthal</Header>
-      </Link>
+const NavBar = ({ theme, setTheme }) => {
+  const router = useRouter();
 
-      <UnorderedList>
-        {PAGES.map(({ title, slug }) => (
-          <Link href={slug} key={slug}>
-            <ListItem>{title}</ListItem>
-          </Link>
-        ))}
-      </UnorderedList>
-    </Container>
+  return (
+    <Nav>
+      <Container>
+        <Link href="/">
+          <Header>Ethan Blumenthal</Header>
+        </Link>
 
-    <Container>
-      <FontAwesomeIcon icon={faSearch} size="lg" />
-      <FontAwesomeIcon icon={theme === 'dark' ? faMoon : faSun} size="lg" onClick={setTheme} />
-      <OutlineButton>Subscribe</OutlineButton>
-    </Container>
-  </Nav>
-);
+        <UnorderedList>
+          {PAGES.map(({ title, slug }) => (
+            <Link href={slug} key={slug}>
+              <ListItem style={{ color: router.pathname === slug ? '#8A99A8' : '' }}>
+                {title}
+              </ListItem>
+            </Link>
+          ))}
+        </UnorderedList>
+      </Container>
+
+      <Container>
+        <FontAwesomeIcon icon={faSearch} size="lg" />
+        <FontAwesomeIcon icon={theme === 'dark' ? faMoon : faSun} size="lg" onClick={setTheme} />
+        <OutlineButton>Subscribe</OutlineButton>
+      </Container>
+    </Nav>
+  );
+};
 
 export default NavBar;

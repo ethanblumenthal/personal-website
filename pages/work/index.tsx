@@ -20,7 +20,8 @@ const Work = ({ allProjects }) => (
       <PageHeader>Work</PageHeader>
     </Header>
 
-    {allProjects && allProjects.map((project, index) => <Project index={index} {...project} />)}
+    {allProjects &&
+      allProjects.map((project, index) => <Project key={index} index={index} {...project} />)}
   </Layout>
 );
 

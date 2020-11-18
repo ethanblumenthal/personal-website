@@ -16,7 +16,6 @@ const StyledImage = styled(Image)`
 `;
 
 const Project = ({ title, description, tags, coverImage, slug, index }) => {
-  console.log(tags);
   if (index % 2 === 0) {
     return (
       <OffsetContainer>
@@ -33,22 +32,22 @@ const Project = ({ title, description, tags, coverImage, slug, index }) => {
         </FlexContainer>
       </OffsetContainer>
     );
-  } else {
-    return (
-      <BackgroundContainer>
-        <FlexContainer key={title}>
-          <StyledImage src={coverImage.url} alt={title} height={350} width={600} />
-          <Content>
-            <SectionHeader>{title}</SectionHeader>
-            <Text>{description}</Text>
-            <Link href={`/work/${slug}`}>
-              <Button>Learn more</Button>
-            </Link>
-          </Content>
-        </FlexContainer>
-      </BackgroundContainer>
-    );
   }
+
+  return (
+    <BackgroundContainer>
+      <FlexContainer key={title}>
+        <StyledImage src={coverImage.url} alt={title} height={350} width={600} />
+        <Content>
+          <SectionHeader>{title}</SectionHeader>
+          <Text>{description}</Text>
+          <Link href={`/work/${slug}`}>
+            <Button>Learn more</Button>
+          </Link>
+        </Content>
+      </FlexContainer>
+    </BackgroundContainer>
+  );
 };
 
 export default Project;
