@@ -17,6 +17,12 @@ export const Button = styled.button`
   }
 `;
 
+export const BlackButton = styled(Button)`
+  color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.black};
+  border: 1px solid ${({ theme }) => theme.colors.white};
+`;
+
 export const OutlineButton = styled(Button)`
   color: ${({ theme }) => theme.colors.text};
   background-color: transparent;

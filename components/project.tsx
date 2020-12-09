@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import { Button } from '../elements/buttons';
+import { BlackButton } from '../elements/buttons';
 import { BackgroundContainer, FlexContainer, OffsetContainer } from '../elements/containers';
 import { SectionHeader, SubText, Text } from '../elements/text';
 import { IProject } from '../utils';
@@ -11,8 +11,8 @@ const Content = styled.div`
   max-width: 32rem;
 `;
 
-const StyledImage = styled(Image)`
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+const StyledImage = styled.img`
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
 `;
 
 const Project = ({ title, description, tags, coverImage, slug, index }) => {
@@ -25,7 +25,7 @@ const Project = ({ title, description, tags, coverImage, slug, index }) => {
             <SectionHeader>{title}</SectionHeader>
             <Text>{description}</Text>
             <Link href={`/work/${slug}`}>
-              <Button>Learn more</Button>
+              <BlackButton>Learn more</BlackButton>
             </Link>
           </Content>
           <StyledImage src={coverImage.url} alt={title} height={350} width={600} />
@@ -42,7 +42,7 @@ const Project = ({ title, description, tags, coverImage, slug, index }) => {
           <SectionHeader>{title}</SectionHeader>
           <Text>{description}</Text>
           <Link href={`/work/${slug}`}>
-            <Button>Learn more</Button>
+            <BlackButton>Learn more</BlackButton>
           </Link>
         </Content>
       </FlexContainer>

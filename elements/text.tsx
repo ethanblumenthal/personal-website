@@ -19,6 +19,8 @@ export const CardHeader = styled.h3`
 
 export const Text = styled.p`
   font-size: 1.1rem;
+  line-height: 1.7rem;
+  font-weight: 300;
 `;
 
 export const SubText = styled.p`
