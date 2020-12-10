@@ -1,40 +1,28 @@
 import styled from 'styled-components';
 import { devices } from '../utils';
 
-export const HeaderContainer = styled.header`
-  background-color: ${({ theme }) => theme.colors.background};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 80vh;
-
-  @media ${devices.tablet} {
-    flex-direction: row;
-    justify-content: center;
-  }
-`;
-
 export const BlogContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.background};
   max-width: 46rem;
   padding: 4rem 0;
   margin: 0 auto;
 
-  @media ${devices.laptop} {
+  @media ${devices.desktop} {
     padding: 4rem 1rem;
   }
 `;
 
 export const BackgroundContainer = styled.div`
-  background-color: ${({ theme, color }) => theme.colors[color]};
-  padding: 2rem;
+  background-color: ${({ theme, color }) =>
+    color ? theme.colors[color] : theme.colors.background};
+  padding: ${({ short }) => (short ? '1rem 2rem' : '2rem')};
 
   @media ${devices.tablet} {
-    padding: 3rem;
+    padding: ${({ short }) => (short ? '1rem 3rem' : '3rem')};
   }
 
-  @media ${devices.laptop} {
-    padding: 4rem;
+  @media ${devices.desktop} {
+    padding: ${({ short }) => (short ? '1rem 4rem' : '4rem')};
   }
 `;
 

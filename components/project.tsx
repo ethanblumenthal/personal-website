@@ -37,7 +37,7 @@ const Project = ({ title, description, tags, coverImage, slug, index }) => {
   }
 
   return (
-    <BackgroundContainer color="background">
+    <BackgroundContainer>
       <ContentContainer>
         <FlexContainer key={title}>
           <StyledImage src={coverImage.url} alt={title} height={350} width={600} />

@@ -17,6 +17,8 @@ const Skill = styled.div`
   background-color: ${({ theme }) => theme.colors.tertiery};
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   border-radius: 0.25rem;
+  height: 5.75rem;
+  padding: 1.75rem;
 `;
 
 const Skillset = () => (

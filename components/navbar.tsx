@@ -5,15 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 import { OutlineButton } from '../elements/buttons';
+import { CardHeader } from '../elements/text';
+import { BackgroundContainer, FlexContainer } from '../elements/containers';
 import { PAGES } from '../utils';
-
-const Nav = styled.nav`
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 8rem;
-`;
 
 const Container = styled.div`
   display: flex;
@@ -23,10 +17,6 @@ const Container = styled.div`
     cursor: pointer;
     margin-right: 1.5rem;
   }
-`;
-
-const Header = styled.h1`
-  cursor: pointer;
 `;
 
 const UnorderedList = styled.ul`
@@ -49,29 +39,31 @@ const NavBar = ({ theme, setTheme }) => {
   const router = useRouter();
 
   return (
-    <Nav>
-      <Container>
-        <Link href="/">
-          <Header>Ethan Blumenthal</Header>
-        </Link>
+    <BackgroundContainer short>
+      <FlexContainer>
+        <Container>
+          <Link href="/">
+            <CardHeader>Ethan Blumenthal</CardHeader>
+          </Link>
 
-        <UnorderedList>
-          {PAGES.map(({ title, slug }) => (
-            <Link href={slug} key={slug}>
-              <ListItem style={{ color: router.pathname === slug ? '#8A99A8' : '' }}>
-                {title}
-              </ListItem>
-            </Link>
-          ))}
-        </UnorderedList>
-      </Container>
+          <UnorderedList>
+            {PAGES.map(({ title, slug }) => (
+              <Link href={slug} key={slug}>
+                <ListItem style={{ color: router.pathname === slug ? '#8A99A8' : '' }}>
+                  {title}
+                </ListItem>
+              </Link>
+            ))}
+          </UnorderedList>
+        </Container>
 
-      <Container>
-        <FontAwesomeIcon icon={faSearch} size="lg" />
-        <FontAwesomeIcon icon={theme === 'dark' ? faMoon : faSun} size="lg" onClick={setTheme} />
-        <OutlineButton>Subscribe</OutlineButton>
-      </Container>
-    </Nav>
+        <Container>
+          <FontAwesomeIcon icon={faSearch} size="lg" />
+          <FontAwesomeIcon icon={theme === 'dark' ? faMoon : faSun} size="lg" onClick={setTheme} />
+          <OutlineButton>Subscribe</OutlineButton>
+        </Container>
+      </FlexContainer>
+    </BackgroundContainer>
   );
 };
 

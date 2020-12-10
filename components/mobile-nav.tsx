@@ -5,9 +5,9 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
-import { SectionHeader, SubText } from '../elements/text';
-import { ExitButton, ThemeButton, ThinButton } from '../elements/buttons';
-import { FlexContainer } from '../elements/containers';
+import { SectionHeader, CardHeader, SubText } from '../elements/text';
+import { ExitButton, ThemeButton, OutlineButton } from '../elements/buttons';
+import { BackgroundContainer, ContentContainer, FlexContainer } from '../elements/containers';
 import { SearchInput } from '../elements/inputs';
 import { PAGES } from '../utils';
 
@@ -22,10 +22,6 @@ const Modal = styled.div`
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   padding: 2rem;
   z-index: 999;
-`;
-
-const Header = styled.h1`
-  cursor: pointer;
 `;
 
 const UnorderedList = styled.ul`
@@ -76,12 +72,16 @@ const MobileNav = ({ setTheme }) => {
   }
 
   return (
-    <FlexContainer>
-      <Link href="/">
-        <Header>Ethan Blumenthal</Header>
-      </Link>
-      <ThinButton onClick={() => setModal(true)}>Menu</ThinButton>
-    </FlexContainer>
+    <BackgroundContainer short>
+      <ContentContainer>
+        <FlexContainer>
+          <Link href="/">
+            <CardHeader>Ethan Blumenthal</CardHeader>
+          </Link>
+          <OutlineButton onClick={() => setModal(true)}>Menu</OutlineButton>
+        </FlexContainer>
+      </ContentContainer>
+    </BackgroundContainer>
   );
 };
 

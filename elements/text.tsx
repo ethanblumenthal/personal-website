@@ -8,7 +8,6 @@ export const PageHeader = styled.h1`
 export const SectionHeader = styled.h2`
   font-size: 2.25rem;
   font-family: 'Ariel';
-  margin-top: 0;
 `;
 
 export const ColorSectionHeader = styled(SectionHeader)`
@@ -18,13 +17,10 @@ export const ColorSectionHeader = styled(SectionHeader)`
 export const CardHeader = styled.h3`
   font-size: 1.75rem;
   font-family: 'Ariel';
-  margin-bottom: 0;
 `;
 
 export const ColorCardHeader = styled(CardHeader)`
   color: ${({ theme }) => theme.colors.white};
-  padding-left: 1.75rem;
-  margin-bottom: 1.75rem;
 `;
 
 export const FooterHeader = styled(CardHeader)`
@@ -48,5 +44,4 @@ export const SubText = styled.p`
   color: ${({ theme }) => theme.colors.grey};
   font-size: 0.8rem;
   text-transform: uppercase;
-  margin-bottom: 0;
 `;

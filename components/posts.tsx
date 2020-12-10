@@ -8,7 +8,7 @@ import { BackgroundContainer, ContentContainer, GridContainer } from '../element
 import { IPost } from '../utils';
 
 const Posts = ({ allPosts }) => (
-  <BackgroundContainer color="background">
+  <BackgroundContainer>
     <ContentContainer>
       <GridContainer>
         {allPosts &&

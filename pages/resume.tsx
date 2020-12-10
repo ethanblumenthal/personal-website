@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Layout from '../components/layout';
 import { Button } from '../elements/buttons';
-import { SectionContainer, FlexContainer } from '../elements/containers';
+import { BackgroundContainer, FlexContainer } from '../elements/containers';
 import { PageHeader, SectionHeader, CardHeader, SubText, Text } from '../elements/text';
 import { EXPERIENCE, EDUCATION, SKILLSET } from '../utils';
 
@@ -26,7 +26,7 @@ const Resume = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
-    <SectionContainer color="background">
+    <BackgroundContainer>
       <PageHeader>Ethan Blumenthal</PageHeader>
       <Text>Software Engineer</Text>
 
@@ -69,7 +69,7 @@ const Resume = () => (
           </a>
         </SideContent>
       </FlexContainer>
-    </SectionContainer>
+    </BackgroundContainer>
   </Layout>
 );
 

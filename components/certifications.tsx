@@ -9,7 +9,7 @@ interface ICertification {
 }
 
 const Certifications = () => (
-  <BackgroundContainer color="background">
+  <BackgroundContainer>
     <ContentContainer>
       <SectionHeader>Certifications</SectionHeader>
 

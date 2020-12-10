@@ -31,7 +31,7 @@ const Anchor = styled.a`
 
 const Footer = () => (
   <footer>
-    <BackgroundContainer color="primary">
+    <BackgroundContainer color="primary" short>
       <ContentContainer>
         <FlexContainer>
           <Link href="/">
