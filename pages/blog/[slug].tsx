@@ -11,7 +11,7 @@ import Layout from '../../components/layout';
 import { getAllPostsBySlug, getPostBySlug, getAllPosts } from '../../api/contentful';
 import { ScrollButton } from '../../elements/buttons';
 import { PageHeader, Text, SubText } from '../../elements/text';
-import { BlogContainer, FlexContainer, SectionContainer } from '../../elements/containers';
+import { BlogContainer, FlexContainer, BackgroundContainer } from '../../elements/containers';
 import RecentPosts from '../../components/recent-posts';
 
 const Content = styled.div`
@@ -19,7 +19,6 @@ const Content = styled.div`
 `;
 
 export default function Post({ post, allPosts }) {
-  const { date, title, excerpt, coverImage, content } = post;
   const router = useRouter();
 
   if (!router.isFallback && !post) {
@@ -28,23 +27,23 @@ export default function Post({ post, allPosts }) {
 
   return (
     <Layout>
-      <SectionContainer color="offset">
+      <BackgroundContainer>
         <FlexContainer>
           <Content>
             <FlexContainer>
               <SubText>JavaScript - React - Theming</SubText>
-              <SubText>{moment(date).format('MMMM D, YYYY')}</SubText>
+              <SubText>{moment(post?.date).format('MMMM D, YYYY')}</SubText>
               <SubText>9 Min Read</SubText>
             </FlexContainer>
-            <PageHeader>{title}</PageHeader>
-            <Text>{excerpt}</Text>
+            <PageHeader>{post?.title}</PageHeader>
+            <Text>{post?.excerpt}</Text>
           </Content>
 
-          <Image src={coverImage.url} alt={title} height={300} width={400} />
+          <Image src={post?.coverImage.url} alt={post?.title} height={300} width={400} />
         </FlexContainer>
-      </SectionContainer>
+      </BackgroundContainer>
 
-      <BlogContainer>{documentToReactComponents(content.json)}</BlogContainer>
+      <BlogContainer>{documentToReactComponents(post?.content?.json)}</BlogContainer>
       <RecentPosts allPosts={allPosts} />
       <ScrollButton onClick={() => window.scrollTo(0, 0)}>
         <FontAwesomeIcon icon={faArrowUp} />

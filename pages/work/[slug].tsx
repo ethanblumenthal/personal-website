@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 import Layout from '../../components/layout';
-import { getAllProjectsBySlug, getProjectBySlug } from '../../api/contentful';
+import { getAllProjectsBySlug, getProjectBySlug, getAllProjects } from '../../api/contentful';
 import { PageHeader } from '../../elements/text';
 import { BlogContainer } from '../../elements/containers';
 import { ArrowButton } from '../../elements/buttons';
@@ -17,7 +17,6 @@ const Header = styled.header`
 `;
 
 export default function Project({ project }) {
-  const { title, content } = project;
   const router = useRouter();
 
   if (!router.isFallback && !project) {
@@ -27,7 +26,7 @@ export default function Project({ project }) {
   return (
     <Layout>
       <Header>
-        <PageHeader>{title}</PageHeader>
+        <PageHeader>{project?.title}</PageHeader>
 
         <Link href="/work">
           <ArrowButton>
@@ -37,17 +36,19 @@ export default function Project({ project }) {
         </Link>
       </Header>
 
-      <BlogContainer>{documentToReactComponents(content.json)}</BlogContainer>
+      <BlogContainer>{documentToReactComponents(project?.content?.json)}</BlogContainer>
     </Layout>
   );
 }
 
 export async function getStaticProps({ params, preview = false }) {
   const data = await getProjectBySlug(params.slug, preview);
+  const allProjects = (await getAllProjects(preview)) ?? [];
 
   return {
     props: {
       project: data?.project ?? null,
+      allProjects,
     },
   };
 }
