@@ -1,6 +1,6 @@
 import { BaseCard } from '../elements/cards';
 import { SectionHeader, CardHeader, Text } from '../elements/text';
-import { GridContainer, OffsetContainer } from '../elements/containers';
+import { BackgroundContainer, ContentContainer, GridContainer } from '../elements/containers';
 import { INVOLVEMENT } from '../utils';
 
 interface IInvolvement {
@@ -10,21 +10,23 @@ interface IInvolvement {
 }
 
 const Involvement = () => (
-  <OffsetContainer>
-    <SectionHeader>Involvement</SectionHeader>
+  <BackgroundContainer color="offset">
+    <ContentContainer>
+      <SectionHeader>Involvement</SectionHeader>
 
-    <GridContainer>
-      {INVOLVEMENT &&
-        INVOLVEMENT.map(({ title, description, link }: IInvolvement) => (
-          <a href={link} target="_blank" key={title}>
-            <BaseCard>
-              <CardHeader>{title}</CardHeader>
-              <Text>{description}</Text>
-            </BaseCard>
-          </a>
-        ))}
-    </GridContainer>
-  </OffsetContainer>
+      <GridContainer>
+        {INVOLVEMENT &&
+          INVOLVEMENT.map(({ title, description, link }: IInvolvement) => (
+            <a href={link} target="_blank" key={title}>
+              <BaseCard>
+                <CardHeader>{title}</CardHeader>
+                <Text>{description}</Text>
+              </BaseCard>
+            </a>
+          ))}
+      </GridContainer>
+    </ContentContainer>
+  </BackgroundContainer>
 );
 
 export default Involvement;

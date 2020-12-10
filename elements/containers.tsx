@@ -14,42 +14,33 @@ export const HeaderContainer = styled.header`
   }
 `;
 
-export const BackgroundContainer = styled.div`
-  background-color: ${({ theme }) => theme.colors.background};
-  padding: 4rem 8rem;
-
-  @media screen and (max-width: 500px) {
-    padding: 4rem 1rem;
-  }
-`;
-
-export const OffsetContainer = styled.div`
-  background-color: ${({ theme }) => theme.colors.offset};
-  padding: 4rem 8rem;
-
-  @media screen and (max-width: 500px) {
-    padding: 4rem 1rem;
-  }
-`;
-
 export const BlogContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.background};
   max-width: 46rem;
   padding: 4rem 0;
   margin: 0 auto;
 
-  @media screen and (max-width: 500px) {
+  @media ${devices.laptop} {
     padding: 4rem 1rem;
   }
 `;
 
-export const ColorContainer = styled.div`
-  background-color: ${({ theme }) => theme.colors.primary};
-  padding: 4rem 8rem;
+export const BackgroundContainer = styled.div`
+  background-color: ${({ theme, color }) => theme.colors[color]};
+  padding: 2rem;
 
-  @media screen and (max-width: 500px) {
-    padding: 4rem 1rem;
+  @media ${devices.tablet} {
+    padding: 3rem;
   }
+
+  @media ${devices.laptop} {
+    padding: 4rem;
+  }
+`;
+
+export const ContentContainer = styled.div`
+  max-width: 74rem;
+  margin: 0 auto;
 `;
 
 export const FlexContainer = styled.div`

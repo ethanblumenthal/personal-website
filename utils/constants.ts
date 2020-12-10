@@ -8,28 +8,25 @@ export const PAGES = [
 export const BIO = {
   title: "Hi, I'm Ethan",
   description:
-    'Im a designer and developer committed to making the web a more empowering and accessible place. I create engaging user experiences and bring them to life through maintainable, high-quality code. I share what I’ve learned in my technical blog.',
+    'Im a software engineer committed to building products that empower users in their daily lives. I share my thoughts on technology and humanism on my blog',
   image: '/ethanblumenthal.jpg',
 };
 
 export const INVOLVEMENT = [
   {
-    title: 'Rightpoint',
-    description:
-      'Learn how to support system-based theming in Styled Components, while allowing a user to select their preferred theme and persist that choice.',
-    link: 'https://www.rightpoint.com/',
+    title: `Rightpoint`,
+    description: `Rightpoint, a Genpact company (NYSE: G) is a global experience leader. Over 700 employees across 12 offices work with clients end-to-end, from defining and enabling vision, to ensuring ongoing market relevance.`,
+    link: `https://www.rightpoint.com/`,
   },
   {
-    title: 'Slingshot Studios',
-    description:
-      'Learn to use React’s Context API and provide/inject in Vue to share state between related components without resorting to a global data store.',
-    link: 'http://slingshotstudios.io/',
+    title: `Slingshot Studios`,
+    description: `Slingshot Studios is a product design and development consultancy that specializes in creating fast and secure applications with modern JAMstack technologies.`,
+    link: 'http://www.slingshotstudios.io/',
   },
   {
-    title: 'JS Conference',
-    description:
-      'Learn how to support system-based theming in Styled Components, while allowing a user to select their preferred theme and persist that choice.',
-    link: 'https://www.rightpoint.com/',
+    title: `Savvy`,
+    description: `Savvy is an browser extension that allows helps users to maximize their credit card rewards.`,
+    link: `https://www.getsavvy.io/`,
   },
 ];
 
@@ -50,12 +47,12 @@ export const CERTIFICATIONS = [
 ];
 
 export const SKILLSET = [
+  'HTML',
+  'CSS',
   'React',
-  'Next',
   'Vue',
   'TypeScript',
   'GraphQL',
-  'Serverless',
   'Node',
   'Express',
   'Python',

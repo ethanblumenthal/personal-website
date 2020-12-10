@@ -11,7 +11,7 @@ import Layout from '../../components/layout';
 import { getAllPostsBySlug, getPostBySlug, getAllPosts } from '../../api/contentful';
 import { ScrollButton } from '../../elements/buttons';
 import { PageHeader, Text, SubText } from '../../elements/text';
-import { BlogContainer, FlexContainer, OffsetContainer } from '../../elements/containers';
+import { BlogContainer, FlexContainer, SectionContainer } from '../../elements/containers';
 import RecentPosts from '../../components/recent-posts';
 
 const Content = styled.div`
@@ -28,7 +28,7 @@ export default function Post({ post, allPosts }) {
 
   return (
     <Layout>
-      <OffsetContainer>
+      <SectionContainer color="offset">
         <FlexContainer>
           <Content>
             <FlexContainer>
@@ -42,7 +42,7 @@ export default function Post({ post, allPosts }) {
 
           <Image src={coverImage.url} alt={title} height={300} width={400} />
         </FlexContainer>
-      </OffsetContainer>
+      </SectionContainer>
 
       <BlogContainer>{documentToReactComponents(content.json)}</BlogContainer>
       <RecentPosts allPosts={allPosts} />

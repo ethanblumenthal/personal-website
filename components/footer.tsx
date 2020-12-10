@@ -3,24 +3,11 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn, faMediumM, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
+import { FooterHeader, FooterText } from '../elements/text';
+import { BackgroundContainer, FlexContainer, ContentContainer } from '../elements/containers';
 import { SquareButton } from '../elements/buttons';
 import { SubscribeInput } from '../elements/inputs';
 import { SubText } from '../elements/text';
-import { devices } from '../utils';
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: ${({ theme, top }) => (top ? theme.colors.primary : theme.colors.secondary)};
-  padding: 4rem 1rem;
-
-  @media ${devices.laptop} {
-    padding: 2rem 8rem;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-`;
 
 const Socials = styled.div`
   display: flex;
@@ -29,19 +16,6 @@ const Socials = styled.div`
   & > a {
     margin-right: 0.75rem;
   }
-`;
-
-const Header = styled.h3`
-  font-size: 1.5rem;
-  color: ${({ theme }) => theme.colors.white};
-  margin-bottom: 0;
-`;
-
-const Text = styled.p`
-  font-size: 1.1rem;
-  color: ${({ theme }) => theme.colors.grey};
-  line-height: 1.5rem;
-  margin-top: 0.5rem;
 `;
 
 const Anchor = styled.a`
@@ -57,41 +31,49 @@ const Anchor = styled.a`
 
 const Footer = () => (
   <footer>
-    <Container top>
-      <Link href="/">
-        <SubText>&copy; {new Date().getFullYear()} Ethan Blumenthal</SubText>
-      </Link>
+    <BackgroundContainer color="primary">
+      <ContentContainer>
+        <FlexContainer>
+          <Link href="/">
+            <SubText>&copy; {new Date().getFullYear()} Ethan Blumenthal</SubText>
+          </Link>
 
-      <Socials>
-        <Anchor href="https://www.linkedin.com/in/ethanblumenthal/" target="_blank">
-          <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
-        </Anchor>
+          <Socials>
+            <Anchor href="https://www.linkedin.com/in/ethanblumenthal/" target="_blank">
+              <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
+            </Anchor>
 
-        <Anchor href="https://medium.com/@ethanblumenthal" target="_blank">
-          <FontAwesomeIcon icon={faMediumM} size="lg" />
-        </Anchor>
+            <Anchor href="https://medium.com/@ethanblumenthal" target="_blank">
+              <FontAwesomeIcon icon={faMediumM} size="lg" />
+            </Anchor>
 
-        <Anchor href="https://github.com/ethanblumenthal" target="_blank">
-          <FontAwesomeIcon icon={faGithub} size="lg" />
-        </Anchor>
+            <Anchor href="https://github.com/ethanblumenthal" target="_blank">
+              <FontAwesomeIcon icon={faGithub} size="lg" />
+            </Anchor>
 
-        <Anchor href="https://www.instagram.com/ethan_blumenthal" target="_blank">
-          <FontAwesomeIcon icon={faInstagram} size="lg" />
-        </Anchor>
-      </Socials>
-    </Container>
+            <Anchor href="https://www.instagram.com/ethan_blumenthal" target="_blank">
+              <FontAwesomeIcon icon={faInstagram} size="lg" />
+            </Anchor>
+          </Socials>
+        </FlexContainer>
+      </ContentContainer>
+    </BackgroundContainer>
 
-    <Container>
-      <div>
-        <Header>Want more tips and tricks?</Header>
-        <Text>Sign up for the newsletter to stay up-to-date.</Text>
-      </div>
+    <BackgroundContainer color="secondary">
+      <ContentContainer>
+        <FlexContainer>
+          <div>
+            <FooterHeader>Want more tips and tricks?</FooterHeader>
+            <FooterText>Sign up for the newsletter to stay up-to-date.</FooterText>
+          </div>
 
-      <div>
-        <SubscribeInput placeholder="Enter your email address" />
-        <SquareButton>Subscribe</SquareButton>
-      </div>
-    </Container>
+          <div>
+            <SubscribeInput placeholder="Enter your email address" />
+            <SquareButton>Subscribe</SquareButton>
+          </div>
+        </FlexContainer>
+      </ContentContainer>
+    </BackgroundContainer>
   </footer>
 );
 
