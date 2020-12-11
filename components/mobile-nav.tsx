@@ -12,10 +12,10 @@ import { SearchInput } from '../elements/inputs';
 import { PAGES } from '../utils';
 
 const Modal = styled.div`
-  width: 80%;
+  width: 20rem;
   position: fixed;
-  top: 10%;
-  left: 10%;
+  top: 1rem;
+  right: 1rem;
   background-color: ${({ theme }) => theme.colors.background};
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -44,7 +44,7 @@ const MobileNav = ({ setTheme }) => {
   const [modal, setModal] = useState(false);
   const router = useRouter();
 
-  if (modal) {
+  const openModal = () => {
     return (
       <Modal>
         <ExitButton onClick={() => setModal(false)}>
@@ -69,7 +69,7 @@ const MobileNav = ({ setTheme }) => {
         <SearchInput placeholder="Search articles" />
       </Modal>
     );
-  }
+  };
 
   return (
     <BackgroundContainer short>
@@ -79,6 +79,7 @@ const MobileNav = ({ setTheme }) => {
             <CardHeader>Ethan Blumenthal</CardHeader>
           </Link>
           <OutlineButton onClick={() => setModal(true)}>Menu</OutlineButton>
+          {modal ? openModal() : null}
         </FlexContainer>
       </ContentContainer>
     </BackgroundContainer>

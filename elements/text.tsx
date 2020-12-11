@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+import { devices } from '../utils';
 
 export const PageHeader = styled.h1`
   font-size: 2.75rem;
   font-family: 'Ariel';
+  margin-bottom: 1rem;
 `;
 
 export const SectionHeader = styled.h2`
@@ -30,9 +32,14 @@ export const FooterHeader = styled(CardHeader)`
 `;
 
 export const Text = styled.p`
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.7rem;
   font-weight: 300;
+
+  @media ${devices.desktop} {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+  }
 `;
 
 export const FooterText = styled(Text)`

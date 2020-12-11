@@ -32,7 +32,7 @@ const RecentPosts = ({ allPosts }) => (
           allPosts.slice(0, 3).map(({ title, date, excerpt }: IPost) => (
             <Card key={title}>
               <SubText>{moment(date).format('MMMM D, YYYY')}</SubText>
-              <CardHeader>{title}</CardHeader>
+              <CardHeader style={{ margin: '1rem 0' }}>{title}</CardHeader>
               <Text>{excerpt}</Text>
             </Card>
           ))}
