@@ -1,14 +1,10 @@
 import Head from 'next/head';
-import styled from 'styled-components';
 
 import Layout from '../../components/layout';
 import Project from '../../components/project';
 import { PageHeader } from '../../elements/text';
+import { CenterContainer } from '../../elements/containers';
 import { getAllProjects } from '../../api/contentful';
-
-const Header = styled.header`
-  text-align: center;
-`;
 
 const Work = ({ allProjects }) => (
   <Layout>
@@ -16,9 +12,10 @@ const Work = ({ allProjects }) => (
       <title>Work</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <Header>
-      <PageHeader>Work</PageHeader>
-    </Header>
+
+    <CenterContainer>
+      <PageHeader style={{ margin: '2rem' }}>Work</PageHeader>
+    </CenterContainer>
 
     {allProjects &&
       allProjects.map((project, index) => <Project key={index} index={index} {...project} />)}

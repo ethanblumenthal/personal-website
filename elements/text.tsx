@@ -4,7 +4,6 @@ import { devices } from '../utils';
 export const PageHeader = styled.h1`
   font-size: 2.75rem;
   font-family: 'Ariel';
-  margin-bottom: 1rem;
 `;
 
 export const SectionHeader = styled.h2`
@@ -19,7 +18,6 @@ export const ColorSectionHeader = styled(SectionHeader)`
 export const CardHeader = styled.h3`
   font-size: 1.75rem;
   font-family: 'Ariel';
-  /* margin: 1rem 0; */
 `;
 
 export const ColorCardHeader = styled(CardHeader)`
@@ -27,7 +25,6 @@ export const ColorCardHeader = styled(CardHeader)`
 `;
 
 export const FooterHeader = styled(CardHeader)`
-  /* font-size: 1.5rem; */
   color: ${({ theme }) => theme.colors.white};
   margin-bottom: 0;
 `;

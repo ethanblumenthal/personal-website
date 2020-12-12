@@ -1,16 +1,12 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import styled from 'styled-components';
 
 import Layout from '../../components/layout';
 import Posts from '../../components/posts';
 import { ThinButton } from '../../elements/buttons';
 import { PageHeader } from '../../elements/text';
+import { CenterContainer } from '../../elements/containers';
 import { getAllPosts, getAllTags } from '../../api/contentful';
-
-const Header = styled.header`
-  text-align: center;
-`;
 
 const Blog = ({ allPosts, allTags }) => (
   <Layout>
@@ -18,15 +14,15 @@ const Blog = ({ allPosts, allTags }) => (
       <title>Blog</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    {console.log(allPosts)}
-    <Header>
-      <PageHeader>Posts</PageHeader>
+
+    <CenterContainer>
+      <PageHeader style={{ margin: '2rem' }}>Posts</PageHeader>
       {allTags.map(({ name, slug }) => (
         <Link href={`/tags/${slug}`} key={slug}>
           <ThinButton>{name}</ThinButton>
         </Link>
       ))}
-    </Header>
+    </CenterContainer>
 
     <Posts allPosts={allPosts} />
   </Layout>

@@ -24,7 +24,7 @@ const Posts = ({ allPosts }) => (
                 />
                 <CardContent>
                   <SubText>{moment(date).format('MMMM D, YYYY')}</SubText>
-                  <CardHeader>{title}</CardHeader>
+                  <CardHeader style={{ margin: '1rem 0' }}>{title}</CardHeader>
                   <Text>{excerpt}</Text>
                 </CardContent>
               </ImageCard>

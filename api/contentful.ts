@@ -15,7 +15,6 @@ const POST_GRAPHQL_FIELDS = `
   content {
     json
   }
-  tags
 `;
 
 async function fetchGraphQL(query, preview = false) {

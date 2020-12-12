@@ -8,7 +8,7 @@ import { ColorSectionHeader, ColorCardHeader } from '../elements/text';
 import {
   BackgroundContainer,
   ContentContainer,
-  FlexContainer,
+  HeaderContainer,
   LgGridContainer,
 } from '../elements/containers';
 import { SKILLSET } from '../utils';
@@ -24,7 +24,7 @@ const Skill = styled.div`
 const Skillset = () => (
   <BackgroundContainer color="primary">
     <ContentContainer>
-      <FlexContainer>
+      <HeaderContainer>
         <ColorSectionHeader>Skillset</ColorSectionHeader>
 
         <Link href="/resume">
@@ -33,7 +33,7 @@ const Skillset = () => (
             <FontAwesomeIcon icon={faArrowRight} />
           </ArrowButtonRight>
         </Link>
-      </FlexContainer>
+      </HeaderContainer>
 
       <LgGridContainer>
         {SKILLSET &&

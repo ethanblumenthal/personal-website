@@ -38,6 +38,17 @@ export const FlexContainer = styled.div`
   flex-wrap: wrap;
 `;
 
+export const CenterContainer = styled.div`
+  text-align: center;
+`;
+
+export const HeaderContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+`;
+
 export const GridContainer = styled.div`
   display: grid;
   grid-gap: 2rem;

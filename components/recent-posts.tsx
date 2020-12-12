@@ -7,7 +7,7 @@ import { SectionHeader, CardHeader, Text, SubText } from '../elements/text';
 import {
   BackgroundContainer,
   ContentContainer,
-  FlexContainer,
+  HeaderContainer,
   GridContainer,
 } from '../elements/containers';
 import { ArrowButtonRight } from '../elements/buttons';
@@ -17,7 +17,7 @@ import { IPost } from '../utils';
 const RecentPosts = ({ allPosts }) => (
   <BackgroundContainer color="offset">
     <ContentContainer>
-      <FlexContainer>
+      <HeaderContainer>
         <SectionHeader>Recent Posts</SectionHeader>
         <Link href="/blog">
           <ArrowButtonRight>
@@ -25,7 +25,7 @@ const RecentPosts = ({ allPosts }) => (
             <FontAwesomeIcon icon={faArrowRight} />
           </ArrowButtonRight>
         </Link>
-      </FlexContainer>
+      </HeaderContainer>
 
       <GridContainer>
         {allPosts &&
