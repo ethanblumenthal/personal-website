@@ -178,3 +178,72 @@ export async function getProjectBySlug(slug, preview) {
     moreProjects: extractProjectEntries(entries),
   };
 }
+
+const TAG_GRAPHQL_FIELDS = `
+  name
+  slug
+`;
+
+function extractTag(fetchResponse) {
+  return fetchResponse?.data?.tagCollection?.items?.[0];
+}
+
+function extractTagEntries(fetchResponse) {
+  return fetchResponse?.data?.tagCollection?.items;
+}
+
+export async function getAllTagsBySlug() {
+  const entries = await fetchGraphQL(
+    `query {
+      tagCollection(where: { slug_exists: true }, order:name_ASC) {
+        items {
+          ${TAG_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+  );
+  return extractTagEntries(entries);
+}
+
+export async function getAllTags(preview) {
+  const entries = await fetchGraphQL(
+    `query {
+      tagCollection(order:name_ASC, preview: ${preview ? 'true' : 'false'}) {
+        items {
+          ${TAG_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    preview,
+  );
+  return extractTagEntries(entries);
+}
+
+export async function getTagBySlug(slug, preview) {
+  const entry = await fetchGraphQL(
+    `query {
+      tagCollection(where: { slug: "${slug}" }, preview: ${preview ? 'true' : 'false'}, limit: 1) {
+        items {
+          ${TAG_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    preview,
+  );
+  const entries = await fetchGraphQL(
+    `query {
+      tagCollection(where: { slug_not_in: "${slug}" }, order:name_ASC, preview: ${
+      preview ? 'true' : 'false'
+    }, limit: 2) {
+        items {
+          ${TAG_GRAPHQL_FIELDS}
+        }
+      }
+    }`,
+    preview,
+  );
+  return {
+    tag: extractTag(entry),
+    moreTags: extractTagEntries(entries),
+  };
+}
