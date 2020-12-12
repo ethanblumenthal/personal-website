@@ -10,7 +10,7 @@ import {
   FlexContainer,
   GridContainer,
 } from '../elements/containers';
-import { ArrowButton } from '../elements/buttons';
+import { ArrowButtonRight } from '../elements/buttons';
 import { Card } from '../elements/cards';
 import { IPost } from '../utils';
 
@@ -20,10 +20,10 @@ const RecentPosts = ({ allPosts }) => (
       <FlexContainer>
         <SectionHeader>Recent Posts</SectionHeader>
         <Link href="/blog">
-          <ArrowButton>
+          <ArrowButtonRight>
             View all
             <FontAwesomeIcon icon={faArrowRight} />
-          </ArrowButton>
+          </ArrowButtonRight>
         </Link>
       </FlexContainer>
 

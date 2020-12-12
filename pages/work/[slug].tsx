@@ -10,7 +10,7 @@ import Layout from '../../components/layout';
 import { getAllProjectsBySlug, getProjectBySlug, getAllProjects } from '../../api/contentful';
 import { PageHeader } from '../../elements/text';
 import { BlogContainer } from '../../elements/containers';
-import { ArrowButton } from '../../elements/buttons';
+import { ArrowButtonLeft } from '../../elements/buttons';
 
 const Header = styled.header`
   text-align: center;
@@ -29,10 +29,10 @@ export default function Project({ project }) {
         <PageHeader>{project?.title}</PageHeader>
 
         <Link href="/work">
-          <ArrowButton>
+          <ArrowButtonLeft>
             <FontAwesomeIcon icon={faArrowLeft} />
             See all projects
-          </ArrowButton>
+          </ArrowButtonLeft>
         </Link>
       </Header>
 

@@ -63,12 +63,28 @@ export const ArrowButton = styled.button`
   outline: none;
 
   & > svg {
-    margin-left: 0.5rem;
+    position: relative;
     transition: ${({ theme }) => theme.transitions.ease};
+  }
+`;
+
+export const ArrowButtonRight = styled(ArrowButton)`
+  & > svg {
+    left: 0.5rem;
   }
 
   &:hover > svg {
-    margin-left: 1rem;
+    left: 0.75rem;
+  }
+`;
+
+export const ArrowButtonLeft = styled(ArrowButton)`
+  & > svg {
+    right: 0.5rem;
+  }
+
+  &:hover > svg {
+    right: 0.75rem;
   }
 `;
 

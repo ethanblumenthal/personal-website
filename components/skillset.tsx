@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-import { ArrowButton } from '../elements/buttons';
+import { ArrowButtonRight } from '../elements/buttons';
 import { ColorSectionHeader, ColorCardHeader } from '../elements/text';
 import {
   BackgroundContainer,
@@ -28,10 +28,10 @@ const Skillset = () => (
         <ColorSectionHeader>Skillset</ColorSectionHeader>
 
         <Link href="/resume">
-          <ArrowButton>
+          <ArrowButtonRight>
             View resume
             <FontAwesomeIcon icon={faArrowRight} />
-          </ArrowButton>
+          </ArrowButtonRight>
         </Link>
       </FlexContainer>
 

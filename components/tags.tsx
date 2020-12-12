@@ -9,11 +9,11 @@ const Tags = ({ allTags }) => (
     <ContentContainer>
       <LgGridContainer>
         {allTags &&
-          allTags.map(({ tag, count }) => (
-            <Link href={`/tags/${tag}`} key={tag}>
+          allTags.map(({ name, slug }) => (
+            <Link href={`/tags/${slug}`} key={name}>
               <TagCard>
-                <CardHeader>{tag}</CardHeader>
-                <Text>{count} articles</Text>
+                <CardHeader>{name}</CardHeader>
+                <Text>X articles</Text>
               </TagCard>
             </Link>
           ))}

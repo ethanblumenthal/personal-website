@@ -1,11 +1,15 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
 import Layout from '../../components/layout';
 import Posts from '../../components/posts';
 import { PageHeader } from '../../elements/text';
 import { getAllPosts, getAllTagsBySlug } from '../../api/contentful';
+import { ArrowButtonLeft, ArrowButtonRight } from '../../elements/buttons';
+import Link from 'next/link';
 
 const Header = styled.header`
   text-align: center;
@@ -13,9 +17,6 @@ const Header = styled.header`
 
 const Tags = ({ allPosts }) => {
   const router = useRouter();
-
-  console.log(allPosts);
-
   const { slug } = router.query;
 
   const taggedPosts = allPosts?.filter((post) => {
@@ -33,6 +34,18 @@ const Tags = ({ allPosts }) => {
         <PageHeader>
           {taggedPosts?.length} Posts tagged with "{}"
         </PageHeader>
+        <Link href="/blog">
+          <ArrowButtonLeft>
+            <FontAwesomeIcon icon={faArrowLeft} />
+            See all articles
+          </ArrowButtonLeft>
+        </Link>
+        <Link href="/tags">
+          <ArrowButtonRight>
+            Browse all tags
+            <FontAwesomeIcon icon={faArrowRight} />
+          </ArrowButtonRight>
+        </Link>
       </Header>
 
       <Posts allPosts={taggedPosts} />

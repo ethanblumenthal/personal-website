@@ -18,11 +18,11 @@ const Blog = ({ allPosts, allTags }) => (
       <title>Blog</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
-
+    {console.log(allPosts)}
     <Header>
       <PageHeader>Posts</PageHeader>
       {allTags.map(({ name, slug }) => (
-        <Link href={`/tags/${slug}`}>
+        <Link href={`/tags/${slug}`} key={slug}>
           <ThinButton>{name}</ThinButton>
         </Link>
       ))}
