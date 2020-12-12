@@ -1,42 +1,39 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import styled from 'styled-components';
 
 import Layout from '../../components/layout';
-import Posts from '../../components/posts';
-import { ThinButton } from '../../elements/buttons';
 import { PageHeader } from '../../elements/text';
 import { getAllPosts } from '../../api/contentful';
+import Tags from '../../components/tags';
 
 const Header = styled.header`
   text-align: center;
 `;
 
 const Blog = ({ allPosts }) => {
-  const uniqueTags = new Set();
+  let allTags = {};
   allPosts.forEach(({ tags }) => {
     tags.forEach((tag) => {
-      uniqueTags.add(tag);
+      allTags[tag] = allTags[tag] ? allTags[tag] + 1 : 1;
     });
   });
+
+  const orderedTags = [];
+  for (let tag in allTags) {
+    orderedTags.push({ tag, count: allTags[tag] });
+  }
 
   return (
     <Layout>
       <Head>
-        <title>Blog</title>
+        <title>Tags</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Header>
-        <PageHeader>Posts</PageHeader>
-        {[...uniqueTags].map((tag) => (
-          <Link href={`/tags/${tag}`}>
-            <ThinButton>{tag}</ThinButton>
-          </Link>
-        ))}
+        <PageHeader>Tags</PageHeader>
       </Header>
 
-      <Posts allPosts={allPosts} />
+      <Tags allTags={orderedTags} />
     </Layout>
   );
 };

@@ -22,6 +22,7 @@ export const BlogCard = styled(Card)`
 
 export const ImageCard = styled(Card)`
   height: 35rem;
+  padding: 0;
 `;
 
 export const BaseCard = styled(Card)`
@@ -31,4 +32,12 @@ export const BaseCard = styled(Card)`
 export const SmallCard = styled(Card)`
   height: 10rem;
   text-align: center;
+`;
+
+export const TagCard = styled(Card)`
+  height: 7.5rem;
+`;
+
+export const CardContent = styled.div`
+  padding: 2rem;
 `;

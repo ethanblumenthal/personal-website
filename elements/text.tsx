@@ -19,6 +19,7 @@ export const ColorSectionHeader = styled(SectionHeader)`
 export const CardHeader = styled.h3`
   font-size: 1.75rem;
   font-family: 'Ariel';
+  /* margin: 1rem 0; */
 `;
 
 export const ColorCardHeader = styled(CardHeader)`

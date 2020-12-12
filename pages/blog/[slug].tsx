@@ -31,7 +31,7 @@ export default function Post({ post, allPosts }) {
         <FlexContainer>
           <Content>
             <FlexContainer>
-              <SubText>JavaScript - React - Theming</SubText>
+              <SubText>{post?.tags.join(' • ')}</SubText>
               <SubText>{moment(post?.date).format('MMMM D, YYYY')}</SubText>
               <SubText>9 Min Read</SubText>
             </FlexContainer>
