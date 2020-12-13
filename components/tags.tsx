@@ -8,15 +8,14 @@ const Tags = ({ allTags }) => (
   <BackgroundContainer>
     <ContentContainer>
       <LgGridContainer>
-        {allTags &&
-          allTags.map(({ name, slug }) => (
-            <Link href={`/tags/${slug}`} key={name}>
-              <TagCard>
-                <CardHeader>{name}</CardHeader>
-                <Text>X articles</Text>
-              </TagCard>
-            </Link>
-          ))}
+        {allTags.map(({ name, slug }) => (
+          <Link href={`/tags/${slug}`} key={name}>
+            <TagCard>
+              <CardHeader>{name}</CardHeader>
+              <Text>X articles</Text>
+            </TagCard>
+          </Link>
+        ))}
       </LgGridContainer>
     </ContentContainer>
   </BackgroundContainer>

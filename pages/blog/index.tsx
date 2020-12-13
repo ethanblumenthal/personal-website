@@ -16,7 +16,7 @@ const Blog = ({ allPosts, allTags }) => (
     </Head>
 
     <CenterContainer>
-      <PageHeader style={{ margin: '2rem' }}>Posts</PageHeader>
+      <PageHeader style={{ margin: '2rem' }}>Blog</PageHeader>
       {allTags.map(({ name, slug }) => (
         <Link href={`/tags/${slug}`} key={slug}>
           <ThinButton>{name}</ThinButton>

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styled from 'styled-components';
 
-import { BackgroundContainer, ContentContainer, FlexContainer } from '../elements/containers';
+import { BackgroundContainer, ContentContainer, FlexCenterContainer } from '../elements/containers';
 import { PageHeader, Text } from '../elements/text';
 import { Button } from '../elements/buttons';
 import { BIO, devices } from '../utils';
@@ -12,16 +12,18 @@ const StyledImage = styled(Image)`
 `;
 
 const Content = styled.div`
-  @media ${devices.desktop} {
-    max-width: 30rem;
-    margin-left: 3rem;
+  margin: 2rem 0 0 0;
+
+  @media ${devices.tablet} {
+    max-width: 35rem;
+    margin: 0 0 0 3rem;
   }
 `;
 
 const Header = () => (
   <BackgroundContainer>
     <ContentContainer>
-      <FlexContainer>
+      <FlexCenterContainer>
         <StyledImage src={BIO.image} alt={BIO.title} width={400} height={400} />
 
         <Content>
@@ -31,7 +33,7 @@ const Header = () => (
             <Button>Learn more</Button>
           </Link>
         </Content>
-      </FlexContainer>
+      </FlexCenterContainer>
     </ContentContainer>
   </BackgroundContainer>
 );

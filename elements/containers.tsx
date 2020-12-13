@@ -38,6 +38,25 @@ export const FlexContainer = styled.div`
   flex-wrap: wrap;
 `;
 
+export const FlexCenterContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  @media ${devices.tablet} {
+    flex-wrap: nowrap;
+  }
+`;
+
+export const SkillContainer = styled.div`
+  background-color: ${({ theme }) => theme.colors.tertiery};
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  height: 5.75rem;
+  padding: 1.75rem;
+`;
+
 export const CenterContainer = styled.div`
   text-align: center;
 `;

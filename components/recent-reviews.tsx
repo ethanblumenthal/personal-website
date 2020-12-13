@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import { ArrowButtonRight } from '../elements/buttons';
-import { ColorSectionHeader, ColorCardHeader } from '../elements/text';
+import { ColorSectionHeader, ColorCardHeader, SubText } from '../elements/text';
 import {
   BackgroundContainer,
   ContentContainer,
@@ -11,26 +11,26 @@ import {
   LgGridContainer,
   SkillContainer,
 } from '../elements/containers';
-import { SKILLSET } from '../utils';
 
-const Skillset = () => (
+const RecentReviews = ({ allReviews }) => (
   <BackgroundContainer color="primary">
     <ContentContainer>
       <HeaderContainer>
-        <ColorSectionHeader>Skillset</ColorSectionHeader>
+        <ColorSectionHeader>Recent Reviews</ColorSectionHeader>
 
-        <Link href="/resume">
+        <Link href="/reviews">
           <ArrowButtonRight>
-            View resume
+            View all
             <FontAwesomeIcon icon={faArrowRight} />
           </ArrowButtonRight>
         </Link>
       </HeaderContainer>
 
       <LgGridContainer>
-        {SKILLSET.map((skill) => (
-          <SkillContainer key={skill}>
-            <ColorCardHeader>{skill}</ColorCardHeader>
+        {allReviews.map(({ date, title }) => (
+          <SkillContainer key={title}>
+            <SubText>{date}</SubText>
+            <ColorCardHeader>{title}</ColorCardHeader>
           </SkillContainer>
         ))}
       </LgGridContainer>
@@ -38,4 +38,4 @@ const Skillset = () => (
   </BackgroundContainer>
 );
 
-export default Skillset;
+export default RecentReviews;

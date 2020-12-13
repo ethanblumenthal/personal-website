@@ -11,25 +11,24 @@ const Posts = ({ allPosts }) => (
   <BackgroundContainer>
     <ContentContainer>
       <GridContainer>
-        {allPosts &&
-          allPosts.map(({ date, title, excerpt, coverImage, slug }: IPost) => (
-            <Link href={`/blog/${slug}`} key={slug}>
-              <ImageCard key={title}>
-                <Image
-                  src={coverImage.url}
-                  alt={title}
-                  width={300}
-                  height={200}
-                  layout="responsive"
-                />
-                <CardContent>
-                  <SubText>{moment(date).format('MMMM D, YYYY')}</SubText>
-                  <CardHeader style={{ margin: '1rem 0' }}>{title}</CardHeader>
-                  <Text>{excerpt}</Text>
-                </CardContent>
-              </ImageCard>
-            </Link>
-          ))}
+        {allPosts.map(({ date, title, excerpt, coverImage, slug }: IPost) => (
+          <Link href={`/blog/${slug}`} key={slug}>
+            <ImageCard key={title}>
+              <Image
+                src={coverImage.url}
+                alt={title}
+                width={300}
+                height={200}
+                layout="responsive"
+              />
+              <CardContent>
+                <SubText>{moment(date).format('MMMM D, YYYY')}</SubText>
+                <CardHeader style={{ margin: '1rem 0' }}>{title}</CardHeader>
+                <Text>{excerpt}</Text>
+              </CardContent>
+            </ImageCard>
+          </Link>
+        ))}
       </GridContainer>
     </ContentContainer>
   </BackgroundContainer>

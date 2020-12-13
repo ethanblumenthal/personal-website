@@ -28,14 +28,13 @@ const RecentPosts = ({ allPosts }) => (
       </HeaderContainer>
 
       <GridContainer>
-        {allPosts &&
-          allPosts.slice(0, 3).map(({ title, date, excerpt }: IPost) => (
-            <Card key={title}>
-              <SubText>{moment(date).format('MMMM D, YYYY')}</SubText>
-              <CardHeader style={{ margin: '1rem 0' }}>{title}</CardHeader>
-              <Text>{excerpt}</Text>
-            </Card>
-          ))}
+        {allPosts.slice(0, 3).map(({ title, date, excerpt }: IPost) => (
+          <Card key={title}>
+            <SubText>{moment(date).format('MMMM D, YYYY')}</SubText>
+            <CardHeader style={{ margin: '1rem 0' }}>{title}</CardHeader>
+            <Text>{excerpt}</Text>
+          </Card>
+        ))}
       </GridContainer>
     </ContentContainer>
   </BackgroundContainer>

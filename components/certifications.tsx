@@ -18,18 +18,17 @@ const Certifications = () => (
       </HeaderContainer>
 
       <LgGridContainer>
-        {CERTIFICATIONS &&
-          CERTIFICATIONS.map(({ title, description, icon }) => (
-            <SmallCard key={title}>
-              <FontAwesomeIcon
-                icon={icon}
-                size="lg"
-                style={{ marginBottom: '1rem', color: ' #E6594C' }}
-              />
-              <SubText style={{ marginBottom: '0.5rem' }}>{description}</SubText>
-              <Text>{title}</Text>
-            </SmallCard>
-          ))}
+        {CERTIFICATIONS.map(({ title, description, icon }) => (
+          <SmallCard key={title}>
+            <FontAwesomeIcon
+              icon={icon}
+              size="lg"
+              style={{ marginBottom: '1rem', color: ' #E6594C' }}
+            />
+            <SubText style={{ marginBottom: '0.5rem' }}>{description}</SubText>
+            <Text>{title}</Text>
+          </SmallCard>
+        ))}
       </LgGridContainer>
     </ContentContainer>
   </BackgroundContainer>

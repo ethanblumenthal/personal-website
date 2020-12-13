@@ -22,15 +22,14 @@ const Involvement = () => (
       </HeaderContainer>
 
       <GridContainer>
-        {INVOLVEMENT &&
-          INVOLVEMENT.map(({ title, description, link }: IInvolvement) => (
-            <a href={link} target="_blank" key={title}>
-              <BaseCard>
-                <CardHeader style={{ marginBottom: '1rem' }}>{title}</CardHeader>
-                <Text>{description}</Text>
-              </BaseCard>
-            </a>
-          ))}
+        {INVOLVEMENT.map(({ title, description, link }: IInvolvement) => (
+          <a href={link} target="_blank" key={title}>
+            <BaseCard>
+              <CardHeader style={{ marginBottom: '1rem' }}>{title}</CardHeader>
+              <Text>{description}</Text>
+            </BaseCard>
+          </a>
+        ))}
       </GridContainer>
     </ContentContainer>
   </BackgroundContainer>

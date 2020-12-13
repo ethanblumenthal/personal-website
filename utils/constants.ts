@@ -90,3 +90,30 @@ export const EXPERIENCE = [
     ],
   },
 ];
+
+export const REVIEWS = [
+  {
+    title: 'Sapiens',
+    date: 'April 9, 2020',
+  },
+  {
+    title: 'Sapiens',
+    date: 'April 9, 2020',
+  },
+  {
+    title: 'Sapiens',
+    date: 'April 9, 2020',
+  },
+  {
+    title: 'Sapiens',
+    date: 'April 9, 2020',
+  },
+  {
+    title: 'Sapiens',
+    date: 'April 9, 2020',
+  },
+  {
+    title: 'Sapiens',
+    date: 'April 9, 2020',
+  },
+];

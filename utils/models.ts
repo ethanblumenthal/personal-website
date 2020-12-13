@@ -22,6 +22,7 @@ export interface IAuthor {
 export interface IProject {
   date: string;
   title: string;
+  subtitle: string;
   description: string;
   coverImage: {
     url: string;
