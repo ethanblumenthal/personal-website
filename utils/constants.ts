@@ -1,3 +1,6 @@
+import { faSchool, faCode } from '@fortawesome/free-solid-svg-icons';
+import { faAws, faGoogle } from '@fortawesome/free-brands-svg-icons';
+
 export const PAGES = [
   { title: 'Home', slug: '/' },
   { title: 'Blog', slug: '/blog' },
@@ -40,10 +43,10 @@ export const EDUCATION = [
 ];
 
 export const CERTIFICATIONS = [
-  { title: 'BA Economics', description: 'University of Illinois' },
-  { title: 'Software Engineering', description: 'Fullstack Academy' },
-  { title: 'Solutions Architect', description: 'Amazon Web Services' },
-  { title: 'Cloud Engineer', description: 'Google Cloud Platform' },
+  { title: 'BA Economics', description: 'University of Illinois', icon: faSchool },
+  { title: 'Software Engineering', description: 'Fullstack Academy', icon: faCode },
+  { title: 'Solutions Architect', description: 'Amazon Web Services', icon: faAws },
+  { title: 'Cloud Engineer', description: 'Google Cloud Platform', icon: faGoogle },
 ];
 
 export const SKILLSET = [
@@ -52,17 +55,17 @@ export const SKILLSET = [
   'React',
   'Vue',
   'TypeScript',
-  'GraphQL',
   'Node',
   'Express',
+  'GraphQL',
+  'Java',
+  'Spring',
   'Python',
-  'Rust',
   'Go',
+  'SQL',
+  'Jenkins',
   'Docker',
   'Kubernetes',
-  'Terraform',
-  'AWS',
-  'GCP',
 ];
 
 export const EXPERIENCE = [

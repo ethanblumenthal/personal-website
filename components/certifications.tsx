@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { SmallCard } from '../elements/cards';
 import { SectionHeader, Text, SubText } from '../elements/text';
 import {
@@ -8,11 +10,6 @@ import {
 } from '../elements/containers';
 import { CERTIFICATIONS } from '../utils';
 
-interface ICertification {
-  title: string;
-  description: string;
-}
-
 const Certifications = () => (
   <BackgroundContainer>
     <ContentContainer>
@@ -22,9 +19,14 @@ const Certifications = () => (
 
       <LgGridContainer>
         {CERTIFICATIONS &&
-          CERTIFICATIONS.map(({ title, description }: ICertification) => (
+          CERTIFICATIONS.map(({ title, description, icon }) => (
             <SmallCard key={title}>
-              <SubText>{description}</SubText>
+              <FontAwesomeIcon
+                icon={icon}
+                size="lg"
+                style={{ marginBottom: '1rem', color: ' #E6594C' }}
+              />
+              <SubText style={{ marginBottom: '0.5rem' }}>{description}</SubText>
               <Text>{title}</Text>
             </SmallCard>
           ))}

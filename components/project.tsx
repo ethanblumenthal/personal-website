@@ -1,3 +1,4 @@
+import { reverse } from 'dns';
 import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
@@ -5,23 +6,35 @@ import styled from 'styled-components';
 import { BlackButton } from '../elements/buttons';
 import { BackgroundContainer, ContentContainer, FlexContainer } from '../elements/containers';
 import { SectionHeader, SubText, Text } from '../elements/text';
+import { devices } from '../utils';
 
 const Content = styled.div`
-  max-width: 32rem;
+  @media ${devices.desktop} {
+    max-width: 32rem;
+  }
 `;
 
-const StyledImage = styled.img`
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+const ImageContainer = styled.div`
+  /* box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px; */
+  margin-bottom: 2rem;
+  /* position: 'relative'; */
+
+  @media ${devices.desktop} {
+    margin-bottom: 0;
+  }
 `;
 
-const Project = ({ title, description, tags, coverImage, slug, index }) => (
+const Project = ({ title, subtitle, description, coverImage, slug, index }) => (
   <BackgroundContainer>
     <ContentContainer>
-      <FlexContainer key={title}>
-        <StyledImage src={coverImage.url} alt={title} height={350} width={600} />
+      <FlexContainer key={title} style={{ flexDirection: index % 2 === 0 ? 'row-reverse' : null }}>
+        <ImageContainer>
+          <Image src={coverImage.url} alt={title} width={600} height={350} layout="intrinsic" />
+        </ImageContainer>
         <Content>
-          <SectionHeader>{title}</SectionHeader>
-          <Text>{description}</Text>
+          <SubText style={{ marginBottom: '0.5rem' }}>{subtitle}</SubText>
+          <SectionHeader style={{ marginBottom: '1rem' }}>{title}</SectionHeader>
+          <Text style={{ marginBottom: '1rem' }}>{description}</Text>
           <Link href={`/work/${slug}`}>
             <BlackButton>Learn more</BlackButton>
           </Link>

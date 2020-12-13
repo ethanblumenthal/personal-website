@@ -102,6 +102,7 @@ export async function getPostBySlug(slug, preview) {
 const PROJECT_GRAPHQL_FIELDS = `
   date
   title
+  subtitle
   description
   coverImage {
     url

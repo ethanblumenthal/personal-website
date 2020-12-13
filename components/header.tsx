@@ -25,8 +25,8 @@ const Header = () => (
         <StyledImage src={BIO.image} alt={BIO.title} width={400} height={400} />
 
         <Content>
-          <PageHeader style={{ marginBottom: '1rem' }}>{BIO.title}</PageHeader>
-          <Text>{BIO.description}</Text>
+          <PageHeader>{BIO.title}</PageHeader>
+          <Text style={{ margin: '1rem 0' }}>{BIO.description}</Text>
           <Link href="/about">
             <Button>Learn more</Button>
           </Link>
