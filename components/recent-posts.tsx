@@ -15,7 +15,7 @@ import { Card } from '../elements/cards';
 import { IPost } from '../utils';
 
 const RecentPosts = ({ allPosts }) => (
-  <BackgroundContainer color="offset">
+  <BackgroundContainer>
     <ContentContainer>
       <HeaderContainer>
         <SectionHeader>Recent Posts</SectionHeader>

@@ -2,21 +2,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import { ArrowButtonRight } from '../elements/buttons';
-import { ColorSectionHeader, ColorCardHeader } from '../elements/text';
+import { SectionHeader, CardHeader, Text } from '../elements/text';
 import {
   BackgroundContainer,
   ContentContainer,
   HeaderContainer,
   LgGridContainer,
-  SkillContainer,
 } from '../elements/containers';
 import { SKILLSET } from '../utils';
+import { Card, CardContent } from '../elements/cards';
 
 const Skillset = () => (
-  <BackgroundContainer color="primary">
+  <BackgroundContainer color="white">
     <ContentContainer>
       <HeaderContainer>
-        <ColorSectionHeader>Skillset</ColorSectionHeader>
+        <SectionHeader>Skillset</SectionHeader>
 
         <a href="/" target="_blank">
           <ArrowButtonRight>
@@ -27,10 +27,15 @@ const Skillset = () => (
       </HeaderContainer>
 
       <LgGridContainer>
-        {SKILLSET.map((skill) => (
-          <SkillContainer key={skill}>
-            <ColorCardHeader>{skill}</ColorCardHeader>
-          </SkillContainer>
+        {SKILLSET.map(({ title, skills }) => (
+          <Card key={title}>
+            <CardContent>
+              <CardHeader>{title}</CardHeader>
+              {skills.map((skill) => (
+                <Text>{skill}</Text>
+              ))}
+            </CardContent>
+          </Card>
         ))}
       </LgGridContainer>
     </ContentContainer>

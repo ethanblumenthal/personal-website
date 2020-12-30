@@ -11,7 +11,7 @@ export const PAGES = [
 export const BIO = {
   title: "Hi, I'm Ethan",
   description:
-    'Software engineer with hands-on experience writing clean and maintainable code. Eager to learn new skills, wear many hats, and collaborate closely with a growing team of people.',
+    'Software engineer with hands-on experience writing clean and maintainable code. Eager to learn new skills, wear many hats, and collaborate closely with a growing team of people. Currently learning to play the guitar and speak Spanish.',
   image: '/ethanblumenthal.jpg',
 };
 
@@ -61,24 +61,20 @@ export const CERTIFICATIONS = [
 ];
 
 export const SKILLSET = [
-  'JavaScript',
-  'TypeScript',
-  'React',
-  'Angular',
-  'Vue',
-  'HTML',
-  'CSS',
-  'Python',
-  'Golang',
-  'Rust',
-  'Node',
-  'Express',
-  'GraphQL',
-  'PostgreSQL',
-  'MongoDB',
-  'Git',
-  'Jenkins',
-  'Docker',
-  'Kubernetes',
-  'Terraform',
+  {
+    title: 'Frontend',
+    skills: ['JavaScript', 'TypeScript', 'React', 'Angular', 'Vue', 'HTML', 'CSS'],
+  },
+  {
+    title: 'Backend',
+    skills: ['Python', 'Golang', 'Rust', 'Node', 'Express', 'GraphQL', 'RabbitMQ'],
+  },
+  {
+    title: 'Databases',
+    skills: ['PostgreSQL', 'MongoDB', 'Redis', 'Elasticsearch'],
+  },
+  {
+    title: 'DevOps',
+    skills: ['Git', 'Jenkins', 'Docker', 'Kubernetes', 'Terraform'],
+  },
 ];

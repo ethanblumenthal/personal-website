@@ -23,8 +23,8 @@ const Certifications = () => (
             <SmallCard>
               <FontAwesomeIcon
                 icon={icon}
-                size="lg"
-                style={{ marginBottom: '1rem', color: ' #E6594C' }}
+                size="2x"
+                style={{ marginBottom: '1rem', color: ' #FFB700' }}
               />
               <SubText style={{ marginBottom: '0.5rem' }}>{description}</SubText>
               <Text>{title}</Text>

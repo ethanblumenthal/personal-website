@@ -16,13 +16,13 @@ export const SubscribeInput = styled.input`
   border: none;
   font-size: 1.1rem;
   border-radius: 0.25rem;
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.white};
   outline-color: ${({ theme }) => theme.colors.grey};
-  color: ${({ theme }) => theme.colors.grey};
+  color: ${({ theme }) => theme.colors.text};
   padding: 1rem 1rem;
   margin-right: 1rem;
 
   &::placeholder {
-    color: ${({ theme }) => theme.colors.grey};
+    color: ${({ theme }) => theme.colors.lightBlue};
   }
 `;

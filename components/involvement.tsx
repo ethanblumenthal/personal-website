@@ -15,7 +15,7 @@ interface IInvolvement {
 }
 
 const Involvement = () => (
-  <BackgroundContainer color="offset">
+  <BackgroundContainer>
     <ContentContainer>
       <HeaderContainer>
         <SectionHeader>Involvement</SectionHeader>

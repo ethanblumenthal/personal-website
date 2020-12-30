@@ -31,7 +31,7 @@ const ListItem = styled.li`
   cursor: pointer;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.grey};
+    color: ${({ theme }) => theme.colors.lightBlue};
   }
 `;
 
@@ -49,7 +49,7 @@ const NavBar = ({ theme, setTheme }) => {
           <UnorderedList>
             {PAGES.map(({ title, slug }) => (
               <Link href={slug} key={slug}>
-                <ListItem style={{ color: router.pathname === slug ? '#8A99A8' : '' }}>
+                <ListItem style={{ color: router.pathname === slug ? '#5993C2' : '' }}>
                   {title}
                 </ListItem>
               </Link>

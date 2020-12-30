@@ -39,8 +39,8 @@ export const ThinButton = styled.button`
   height: 1.5rem;
   font-size: 0.9rem;
   cursor: pointer;
-  color: ${({ theme }) => theme.colors.grey};
-  background-color: ${({ theme }) => theme.colors.lightGrey};
+  color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.lightBlue};
   text-transform: uppercase;
   border-radius: 2rem;
   border: none;
@@ -50,7 +50,7 @@ export const ThinButton = styled.button`
   margin-right: 0.5rem;
 
   &:hover {
-    background-color: rgba(233, 236, 239, 0.5);
+    background-color: ${({ theme }) => theme.colors.text};
   }
 `;
 

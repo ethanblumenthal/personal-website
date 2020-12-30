@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import { BlackButton } from '../elements/buttons';
+import { Button } from '../elements/buttons';
 import { BackgroundContainer, ContentContainer, FlexContainer } from '../elements/containers';
 import { SectionHeader, SubText, Text } from '../elements/text';
 import { IProject, devices } from '../utils';
@@ -25,7 +25,7 @@ const ImageContainer = styled.div`
 
 const Projects = ({ allProjects }) => {
   return allProjects.map(({ title, subtitle, description, coverImage, slug }: IProject, idx) => (
-    <BackgroundContainer color={idx % 2 === 0 ? 'offset' : null}>
+    <BackgroundContainer>
       <ContentContainer>
         <FlexContainer key={title} style={{ flexDirection: idx % 2 === 0 ? 'row-reverse' : null }}>
           <ImageContainer>
@@ -36,7 +36,7 @@ const Projects = ({ allProjects }) => {
             <SectionHeader style={{ marginBottom: '1rem' }}>{title}</SectionHeader>
             <Text style={{ marginBottom: '1rem' }}>{description}</Text>
             <Link href={`/work/${slug}`}>
-              <BlackButton>Learn more</BlackButton>
+              <Button>Learn more</Button>
             </Link>
           </Content>
         </FlexContainer>

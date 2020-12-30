@@ -27,6 +27,7 @@ const Blog = ({ allPosts, allTags }) => (
     <Posts allPosts={allPosts} />
   </Layout>
 );
+
 export default Blog;
 
 export async function getStaticProps({ preview = false }) {
