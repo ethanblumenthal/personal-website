@@ -14,7 +14,6 @@ const Blog = ({ allPosts, allTags }) => (
   <Layout>
     <Head>
       <title>Tags</title>
-      <link rel="icon" href="/favicon.ico" />
     </Head>
     <Header>
       <PageHeader>Tags</PageHeader>

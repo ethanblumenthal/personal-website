@@ -10,7 +10,6 @@ const Work = ({ allProjects }) => (
   <Layout>
     <Head>
       <title>Work</title>
-      <link rel="icon" href="/favicon.ico" />
     </Head>
 
     <CenterContainer>

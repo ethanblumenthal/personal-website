@@ -10,7 +10,6 @@ const Home = ({ allPosts }) => (
   <Layout>
     <Head>
       <title>Home</title>
-      <link rel="icon" href="/favicon.ico" />
     </Head>
     <Header />
     <RecentPosts allPosts={allPosts} />
