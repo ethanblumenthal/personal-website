@@ -43,7 +43,7 @@ const NavBar = ({ theme, setTheme }) => {
       <FlexContainer>
         <Container>
           <Link href="/">
-            <CardHeader>Ethan Blumenthal</CardHeader>
+            <CardHeader style={{ cursor: 'pointer' }}>Ethan Blumenthal</CardHeader>
           </Link>
 
           <UnorderedList>
@@ -58,7 +58,9 @@ const NavBar = ({ theme, setTheme }) => {
         </Container>
 
         <Container>
-          <FontAwesomeIcon icon={faSearch} size="lg" />
+          <Link href="/tags">
+            <FontAwesomeIcon icon={faSearch} size="lg" />
+          </Link>
           <FontAwesomeIcon icon={theme === 'dark' ? faMoon : faSun} size="lg" onClick={setTheme} />
           <OutlineButton>Subscribe</OutlineButton>
         </Container>

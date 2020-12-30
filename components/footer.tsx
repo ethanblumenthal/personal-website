@@ -35,7 +35,9 @@ const Footer = () => (
       <ContentContainer>
         <FlexContainer>
           <Link href="/">
-            <SubText>&copy; {new Date().getFullYear()} Ethan Blumenthal</SubText>
+            <SubText style={{ cursor: 'pointer' }}>
+              &copy; {new Date().getFullYear()} Ethan Blumenthal
+            </SubText>
           </Link>
 
           <Socials>

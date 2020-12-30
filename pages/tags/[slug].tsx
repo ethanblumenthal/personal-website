@@ -1,6 +1,6 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
-import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 
@@ -9,11 +9,7 @@ import Posts from '../../components/posts';
 import { PageHeader } from '../../elements/text';
 import { getAllPosts, getAllTagsBySlug } from '../../api/contentful';
 import { ArrowButtonLeft, ArrowButtonRight } from '../../elements/buttons';
-import Link from 'next/link';
-
-const Header = styled.header`
-  text-align: center;
-`;
+import { CenterContainer } from '../../elements/containers';
 
 export default function Tags({ allPosts }) {
   const router = useRouter();
@@ -33,8 +29,8 @@ export default function Tags({ allPosts }) {
         <title>Tags</title>
       </Head>
 
-      <Header>
-        <PageHeader>
+      <CenterContainer>
+        <PageHeader style={{ margin: '2rem' }}>
           {taggedPosts.length} Posts tagged with "{router.query.slug}"
         </PageHeader>
         <Link href="/blog">
@@ -49,7 +45,7 @@ export default function Tags({ allPosts }) {
             <FontAwesomeIcon icon={faArrowRight} />
           </ArrowButtonRight>
         </Link>
-      </Header>
+      </CenterContainer>
 
       <Posts allPosts={taggedPosts} />
     </Layout>
