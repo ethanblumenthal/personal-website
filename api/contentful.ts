@@ -15,6 +15,11 @@ const POST_GRAPHQL_FIELDS = `
   content {
     json
   }
+  tagsCollection {
+    items {
+      ...TagParts
+    }
+  }
 `;
 
 async function fetchGraphQL(query, preview = false) {
@@ -58,7 +63,12 @@ export async function getAllPostsBySlug() {
 
 export async function getAllPosts(preview) {
   const entries = await fetchGraphQL(
-    `query {
+    `fragment TagParts on Tag {
+      name
+      slug
+  }
+    
+    query {
       postCollection(order: date_DESC, preview: ${preview ? 'true' : 'false'}) {
         items {
           ${POST_GRAPHQL_FIELDS}
@@ -72,7 +82,12 @@ export async function getAllPosts(preview) {
 
 export async function getPostBySlug(slug, preview) {
   const entry = await fetchGraphQL(
-    `query {
+    `
+    fragment TagParts on Tag {
+      name
+      slug
+  }
+  query {
       postCollection(where: { slug: "${slug}" }, preview: ${preview ? 'true' : 'false'}, limit: 1) {
         items {
           ${POST_GRAPHQL_FIELDS}
@@ -82,7 +97,12 @@ export async function getPostBySlug(slug, preview) {
     preview,
   );
   const entries = await fetchGraphQL(
-    `query {
+    `
+    fragment TagParts on Tag {
+      name
+      slug
+  }
+    query {
       postCollection(where: { slug_not_in: "${slug}" }, order: date_DESC, preview: ${
       preview ? 'true' : 'false'
     }, limit: 2) {

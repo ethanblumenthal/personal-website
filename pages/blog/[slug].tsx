@@ -25,13 +25,22 @@ export default function Post({ post, allPosts }) {
     return <ErrorPage statusCode={404} />;
   }
 
+  const fetchTags = () => {
+    let tags = '';
+    post?.tagsCollection.items.forEach(({ name }) => {
+      tags += name += ' ';
+    });
+
+    return tags;
+  };
+
   return (
     <Layout>
       <BackgroundContainer>
         <FlexContainer>
           <Content>
             <FlexContainer>
-              {/* <SubText>{post?.tags.join(' • ')}</SubText> */}
+              <SubText>{fetchTags()}</SubText>
               <SubText>{moment(post?.date).format('MMMM D, YYYY')}</SubText>
               <SubText>9 Min Read</SubText>
             </FlexContainer>
@@ -39,7 +48,9 @@ export default function Post({ post, allPosts }) {
             <Text>{post?.excerpt}</Text>
           </Content>
 
-          <Image src={post?.coverImage.url} alt={post?.title} height={300} width={400} />
+          {post ? (
+            <Image src={post?.coverImage.url} alt={post?.title} height={300} width={400} />
+          ) : null}
         </FlexContainer>
       </BackgroundContainer>
 

@@ -19,9 +19,9 @@ const Tags = ({ allPosts }) => {
   const router = useRouter();
   const { slug } = router.query;
 
-  const taggedPosts = allPosts?.filter((post) => {
-    post.tags.includes(slug);
-  });
+  // const taggedPosts = allPosts?.filter((post) => {
+  //   post.tags.includes(slug);
+  // });
 
   return (
     <Layout>
@@ -31,9 +31,7 @@ const Tags = ({ allPosts }) => {
       </Head>
 
       <Header>
-        <PageHeader>
-          {taggedPosts?.length} Posts tagged with "{}"
-        </PageHeader>
+        <PageHeader>{/* {taggedPosts?.length} Posts tagged with "{}" */}</PageHeader>
         <Link href="/blog">
           <ArrowButtonLeft>
             <FontAwesomeIcon icon={faArrowLeft} />
@@ -48,7 +46,7 @@ const Tags = ({ allPosts }) => {
         </Link>
       </Header>
 
-      <Posts allPosts={taggedPosts} />
+      {/* <Posts allPosts={taggedPosts} /> */}
     </Layout>
   );
 };

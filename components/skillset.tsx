@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -19,12 +18,12 @@ const Skillset = () => (
       <HeaderContainer>
         <ColorSectionHeader>Skillset</ColorSectionHeader>
 
-        <Link href="/resume">
+        <a href="/" target="_blank">
           <ArrowButtonRight>
             View resume
             <FontAwesomeIcon icon={faArrowRight} />
           </ArrowButtonRight>
-        </Link>
+        </a>
       </HeaderContainer>
 
       <LgGridContainer>

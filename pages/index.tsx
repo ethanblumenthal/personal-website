@@ -5,7 +5,6 @@ import Header from '../components/header';
 import RecentPosts from '../components/recent-posts';
 import { getAllPosts } from '../api/contentful';
 import RecentReviews from '../components/recent-reviews';
-import { REVIEWS } from '../utils';
 
 const Home = ({ allPosts }) => (
   <Layout>
@@ -15,7 +14,7 @@ const Home = ({ allPosts }) => (
     </Head>
     <Header />
     <RecentPosts allPosts={allPosts} />
-    <RecentReviews allReviews={REVIEWS} />
+    {/* <RecentReviews allReviews={REVIEWS} /> */}
   </Layout>
 );
 
