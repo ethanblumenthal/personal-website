@@ -3,12 +3,12 @@ import { devices } from '../utils';
 
 export const PageHeader = styled.h1`
   font-size: 2.75rem;
-  font-family: 'Ariel';
+  font-family: 'Roboto Slab', serif;
 `;
 
 export const SectionHeader = styled.h2`
   font-size: 2.25rem;
-  font-family: 'Ariel';
+  font-family: 'Roboto Slab', serif;
 `;
 
 export const ColorSectionHeader = styled(SectionHeader)`
@@ -17,7 +17,7 @@ export const ColorSectionHeader = styled(SectionHeader)`
 
 export const CardHeader = styled.h3`
   font-size: 1.75rem;
-  font-family: 'Ariel';
+  font-family: 'Roboto Slab', serif;
 `;
 
 export const ColorCardHeader = styled(CardHeader)`
