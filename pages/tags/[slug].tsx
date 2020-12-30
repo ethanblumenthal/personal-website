@@ -15,12 +15,16 @@ const Header = styled.header`
   text-align: center;
 `;
 
-export default function Tag({ allPosts }) {
+export default function Tags({ allPosts }) {
   const router = useRouter();
-  const { slug } = router.query;
 
-  const taggedPosts = allPosts?.filter((post) => {
-    post.tagsCollection.items.includes(slug);
+  const taggedPosts = [];
+  allPosts?.forEach((post) => {
+    post.tagsCollection.items.forEach(({ slug }) => {
+      if (slug === router.query.slug) {
+        taggedPosts.push(post);
+      }
+    });
   });
 
   return (
@@ -32,7 +36,7 @@ export default function Tag({ allPosts }) {
 
       <Header>
         <PageHeader>
-          {taggedPosts?.length} Posts tagged with "{slug}"
+          {taggedPosts.length} Posts tagged with "{router.query.slug}"
         </PageHeader>
         <Link href="/blog">
           <ArrowButtonLeft>

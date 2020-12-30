@@ -30,7 +30,6 @@ export default function Post({ post, allPosts }) {
     post?.tagsCollection.items.forEach(({ name }) => {
       tags += name += ' ';
     });
-
     return tags;
   };
 

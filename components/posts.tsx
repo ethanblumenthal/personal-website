@@ -11,7 +11,7 @@ const Posts = ({ allPosts }) => (
   <BackgroundContainer>
     <ContentContainer>
       <GridContainer>
-        {allPosts.map(({ date, title, excerpt, coverImage, slug }: IPost) => (
+        {allPosts?.map(({ date, title, excerpt, coverImage, slug }: IPost) => (
           <Link href={`/blog/${slug}`} key={slug}>
             <ImageCard key={title}>
               <Image

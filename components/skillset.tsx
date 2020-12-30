@@ -32,7 +32,7 @@ const Skillset = () => (
             <CardContent>
               <CardHeader>{title}</CardHeader>
               {skills.map((skill) => (
-                <Text>{skill}</Text>
+                <Text key={skill}>{skill}</Text>
               ))}
             </CardContent>
           </Card>
