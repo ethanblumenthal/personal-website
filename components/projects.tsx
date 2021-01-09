@@ -25,7 +25,7 @@ const ImageContainer = styled.div`
 
 const Projects = ({ allProjects }) => {
   return allProjects.map(({ title, subtitle, description, coverImage, slug }: IProject, idx) => (
-    <BackgroundContainer>
+    <BackgroundContainer key={slug}>
       <ContentContainer>
         <FlexContainer key={title} style={{ flexDirection: idx % 2 === 0 ? 'row-reverse' : null }}>
           <ImageContainer>

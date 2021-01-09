@@ -29,7 +29,7 @@ const Skillset = () => (
       <LgGridContainer>
         {SKILLSET.map(({ title, skills }) => (
           <Card key={title}>
-            <CardContent>
+            <CardContent style={{ textAlign: 'center' }}>
               <CardHeader>{title}</CardHeader>
               {skills.map((skill) => (
                 <Text key={skill}>{skill}</Text>

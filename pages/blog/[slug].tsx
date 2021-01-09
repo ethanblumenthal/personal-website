@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import styled from 'styled-components';
@@ -11,8 +10,14 @@ import Layout from '../../components/layout';
 import { getAllPostsBySlug, getPostBySlug, getAllPosts } from '../../api/contentful';
 import { ScrollButton } from '../../elements/buttons';
 import { PageHeader, Text, SubText } from '../../elements/text';
-import { BlogContainer, FlexContainer, BackgroundContainer } from '../../elements/containers';
+import {
+  BlogContainer,
+  FlexContainer,
+  FlexCenterContainer,
+  BackgroundContainer,
+} from '../../elements/containers';
 import RecentPosts from '../../components/recent-posts';
+import { RoundImage } from '../../elements/images';
 
 const Content = styled.div`
   max-width: 35rem;
@@ -28,29 +33,28 @@ export default function Post({ post, allPosts }) {
   const fetchTags = () => {
     let tags = '';
     post?.tagsCollection.items.forEach(({ name }) => {
-      tags += name += ' ';
+      tags += name += ' • ';
     });
     return tags;
   };
 
   return (
     <Layout>
-      <BackgroundContainer>
-        <FlexContainer>
+      <BackgroundContainer color="grey">
+        <FlexCenterContainer>
           <Content>
             <FlexContainer>
-              <SubText>{fetchTags()}</SubText>
               <SubText>{moment(post?.date).format('MMMM D, YYYY')}</SubText>
-              <SubText>9 Min Read</SubText>
             </FlexContainer>
             <PageHeader>{post?.title}</PageHeader>
             <Text>{post?.excerpt}</Text>
+            <SubText>{fetchTags()}</SubText>
           </Content>
 
           {post ? (
-            <Image src={post?.coverImage.url} alt={post?.title} height={300} width={400} />
+            <RoundImage src={post?.coverImage.url} alt={post?.title} height={300} width={400} />
           ) : null}
-        </FlexContainer>
+        </FlexCenterContainer>
       </BackgroundContainer>
 
       <BlogContainer>{documentToReactComponents(post?.content?.json)}</BlogContainer>
