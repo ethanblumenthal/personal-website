@@ -20,6 +20,11 @@ export const BlogCard = styled(Card)`
   height: 20rem;
 `;
 
+export const SkillCard = styled(Card)`
+  cursor: auto;
+  padding: 0;
+`;
+
 export const ImageCard = styled(Card)`
   height: 35rem;
   padding: 0;

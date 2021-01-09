@@ -67,7 +67,7 @@ export const SKILLSET = [
   },
   {
     title: 'Backend',
-    skills: ['Python', 'Golang', 'Rust', 'Node', 'Express', 'GraphQL', 'RabbitMQ'],
+    skills: ['Java', 'Python', 'Golang', 'Node', 'Express', 'GraphQL'],
   },
   {
     title: 'Databases',
@@ -75,6 +75,6 @@ export const SKILLSET = [
   },
   {
     title: 'DevOps',
-    skills: ['Git', 'Jenkins', 'Docker', 'Kubernetes', 'Terraform'],
+    skills: ['Git', 'Linux', 'Jenkins', 'Docker', 'Kubernetes', 'Terraform'],
   },
 ];

@@ -10,7 +10,7 @@ import {
   LgGridContainer,
 } from '../elements/containers';
 import { SKILLSET } from '../utils';
-import { Card, CardContent } from '../elements/cards';
+import { SkillCard, CardContent } from '../elements/cards';
 
 const Skillset = () => (
   <BackgroundContainer color="white">
@@ -31,14 +31,16 @@ const Skillset = () => (
 
       <LgGridContainer>
         {SKILLSET.map(({ title, skills }) => (
-          <Card key={title}>
+          <SkillCard key={title}>
             <CardContent style={{ textAlign: 'center' }}>
-              <CardHeader>{title}</CardHeader>
+              <CardHeader style={{ marginBottom: '0.5rem' }}>{title}</CardHeader>
               {skills.map((skill) => (
-                <Text key={skill}>{skill}</Text>
+                <Text style={{ marginBottom: '0.5rem' }} key={skill}>
+                  {skill}
+                </Text>
               ))}
             </CardContent>
-          </Card>
+          </SkillCard>
         ))}
       </LgGridContainer>
     </ContentContainer>
