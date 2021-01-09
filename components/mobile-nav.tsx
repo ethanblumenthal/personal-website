@@ -3,12 +3,12 @@ import { useRouter } from 'next/router';
 import { useEffect, useRef, useState, RefObject } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import { SectionHeader, CardHeader, SubText } from '../elements/text';
 import { ExitButton, ThemeButton, OutlineButton } from '../elements/buttons';
 import { BackgroundContainer, ContentContainer, FlexContainer } from '../elements/containers';
-import { SearchInput } from '../elements/inputs';
 import { PAGES } from '../utils';
 
 const Modal = styled.div`
@@ -40,7 +40,7 @@ const ListItem = styled.li`
   }
 `;
 
-const MobileNav = ({ setTheme }) => {
+const MobileNav = ({ theme, setTheme }) => {
   const [modal, setModal] = useState(false);
   const node: RefObject<any> = useRef();
 
@@ -78,11 +78,16 @@ const MobileNav = ({ setTheme }) => {
         </UnorderedList>
 
         <SubText>Change Theme</SubText>
-        <ThemeButton onClick={() => setTheme('dark')}>Light</ThemeButton>
-        <ThemeButton onClick={() => setTheme('light')}>Dark</ThemeButton>
+        <ThemeButton onClick={() => setTheme('dark')}>
+          <FontAwesomeIcon icon={theme === 'dark' ? faMoon : faSun} size="lg" onClick={setTheme} />
+        </ThemeButton>
 
         <SubText>Site Search</SubText>
-        <SearchInput placeholder="Search articles" />
+        <Link href="/tags">
+          <ThemeButton>
+            <FontAwesomeIcon icon={faSearch} size="lg" />
+          </ThemeButton>
+        </Link>
       </Modal>
     );
   };

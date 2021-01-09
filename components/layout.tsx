@@ -33,7 +33,7 @@ const Layout = ({ children }: LayoutProps) => {
         <NavBar theme={theme} setTheme={setTheme} />
       </Desktop>
       <Mobile>
-        <MobileNav setTheme={setTheme} />
+        <MobileNav theme={theme} setTheme={setTheme} />
       </Mobile>
       <main>{children}</main>
       <Footer />
