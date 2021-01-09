@@ -20,8 +20,6 @@ const Header = () => (
   <BackgroundContainer>
     <ContentContainer>
       <FlexCenterContainer>
-        <RoundImage src={BIO.image} alt={BIO.title} width={400} height={400} />
-
         <Content>
           <PageHeader>{BIO.title}</PageHeader>
           <Text style={{ margin: '1rem 0' }}>{BIO.description}</Text>
@@ -29,6 +27,8 @@ const Header = () => (
             <Button>Learn more</Button>
           </Link>
         </Content>
+
+        <RoundImage src={BIO.image} alt={BIO.title} width={400} height={400} />
       </FlexCenterContainer>
     </ContentContainer>
   </BackgroundContainer>

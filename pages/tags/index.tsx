@@ -15,7 +15,7 @@ const Blog = ({ allPosts, allTags }) => (
       <PageHeader style={{ margin: '2rem' }}>Tags</PageHeader>
     </CenterContainer>
 
-    <Tags allTags={allTags} />
+    <Tags allTags={allTags} allPosts={allPosts} />
   </Layout>
 );
 

@@ -18,7 +18,10 @@ const Skillset = () => (
       <HeaderContainer>
         <SectionHeader>Skillset</SectionHeader>
 
-        <a href="/" target="_blank">
+        <a
+          href="https://ethanblumenthal.s3.us-east-2.amazonaws.com/ethan_blumenthal_resume.pdf"
+          target="_blank"
+        >
           <ArrowButtonRight>
             View resume
             <FontAwesomeIcon icon={faArrowRight} />

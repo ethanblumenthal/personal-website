@@ -13,8 +13,8 @@ import { CenterContainer } from '../../elements/containers';
 
 export default function Tags({ allPosts }) {
   const router = useRouter();
-
   const taggedPosts = [];
+
   allPosts?.forEach((post) => {
     post.tagsCollection.items.forEach(({ slug }) => {
       if (slug === router.query.slug) {
