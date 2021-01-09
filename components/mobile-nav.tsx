@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useEffect, useRef, useState, RefObject } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -42,11 +42,27 @@ const ListItem = styled.li`
 
 const MobileNav = ({ setTheme }) => {
   const [modal, setModal] = useState(false);
+  const node: RefObject<any> = useRef();
+
   const router = useRouter();
+
+  const handleClick = (e) => {
+    if (node?.current?.contains(e.target)) {
+      return;
+    }
+    setModal(false);
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClick);
+    return () => {
+      document.removeEventListener('mousedown', handleClick);
+    };
+  }, []);
 
   const openModal = () => {
     return (
-      <Modal>
+      <Modal ref={node}>
         <ExitButton onClick={() => setModal(false)}>
           <FontAwesomeIcon icon={faTimes} />
         </ExitButton>
