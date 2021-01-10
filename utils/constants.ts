@@ -15,6 +15,13 @@ export const BIO = {
   image: '/ethanblumenthal.jpg',
 };
 
+export const LOGO = {
+  title: 'Software Engineer',
+  description:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+  image: '/logo.svg',
+};
+
 export const INVOLVEMENT = [
   {
     title: `Rightpoint`,
@@ -22,14 +29,9 @@ export const INVOLVEMENT = [
     link: `https://www.rightpoint.com/`,
   },
   {
-    title: `Slingshot Studios`,
-    description: `Slingshot Studios is a product design and development consultancy that specializes in creating fast and secure applications with modern JAMstack technologies.`,
-    link: 'http://www.slingshotstudios.io/',
-  },
-  {
-    title: `Savvy`,
-    description: `Savvy is an browser extension that allows helps users to maximize their credit card rewards.`,
-    link: `https://www.getsavvy.io/`,
+    title: `Pourcast`,
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.`,
+    link: '',
   },
 ];
 
@@ -49,13 +51,13 @@ export const CERTIFICATIONS = [
   {
     title: 'Solutions Architect',
     description: 'Amazon Web Services',
-    link: `https://www.dataquest.io/`,
+    link: `https://aws.amazon.com/certification/certified-solutions-architect-associate/`,
     icon: faAws,
   },
   {
     title: 'Cloud Engineer',
     description: 'Google Cloud Platform',
-    link: `https://www.dataquest.io/`,
+    link: `https://cloud.google.com/certification/cloud-engineer/`,
     icon: faGoogle,
   },
 ];

@@ -23,6 +23,11 @@ export const BlogCard = styled(Card)`
 export const SkillCard = styled(Card)`
   cursor: auto;
   padding: 0;
+
+  &:hover {
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    top: 0;
+  }
 `;
 
 export const ImageCard = styled(Card)`
