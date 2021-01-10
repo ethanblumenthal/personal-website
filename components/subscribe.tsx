@@ -2,8 +2,13 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRef, RefObject } from 'react';
 
-import { ExitButton, OutlineButton } from '../elements/buttons';
-import { ModalContainer, BackdropContainer } from '../elements/containers';
+import { ExitButton, OutlineButton, ThemeButton } from '../elements/buttons';
+import {
+  ModalContainer,
+  BackdropContainer,
+  MobileWrapper,
+  DesktopWrapper,
+} from '../elements/containers';
 import useModal from '../hooks/useModal';
 
 const Subscribe = () => {

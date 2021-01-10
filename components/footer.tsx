@@ -1,25 +1,21 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedinIn, faMediumM, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedinIn, faMediumM, faGithub } from '@fortawesome/free-brands-svg-icons';
 
-import { BackgroundContainer, FlexContainer, ContentContainer } from '../elements/containers';
+import {
+  BackgroundContainer,
+  FlexContainer,
+  ContentContainer,
+  FlexEvenlyContainer,
+} from '../elements/containers';
 import { SubText } from '../elements/text';
-
-const Socials = styled.div`
-  display: flex;
-  padding: 1rem;
-
-  & > a {
-    margin-right: 0.75rem;
-  }
-`;
 
 const Anchor = styled.a`
   & > svg {
     color: ${({ theme }) => theme.colors.grey};
     transition: ${({ theme }) => theme.transitions.ease};
+    margin-right: 1rem;
   }
 
   &:hover > svg {
@@ -29,37 +25,26 @@ const Anchor = styled.a`
 
 const Footer = () => (
   <footer>
-    <BackgroundContainer color="secondary" short>
+    <BackgroundContainer color="secondary">
       <ContentContainer>
-        <FlexContainer>
+        <FlexEvenlyContainer>
           <Image src={'/logo.svg'} alt={'Ethan Blumenthal'} width={50} height={50} />
+          <SubText>&copy; {new Date().getFullYear()} Ethan Blumenthal</SubText>
 
-          <div>
-            <Link href="/">
-              <SubText style={{ cursor: 'pointer' }}>
-                &copy; {new Date().getFullYear()} Ethan Blumenthal
-              </SubText>
-            </Link>
+          <FlexContainer>
+            <Anchor href="https://www.linkedin.com/in/ethanblumenthal/" target="_blank">
+              <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
+            </Anchor>
 
-            <Socials>
-              <Anchor href="https://www.linkedin.com/in/ethanblumenthal/" target="_blank">
-                <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
-              </Anchor>
+            <Anchor href="https://medium.com/@ethanblumenthal" target="_blank">
+              <FontAwesomeIcon icon={faMediumM} size="lg" />
+            </Anchor>
 
-              <Anchor href="https://medium.com/@ethanblumenthal" target="_blank">
-                <FontAwesomeIcon icon={faMediumM} size="lg" />
-              </Anchor>
-
-              <Anchor href="https://github.com/ethanblumenthal" target="_blank">
-                <FontAwesomeIcon icon={faGithub} size="lg" />
-              </Anchor>
-
-              <Anchor href="https://www.instagram.com/ethan_blumenthal" target="_blank">
-                <FontAwesomeIcon icon={faInstagram} size="lg" />
-              </Anchor>
-            </Socials>
-          </div>
-        </FlexContainer>
+            <Anchor href="https://github.com/ethanblumenthal" target="_blank">
+              <FontAwesomeIcon icon={faGithub} size="lg" />
+            </Anchor>
+          </FlexContainer>
+        </FlexEvenlyContainer>
       </ContentContainer>
     </BackgroundContainer>
   </footer>

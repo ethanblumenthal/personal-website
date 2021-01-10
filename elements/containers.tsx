@@ -120,3 +120,15 @@ export const BackdropContainer = styled.div`
   background: rgba(0, 0, 0, 0.3);
   z-index: 99;
 `;
+
+export const DesktopWrapper = styled.div`
+  @media ${devices.navigation} {
+    display: none;
+  }
+`;
+
+export const MobileWrapper = styled.div`
+  @media ${devices.desktop} {
+    display: none;
+  }
+`;

@@ -1,22 +1,11 @@
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 
 import { GlobalStyle, lightTheme, darkTheme, devices } from '../utils';
 import useDarkMode from '../hooks/useDarkMode';
 import NavBar from '../components/navbar';
 import MobileNav from './mobile-nav';
 import Footer from './footer';
-
-const Desktop = styled.div`
-  @media ${devices.navigation} {
-    display: none;
-  }
-`;
-
-const Mobile = styled.div`
-  @media ${devices.desktop} {
-    display: none;
-  }
-`;
+import { DesktopWrapper, MobileWrapper } from '../elements/containers';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -29,12 +18,12 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <ThemeProvider theme={themeMode}>
       <GlobalStyle />
-      <Desktop>
+      <DesktopWrapper>
         <NavBar theme={theme} setTheme={setTheme} />
-      </Desktop>
-      <Mobile>
+      </DesktopWrapper>
+      <MobileWrapper>
         <MobileNav theme={theme} setTheme={setTheme} />
-      </Mobile>
+      </MobileWrapper>
       <main>{children}</main>
       <Footer />
     </ThemeProvider>

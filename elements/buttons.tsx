@@ -123,7 +123,7 @@ export const ThemeButton = styled.button`
   height: 3rem;
   width: 6rem;
   cursor: pointer;
-  background-color: ${({ theme }) => theme.colors.lightGrey};
+  background-color: ${({ theme }) => theme.colors.button};
   border: none;
   outline: none;
   border-radius: 0.5rem;
