@@ -31,6 +31,15 @@ export const ContentContainer = styled.div`
   margin: 0 auto;
 `;
 
+export const HeaderContent = styled.div`
+  margin: 2rem 0 0 0;
+
+  @media ${devices.tablet} {
+    max-width: 30rem;
+    margin: 0;
+  }
+`;
+
 export const FlexContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -38,11 +47,16 @@ export const FlexContainer = styled.div`
   flex-wrap: wrap;
 `;
 
-export const FlexCenterContainer = styled.div`
-  display: flex;
+export const FlexCenterContainer = styled(FlexContainer)`
   justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+
+  @media ${devices.tablet} {
+    flex-wrap: nowrap;
+  }
+`;
+
+export const FlexEvenlyContainer = styled(FlexContainer)`
+  justify-content: space-evenly;
 
   @media ${devices.tablet} {
     flex-wrap: nowrap;

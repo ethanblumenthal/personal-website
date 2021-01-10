@@ -1,3 +1,6 @@
+import Link from 'next/link';
+import Image from 'next/image';
+
 import {
   BackgroundContainer,
   ContentContainer,
@@ -6,28 +9,24 @@ import {
 } from '../elements/containers';
 import { PageHeader, Text } from '../elements/text';
 import { Button } from '../elements/buttons';
-import { RoundImage } from '../elements/images';
 import { BIO } from '../utils';
 
-const Bio = () => (
+const Logo = () => (
   <BackgroundContainer>
     <ContentContainer>
       <FlexEvenlyContainer>
-        <HeaderContent>
-          <PageHeader>{BIO.title}</PageHeader>
-          <Text style={{ margin: '1rem 0' }}>{BIO.description}</Text>
-          <a
-            href="https://ethanblumenthal.s3.us-east-2.amazonaws.com/ethan_blumenthal_resume.pdf"
-            target="_blank"
-          >
-            <Button>View resume</Button>
-          </a>
-        </HeaderContent>
+        <Image src={'/logo.svg'} alt={'Ethan Blumenthal'} width={400} height={400} />
 
-        <RoundImage src={BIO.image} alt={BIO.title} width={400} height={400} />
+        <HeaderContent>
+          <PageHeader>Software Engineer</PageHeader>
+          <Text style={{ margin: '1rem 0' }}>{BIO.description}</Text>
+          <Link href="/about">
+            <Button>Learn more</Button>
+          </Link>
+        </HeaderContent>
       </FlexEvenlyContainer>
     </ContentContainer>
   </BackgroundContainer>
 );
 
-export default Bio;
+export default Logo;
