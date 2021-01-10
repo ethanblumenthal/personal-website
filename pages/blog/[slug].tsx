@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-import styled from 'styled-components';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
@@ -12,16 +11,12 @@ import { ScrollButton } from '../../elements/buttons';
 import { PageHeader, Text, SubText } from '../../elements/text';
 import {
   BlogContainer,
-  FlexContainer,
-  FlexCenterContainer,
+  FlexEvenlyContainer,
   BackgroundContainer,
+  HeaderContent,
 } from '../../elements/containers';
 import RecentPosts from '../../components/recent-posts';
 import { RoundImage } from '../../elements/images';
-
-const Content = styled.div`
-  max-width: 35rem;
-`;
 
 export default function Post({ post, allPosts }) {
   const router = useRouter();
@@ -31,30 +26,28 @@ export default function Post({ post, allPosts }) {
   }
 
   const fetchTags = () => {
-    let tags = '';
+    let tags = [];
     post?.tagsCollection.items.forEach(({ name }) => {
-      tags += name += ' • ';
+      tags.push(name);
     });
-    return tags;
+    return tags.join(' • ');
   };
 
   return (
     <Layout>
       <BackgroundContainer color="grey">
-        <FlexCenterContainer>
-          <Content>
-            <FlexContainer>
-              <SubText>{moment(post?.date).format('MMMM D, YYYY')}</SubText>
-            </FlexContainer>
-            <PageHeader>{post?.title}</PageHeader>
-            <Text>{post?.excerpt}</Text>
+        <FlexEvenlyContainer>
+          <HeaderContent>
+            <SubText>{moment(post?.date).format('MMMM D, YYYY')}</SubText>
+            <PageHeader style={{ marginBottom: '0.5rem' }}>{post?.title}</PageHeader>
+            <Text style={{ marginBottom: '0.5rem' }}>{post?.excerpt}</Text>
             <SubText>{fetchTags()}</SubText>
-          </Content>
+          </HeaderContent>
 
           {post ? (
             <RoundImage src={post?.coverImage.url} alt={post?.title} height={300} width={400} />
           ) : null}
-        </FlexCenterContainer>
+        </FlexEvenlyContainer>
       </BackgroundContainer>
 
       <BlogContainer>{documentToReactComponents(post?.content?.json)}</BlogContainer>
