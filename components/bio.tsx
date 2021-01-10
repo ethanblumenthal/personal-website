@@ -1,3 +1,5 @@
+import { IframeHTMLAttributes } from 'react';
+
 import {
   BackgroundContainer,
   ContentContainer,
@@ -23,7 +25,6 @@ const Bio = () => (
             <Button>View resume</Button>
           </a>
         </HeaderContent>
-
         <RoundImage src={BIO.image} alt={BIO.title} width={400} height={400} />
       </FlexEvenlyContainer>
     </ContentContainer>

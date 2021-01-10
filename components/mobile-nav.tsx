@@ -1,6 +1,6 @@
+import { useRef, RefObject } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, useRef, useState, RefObject } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
@@ -10,6 +10,7 @@ import { SectionHeader, CardHeader, SubText } from '../elements/text';
 import { ExitButton, ThemeButton, OutlineButton } from '../elements/buttons';
 import { BackgroundContainer, ContentContainer, FlexContainer } from '../elements/containers';
 import { PAGES } from '../utils';
+import useModal from '../hooks/useModal';
 
 const Modal = styled.div`
   width: 20rem;
@@ -41,29 +42,14 @@ const ListItem = styled.li`
 `;
 
 const MobileNav = ({ theme, setTheme }) => {
-  const [modal, setModal] = useState(false);
   const node: RefObject<any> = useRef();
-
+  const [modal, openModal] = useModal(node);
   const router = useRouter();
 
-  const handleClick = (e) => {
-    if (node?.current?.contains(e.target)) {
-      return;
-    }
-    setModal(false);
-  };
-
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClick);
-    return () => {
-      document.removeEventListener('mousedown', handleClick);
-    };
-  }, []);
-
-  const openModal = () => {
+  const renderModal = () => {
     return (
       <Modal ref={node}>
-        <ExitButton onClick={() => setModal(false)}>
+        <ExitButton onClick={() => openModal(false)}>
           <FontAwesomeIcon icon={faTimes} />
         </ExitButton>
         <SubText>Links</SubText>
@@ -99,8 +85,8 @@ const MobileNav = ({ theme, setTheme }) => {
           <Link href="/">
             <CardHeader>Ethan Blumenthal</CardHeader>
           </Link>
-          <OutlineButton onClick={() => setModal(true)}>Menu</OutlineButton>
-          {modal ? openModal() : null}
+          <OutlineButton onClick={() => openModal(true)}>Menu</OutlineButton>
+          {modal ? renderModal() : null}
         </FlexContainer>
       </ContentContainer>
     </BackgroundContainer>

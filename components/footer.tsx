@@ -70,16 +70,8 @@ const Footer = () => (
           </div>
 
           <div>
-            <SubscribeInput placeholder="Enter your email address" />
-            <SquareButton>Subscribe</SquareButton>
-            {/* <iframe
-              src="https://ethanblumenthal.substack.com/embed"
-              width="480"
-              height="320"
-              // style="border:1px solid #EEE; background:white;"
-              frameborder="0"
-              scrolling="no"
-            ></iframe> */}
+            {/* <SubscribeInput placeholder="Enter your email address" />
+            <SquareButton>Subscribe</SquareButton> */}
           </div>
         </FlexContainer>
       </ContentContainer>
