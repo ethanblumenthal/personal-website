@@ -8,31 +8,24 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import { SectionHeader, CardHeader, SubText } from '../elements/text';
 import { ExitButton, ThemeButton, OutlineButton } from '../elements/buttons';
-import { BackgroundContainer, ContentContainer, FlexContainer } from '../elements/containers';
+import {
+  BackdropContainer,
+  BackgroundContainer,
+  ContentContainer,
+  FlexContainer,
+  FlexEvenlyContainer,
+  ModalContainer,
+} from '../elements/containers';
 import { PAGES } from '../utils';
 import useModal from '../hooks/useModal';
 
-const Modal = styled.div`
-  width: 20rem;
-  position: fixed;
-  top: 1rem;
-  right: 1rem;
-  background-color: ${({ theme }) => theme.colors.background};
-  border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
-  padding: 2rem;
-  z-index: 999;
-`;
-
 const UnorderedList = styled.ul`
   list-style: none;
-  padding-left: 0;
+  padding: 1rem 0;
 `;
 
 const ListItem = styled.li`
   font-size: 1.2rem;
-  margin-right: 1.5rem;
   transition: ${({ theme }) => theme.transitions.ease};
   cursor: pointer;
 
@@ -47,33 +40,45 @@ const MobileNav = ({ theme, setTheme }) => {
   const router = useRouter();
 
   const renderModal = () => (
-    <Modal ref={node}>
-      <ExitButton onClick={() => openModal(false)}>
-        <FontAwesomeIcon icon={faTimes} />
-      </ExitButton>
-      <SubText>Links</SubText>
-      <UnorderedList>
-        {PAGES.map(({ title, slug }) => (
-          <Link href={slug} key={slug}>
-            <ListItem style={{ color: router.pathname === slug ? '#8A99A8' : '' }}>
-              <SectionHeader>{title}</SectionHeader>
-            </ListItem>
-          </Link>
-        ))}
-      </UnorderedList>
+    <>
+      <ModalContainer small ref={node}>
+        <ExitButton onClick={() => openModal(false)}>
+          <FontAwesomeIcon icon={faTimes} />
+        </ExitButton>
+        <UnorderedList>
+          {PAGES.map(({ title, slug }) => (
+            <Link href={slug} key={slug}>
+              <ListItem style={{ color: router.pathname === slug ? '#8A99A8' : '' }}>
+                <SectionHeader>{title}</SectionHeader>
+              </ListItem>
+            </Link>
+          ))}
+        </UnorderedList>
 
-      <SubText>Change Theme</SubText>
-      <ThemeButton onClick={() => setTheme('dark')}>
-        <FontAwesomeIcon icon={theme === 'dark' ? faMoon : faSun} size="lg" onClick={setTheme} />
-      </ThemeButton>
+        <FlexEvenlyContainer>
+          <div>
+            <SubText style={{ paddingBottom: '0.5rem' }}>Change Theme</SubText>
+            <ThemeButton onClick={() => setTheme('dark')}>
+              <FontAwesomeIcon
+                icon={theme === 'dark' ? faMoon : faSun}
+                size="lg"
+                onClick={setTheme}
+              />
+            </ThemeButton>
+          </div>
 
-      <SubText>Site Search</SubText>
-      <Link href="/tags">
-        <ThemeButton>
-          <FontAwesomeIcon icon={faSearch} size="lg" />
-        </ThemeButton>
-      </Link>
-    </Modal>
+          <div>
+            <SubText style={{ paddingBottom: '0.5rem' }}>Search Tags</SubText>
+            <Link href="/tags">
+              <ThemeButton>
+                <FontAwesomeIcon icon={faSearch} size="lg" />
+              </ThemeButton>
+            </Link>
+          </div>
+        </FlexEvenlyContainer>
+      </ModalContainer>
+      <BackdropContainer />
+    </>
   );
 
   return (

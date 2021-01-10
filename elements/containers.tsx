@@ -93,3 +93,30 @@ export const LgGridContainer = styled.div`
   grid-gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 `;
+
+export const ModalContainer = styled.div`
+  width: ${({ small }) => (small ? '20rem' : '30rem')};
+  position: absolute;
+  top: calc(50% - 10rem);
+  background-color: ${({ theme }) => theme.colors.background};
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+  z-index: 999;
+  text-align: center;
+
+  @media ${devices.tablet} {
+    left: ${({ small }) => (small ? 'calc(50% - 10rem)' : 'calc(50% - 15rem)')};
+  }
+`;
+
+export const BackdropContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 99;
+`;

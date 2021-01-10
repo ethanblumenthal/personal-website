@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
-import { OutlineButton } from '../elements/buttons';
 import { CardHeader } from '../elements/text';
 import { BackgroundContainer, FlexContainer } from '../elements/containers';
 import { PAGES } from '../utils';

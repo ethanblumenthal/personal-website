@@ -121,7 +121,8 @@ export const ThemeButton = styled.button`
   font-size: 1.2rem;
   line-height: 1.2rem;
   height: 3rem;
-  width: 50%;
+  width: 6rem;
+  cursor: pointer;
   background-color: ${({ theme }) => theme.colors.lightGrey};
   border: none;
   outline: none;
