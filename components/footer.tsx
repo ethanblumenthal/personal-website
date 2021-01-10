@@ -19,13 +19,13 @@ const Anchor = styled.a`
   }
 
   &:hover > svg {
-    color: ${({ theme }) => theme.colors.button};
+    color: ${({ theme }) => theme.colors.tertiery};
   }
 `;
 
 const Footer = () => (
   <footer>
-    <BackgroundContainer color="secondary">
+    <BackgroundContainer color="primary">
       <ContentContainer>
         <FlexEvenlyContainer>
           <Image src={'/logo.svg'} alt={'Ethan Blumenthal'} width={50} height={50} />

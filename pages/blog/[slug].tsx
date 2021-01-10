@@ -35,7 +35,7 @@ export default function Post({ post, allPosts }) {
 
   return (
     <Layout>
-      <BackgroundContainer color="grey">
+      <BackgroundContainer color="card">
         <FlexEvenlyContainer>
           <HeaderContent>
             <SubText>{moment(post?.date).format('MMMM D, YYYY')}</SubText>

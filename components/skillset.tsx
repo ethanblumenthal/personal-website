@@ -13,7 +13,7 @@ import { SKILLSET } from '../utils';
 import { SkillCard, CardContent } from '../elements/cards';
 
 const Skillset = () => (
-  <BackgroundContainer color="white">
+  <BackgroundContainer>
     <ContentContainer>
       <HeaderContainer>
         <SectionHeader>Skillset</SectionHeader>

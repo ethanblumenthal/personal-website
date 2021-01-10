@@ -46,7 +46,7 @@ export const FooterText = styled(Text)`
 `;
 
 export const SubText = styled.p`
-  color: ${({ theme }) => theme.colors.lightBlue};
+  color: ${({ theme }) => theme.colors.secondary};
   font-size: 0.8rem;
   text-transform: uppercase;
 `;

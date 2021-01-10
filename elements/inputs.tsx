@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SearchInput = styled.input`
   font-size: 1.2rem;
-  background-color: ${({ theme }) => theme.colors.lightGrey};
+  background-color: ${({ theme }) => theme.colors.grey};
   border: none;
   outline: none;
   width: 100%;
@@ -18,11 +18,11 @@ export const SubscribeInput = styled.input`
   border-radius: 0.25rem;
   background-color: ${({ theme }) => theme.colors.white};
   outline-color: ${({ theme }) => theme.colors.grey};
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.primary};
   padding: 1rem 1rem;
   margin-right: 1rem;
 
   &::placeholder {
-    color: ${({ theme }) => theme.colors.lightBlue};
+    color: ${({ theme }) => theme.colors.secondary};
   }
 `;

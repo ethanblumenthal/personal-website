@@ -5,7 +5,7 @@ export const Button = styled.button`
   font-size: 1rem;
   cursor: pointer;
   color: ${({ theme }) => theme.colors.white};
-  background-color: ${({ theme }) => theme.colors.button};
+  background-color: ${({ theme }) => theme.colors.tertiery};
   border-radius: 2rem;
   border: none;
   outline: none;
@@ -40,7 +40,7 @@ export const ThinButton = styled.button`
   font-size: 0.9rem;
   cursor: pointer;
   color: ${({ theme }) => theme.colors.white};
-  background-color: ${({ theme }) => theme.colors.lightBlue};
+  background-color: ${({ theme }) => theme.colors.secondary};
   text-transform: uppercase;
   border-radius: 2rem;
   border: none;
@@ -50,14 +50,14 @@ export const ThinButton = styled.button`
   margin-right: 0.5rem;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.text};
+    background-color: ${({ theme }) => theme.colors.tertiery};
   }
 `;
 
 export const ArrowButton = styled.button`
   font-size: 1.2rem;
   cursor: pointer;
-  color: ${({ theme }) => theme.colors.button};
+  color: ${({ theme }) => theme.colors.tertiery};
   background-color: transparent;
   border: none;
   outline: none;
@@ -110,7 +110,7 @@ export const ExitButton = styled.button`
   width: 2rem;
   cursor: pointer;
   color: ${({ theme }) => theme.colors.black};
-  background-color: ${({ theme }) => theme.colors.lightGrey};
+  background-color: ${({ theme }) => theme.colors.grey};
   border: none;
   border-radius: 50%;
   outline: none;
@@ -123,7 +123,7 @@ export const ThemeButton = styled.button`
   height: 3rem;
   width: 6rem;
   cursor: pointer;
-  background-color: ${({ theme }) => theme.colors.button};
+  background-color: ${({ theme }) => theme.colors.tertiery};
   border: none;
   outline: none;
   border-radius: 0.5rem;

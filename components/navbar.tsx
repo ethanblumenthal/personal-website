@@ -31,7 +31,7 @@ const ListItem = styled.li`
   cursor: pointer;
 
   &:hover {
-    color: ${({ theme }) => theme.colors.lightBlue};
+    color: ${({ theme }) => theme.colors.secondary};
   }
 `;
 
