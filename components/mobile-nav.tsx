@@ -46,37 +46,35 @@ const MobileNav = ({ theme, setTheme }) => {
   const [modal, openModal] = useModal(node);
   const router = useRouter();
 
-  const renderModal = () => {
-    return (
-      <Modal ref={node}>
-        <ExitButton onClick={() => openModal(false)}>
-          <FontAwesomeIcon icon={faTimes} />
-        </ExitButton>
-        <SubText>Links</SubText>
-        <UnorderedList>
-          {PAGES.map(({ title, slug }) => (
-            <Link href={slug} key={slug}>
-              <ListItem style={{ color: router.pathname === slug ? '#8A99A8' : '' }}>
-                <SectionHeader>{title}</SectionHeader>
-              </ListItem>
-            </Link>
-          ))}
-        </UnorderedList>
+  const renderModal = () => (
+    <Modal ref={node}>
+      <ExitButton onClick={() => openModal(false)}>
+        <FontAwesomeIcon icon={faTimes} />
+      </ExitButton>
+      <SubText>Links</SubText>
+      <UnorderedList>
+        {PAGES.map(({ title, slug }) => (
+          <Link href={slug} key={slug}>
+            <ListItem style={{ color: router.pathname === slug ? '#8A99A8' : '' }}>
+              <SectionHeader>{title}</SectionHeader>
+            </ListItem>
+          </Link>
+        ))}
+      </UnorderedList>
 
-        <SubText>Change Theme</SubText>
-        <ThemeButton onClick={() => setTheme('dark')}>
-          <FontAwesomeIcon icon={theme === 'dark' ? faMoon : faSun} size="lg" onClick={setTheme} />
+      <SubText>Change Theme</SubText>
+      <ThemeButton onClick={() => setTheme('dark')}>
+        <FontAwesomeIcon icon={theme === 'dark' ? faMoon : faSun} size="lg" onClick={setTheme} />
+      </ThemeButton>
+
+      <SubText>Site Search</SubText>
+      <Link href="/tags">
+        <ThemeButton>
+          <FontAwesomeIcon icon={faSearch} size="lg" />
         </ThemeButton>
-
-        <SubText>Site Search</SubText>
-        <Link href="/tags">
-          <ThemeButton>
-            <FontAwesomeIcon icon={faSearch} size="lg" />
-          </ThemeButton>
-        </Link>
-      </Modal>
-    );
-  };
+      </Link>
+    </Modal>
+  );
 
   return (
     <BackgroundContainer short>

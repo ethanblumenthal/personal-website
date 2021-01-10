@@ -8,6 +8,7 @@ import { OutlineButton } from '../elements/buttons';
 import { CardHeader } from '../elements/text';
 import { BackgroundContainer, FlexContainer } from '../elements/containers';
 import { PAGES } from '../utils';
+import Subscribe from './subscribe';
 
 const Container = styled.div`
   display: flex;
@@ -62,7 +63,7 @@ const NavBar = ({ theme, setTheme }) => {
             <FontAwesomeIcon icon={faSearch} size="lg" />
           </Link>
           <FontAwesomeIcon icon={theme === 'dark' ? faMoon : faSun} size="lg" onClick={setTheme} />
-          <OutlineButton>Subscribe</OutlineButton>
+          <Subscribe />
         </Container>
       </FlexContainer>
     </BackgroundContainer>
