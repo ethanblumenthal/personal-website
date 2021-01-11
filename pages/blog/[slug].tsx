@@ -13,7 +13,7 @@ import {
   BlogContainer,
   FlexEvenlyContainer,
   BackgroundContainer,
-  HeaderContent,
+  MainContent,
 } from '../../elements/containers';
 import RecentPosts from '../../components/recent-posts';
 import { RoundImage } from '../../elements/images';
@@ -37,12 +37,12 @@ export default function Post({ post, allPosts }) {
     <Layout>
       <BackgroundContainer color="card">
         <FlexEvenlyContainer>
-          <HeaderContent>
+          <MainContent>
             <SubText>{moment(post?.date).format('MMMM D, YYYY')}</SubText>
             <PageHeader style={{ marginBottom: '0.5rem' }}>{post?.title}</PageHeader>
             <Text style={{ marginBottom: '0.5rem' }}>{post?.excerpt}</Text>
             <SubText>{fetchTags()}</SubText>
-          </HeaderContent>
+          </MainContent>
 
           {post ? (
             <RoundImage src={post?.coverImage.url} alt={post?.title} height={300} width={400} />
