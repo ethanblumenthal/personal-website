@@ -5,7 +5,7 @@ import {
   BackgroundContainer,
   ContentContainer,
   FlexEvenlyContainer,
-  HeaderContent,
+  MainContent,
 } from '../elements/containers';
 import { PageHeader, Text } from '../elements/text';
 import { Button } from '../elements/buttons';
@@ -17,13 +17,13 @@ const Logo = () => (
       <FlexEvenlyContainer>
         <Image src={LOGO.image} alt={'Ethan Blumenthal'} width={400} height={400} />
 
-        <HeaderContent>
+        <MainContent>
           <PageHeader>{LOGO.title}</PageHeader>
           <Text style={{ margin: '1rem 0' }}>{LOGO.description}</Text>
           <Link href="/about">
             <Button>Learn more</Button>
           </Link>
-        </HeaderContent>
+        </MainContent>
       </FlexEvenlyContainer>
     </ContentContainer>
   </BackgroundContainer>

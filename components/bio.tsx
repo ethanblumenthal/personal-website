@@ -1,8 +1,10 @@
 import {
   BackgroundContainer,
   ContentContainer,
+  DesktopWrapper,
   FlexEvenlyContainer,
-  HeaderContent,
+  MainContent,
+  MobileWrapper,
 } from '../elements/containers';
 import { PageHeader, Text } from '../elements/text';
 import { Button } from '../elements/buttons';
@@ -13,7 +15,9 @@ const Bio = () => (
   <BackgroundContainer>
     <ContentContainer>
       <FlexEvenlyContainer>
-        <HeaderContent>
+        <RoundImage src={BIO.image} alt={BIO.title} width={400} height={400} />
+
+        <MainContent isOnRight>
           <PageHeader>{BIO.title}</PageHeader>
           <Text style={{ margin: '1rem 0' }}>{BIO.description}</Text>
           <a
@@ -22,8 +26,7 @@ const Bio = () => (
           >
             <Button>View resume</Button>
           </a>
-        </HeaderContent>
-        <RoundImage src={BIO.image} alt={BIO.title} width={400} height={400} />
+        </MainContent>
       </FlexEvenlyContainer>
     </ContentContainer>
   </BackgroundContainer>

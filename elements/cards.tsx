@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { devices } from '../utils';
 
 export const Card = styled.div`
   position: relative;
@@ -31,12 +32,17 @@ export const SkillCard = styled(Card)`
 `;
 
 export const ImageCard = styled(Card)`
-  height: 35rem;
   padding: 0;
+
+  @media ${devices.tablet} {
+    min-height: 35rem;
+  }
 `;
 
 export const BaseCard = styled(Card)`
-  height: 16rem;
+  @media ${devices.tablet} {
+    min-height: 16rem;
+  }
 `;
 
 export const SmallCard = styled(Card)`

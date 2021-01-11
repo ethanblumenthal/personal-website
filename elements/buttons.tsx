@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { devices } from '../utils';
 
 export const Button = styled.button`
   height: 2.5rem;
@@ -46,8 +47,8 @@ export const ThinButton = styled.button`
   border: none;
   outline: none;
   padding: 0 0.9rem;
+  margin: 0 0.5rem 0.5rem 0;
   transition: ${({ theme }) => theme.transitions.ease};
-  margin-right: 0.5rem;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.tertiery};

@@ -31,12 +31,12 @@ export const ContentContainer = styled.div`
   margin: 0 auto;
 `;
 
-export const HeaderContent = styled.div`
+export const MainContent = styled.div`
   margin: 2rem 0 0 0;
 
   @media ${devices.tablet} {
-    max-width: 30rem;
-    margin: 0;
+    max-width: 50%;
+    margin: ${({ isOnRight }) => (isOnRight ? '0 0 0 2rem' : '0 2rem 0 0')};
   }
 `;
 
@@ -45,6 +45,10 @@ export const FlexContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+
+  @media ${devices.tablet} {
+    flex-wrap: nowrap;
+  }
 `;
 
 export const FlexCenterContainer = styled(FlexContainer)`
@@ -98,6 +102,7 @@ export const ModalContainer = styled.div`
   width: ${({ small }) => (small ? '20rem' : '30rem')};
   position: absolute;
   top: calc(50% - 10rem);
+  left: ${({ small }) => (small ? 'calc(50% - 10rem)' : 'calc(50% - 15rem)')};
   background-color: ${({ theme }) => theme.colors.background};
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.3);
@@ -105,10 +110,6 @@ export const ModalContainer = styled.div`
   padding: 2rem;
   z-index: 999;
   text-align: center;
-
-  @media ${devices.tablet} {
-    left: ${({ small }) => (small ? 'calc(50% - 10rem)' : 'calc(50% - 15rem)')};
-  }
 `;
 
 export const BackdropContainer = styled.div`
