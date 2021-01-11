@@ -83,7 +83,7 @@ export const CenterContainer = styled.div`
 export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: baseline;
   margin-bottom: 2rem;
 `;
 
@@ -120,6 +120,7 @@ export const BackdropContainer = styled.div`
   height: 100%;
   width: 100%;
   background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(0.5rem);
   z-index: 99;
 `;
 
@@ -133,4 +134,8 @@ export const MobileWrapper = styled.div`
   @media ${devices.desktop} {
     display: none;
   }
+`;
+
+export const IconContainer = styled.span`
+  cursor: pointer; ;
 `;

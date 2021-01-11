@@ -5,19 +5,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 
 import { CardHeader } from '../elements/text';
-import { BackgroundContainer, FlexContainer } from '../elements/containers';
+import { BackgroundContainer, FlexContainer, IconContainer } from '../elements/containers';
 import { PAGES } from '../utils';
 import Subscribe from './subscribe';
-
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-
-  & > svg {
-    cursor: pointer;
-    margin-right: 1.5rem;
-  }
-`;
 
 const UnorderedList = styled.ul`
   display: flex;
@@ -41,7 +31,7 @@ const NavBar = ({ theme, setTheme }) => {
   return (
     <BackgroundContainer short>
       <FlexContainer>
-        <Container>
+        <FlexContainer>
           <Link href="/">
             <CardHeader style={{ cursor: 'pointer' }}>Ethan Blumenthal</CardHeader>
           </Link>
@@ -55,15 +45,23 @@ const NavBar = ({ theme, setTheme }) => {
               </Link>
             ))}
           </UnorderedList>
-        </Container>
+        </FlexContainer>
 
-        <Container>
+        <FlexContainer style={{ width: '12rem' }}>
           <Link href="/tags">
-            <FontAwesomeIcon icon={faSearch} size="lg" />
+            <IconContainer>
+              <FontAwesomeIcon icon={faSearch} size="lg" />
+            </IconContainer>
           </Link>
-          <FontAwesomeIcon icon={theme === 'dark' ? faMoon : faSun} size="lg" onClick={setTheme} />
+          <IconContainer>
+            <FontAwesomeIcon
+              icon={theme === 'dark' ? faMoon : faSun}
+              size="lg"
+              onClick={setTheme}
+            />
+          </IconContainer>
           <Subscribe />
-        </Container>
+        </FlexContainer>
       </FlexContainer>
     </BackgroundContainer>
   );
