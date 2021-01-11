@@ -5,10 +5,11 @@ export const BlogContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.background};
   max-width: 46rem;
   padding: 4rem 0;
-  margin: 0 auto;
+  margin: 0 2rem;
 
-  @media ${devices.desktop} {
+  @media ${devices.tablet} {
     padding: 4rem 1rem;
+    margin: auto;
   }
 `;
 

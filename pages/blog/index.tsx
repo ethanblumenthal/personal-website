@@ -16,7 +16,7 @@ const Blog = ({ allPosts, allTags }) => (
 
     <CenterContainer>
       <PageHeader style={{ margin: '2rem' }}>Blog</PageHeader>
-      <FlexCenterContainer style={{ maxWidth: '35rem', margin: 'auto' }}>
+      <FlexCenterContainer style={{ maxWidth: '30rem', margin: 'auto' }}>
         {allTags.map(({ name, slug }) => (
           <Link href={`/tags/${slug}`} key={slug}>
             <ThinButton>{name}</ThinButton>
