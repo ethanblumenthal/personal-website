@@ -6,23 +6,23 @@ import {
   GridContainer,
   HeaderContainer,
 } from '../elements/containers';
-import { INVOLVEMENT } from '../utils';
+import { EXPERIENCE } from '../utils';
 
-interface IInvolvement {
+interface IExperience {
   title: string;
   description: string;
   link: string;
 }
 
-const Involvement = () => (
+const Experience = () => (
   <BackgroundContainer>
     <ContentContainer>
       <HeaderContainer>
-        <SectionHeader>Involvement</SectionHeader>
+        <SectionHeader>Experience</SectionHeader>
       </HeaderContainer>
 
       <GridContainer>
-        {INVOLVEMENT.map(({ title, description, link }: IInvolvement) => (
+        {EXPERIENCE.map(({ title, description, link }: IExperience) => (
           <a href={link} target="_blank" key={title}>
             <BaseCard>
               <CardHeader style={{ marginBottom: '1rem' }}>{title}</CardHeader>
@@ -35,4 +35,4 @@ const Involvement = () => (
   </BackgroundContainer>
 );
 
-export default Involvement;
+export default Experience;
