@@ -36,7 +36,7 @@ export const CERTIFICATIONS = [
   {
     title: 'Software Engineering',
     description: 'Fullstack Academy',
-    link: `https://www.fullstackacademy.com/`,
+    link: `https://ethanblumenthal.s3.us-east-2.amazonaws.com/ethan_blumenthal_fullstack.pdf`,
     icon: 'book',
   },
   {
@@ -54,7 +54,7 @@ export const CERTIFICATIONS = [
   {
     title: 'Cloud Engineer',
     description: 'Google Cloud Platform',
-    link: `https://cloud.google.com/certification/cloud-engineer/`,
+    link: `https://www.credential.net/7ddf36bf-5464-4a7b-b4e1-c8a03f2cb105?key=f97cb02161d2387c668949d990c541bb9a2f39430c128c10c81b835718b9864d&_ga=2.143835574.26271270.1610596323-764528462.1610596323`,
     icon: 'code',
   },
 ];
