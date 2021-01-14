@@ -1,5 +1,3 @@
-import { Icon } from 'react-feather';
-
 export const PAGES = [
   { title: 'Home', slug: '/' },
   { title: 'Blog', slug: '/blog' },
@@ -39,25 +37,25 @@ export const CERTIFICATIONS = [
     title: 'Software Engineering',
     description: 'Fullstack Academy',
     link: `https://www.fullstackacademy.com/`,
-    icon: '<Icon />',
+    icon: 'book',
   },
   {
     title: 'Algorithms Specialization',
     description: 'Stanford (Coursera)',
     link: `https://www.coursera.org/specializations/algorithms/`,
-    icon: '<Icon />',
+    icon: 'book',
   },
   {
     title: 'Solutions Architect',
     description: 'Amazon Web Services',
     link: `https://aws.amazon.com/certification/certified-solutions-architect-associate/`,
-    icon: '<Icon />',
+    icon: 'code',
   },
   {
     title: 'Cloud Engineer',
     description: 'Google Cloud Platform',
     link: `https://cloud.google.com/certification/cloud-engineer/`,
-    icon: '<Icon />',
+    icon: 'code',
   },
 ];
 

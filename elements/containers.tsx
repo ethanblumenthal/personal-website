@@ -52,6 +52,15 @@ export const FlexContainer = styled.div`
   }
 `;
 
+export const FooterContainer = styled(FlexContainer)`
+  flex-direction: column;
+
+  @media ${devices.tablet} {
+    flex-direction: row;
+    align-items: 'flex-start';
+  }
+`;
+
 export const FlexCenterContainer = styled(FlexContainer)`
   justify-content: center;
 

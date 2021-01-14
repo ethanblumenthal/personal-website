@@ -2,7 +2,7 @@ export const lightTheme = {
   colors: {
     primary: '#11446C',
     secondary: '#5993C2',
-    tertiery: '#FFB700',
+    tertiery: '#ffb700',
     white: '#ffffff',
     grey: '#dcdcdc',
     black: '#000000',
@@ -21,7 +21,7 @@ export const darkTheme = {
   colors: {
     primary: '#11446C',
     secondary: '#5993C2',
-    tertiery: '#FFB700',
+    tertiery: '#ffb700',
     white: '#ffffff',
     grey: '#dcdcdc',
     black: '#000000',

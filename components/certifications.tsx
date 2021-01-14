@@ -7,6 +7,7 @@ import {
   LgGridContainer,
 } from '../elements/containers';
 import { CERTIFICATIONS } from '../utils';
+import { Bookmark, Code } from 'react-feather';
 
 const Certifications = () => (
   <BackgroundContainer>
@@ -19,7 +20,11 @@ const Certifications = () => (
         {CERTIFICATIONS.map(({ title, description, link, icon }) => (
           <a href={link} target="_blank" key={title}>
             <SmallCard>
-              {icon}
+              {icon === 'book' ? (
+                <Bookmark style={{ color: '#ffb700', marginBottom: '0.5rem' }} />
+              ) : (
+                <Code style={{ color: '#ffb700', marginBottom: '0.5rem' }} />
+              )}
               <SubText style={{ marginBottom: '0.5rem' }}>{description}</SubText>
               <Text>{title}</Text>
             </SmallCard>

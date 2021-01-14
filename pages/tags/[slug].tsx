@@ -8,7 +8,7 @@ import Posts from '../../components/posts';
 import { PageHeader } from '../../elements/text';
 import { getAllPosts, getAllTagsBySlug } from '../../api/contentful';
 import { ArrowButtonLeft, ArrowButtonRight } from '../../elements/buttons';
-import { CenterContainer } from '../../elements/containers';
+import { CenterContainer, FlexCenterContainer } from '../../elements/containers';
 
 export default function Tags({ allPosts }) {
   const router = useRouter();
@@ -32,18 +32,21 @@ export default function Tags({ allPosts }) {
         <PageHeader style={{ margin: '2rem' }}>
           {taggedPosts.length} Posts tagged with "{router.query.slug}"
         </PageHeader>
-        <Link href="/blog">
-          <ArrowButtonLeft>
-            <ArrowLeft />
-            See all articles
-          </ArrowButtonLeft>
-        </Link>
-        <Link href="/tags">
-          <ArrowButtonRight>
-            Browse all tags
-            <ArrowRight />
-          </ArrowButtonRight>
-        </Link>
+
+        <FlexCenterContainer>
+          <Link href="/blog">
+            <ArrowButtonLeft style={{ marginRight: '1rem' }}>
+              <ArrowLeft />
+              See all articles
+            </ArrowButtonLeft>
+          </Link>
+          <Link href="/tags">
+            <ArrowButtonRight>
+              Browse all tags
+              <ArrowRight />
+            </ArrowButtonRight>
+          </Link>
+        </FlexCenterContainer>
       </CenterContainer>
 
       <Posts allPosts={taggedPosts} />

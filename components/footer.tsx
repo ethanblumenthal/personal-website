@@ -4,7 +4,7 @@ import { Phone, Mail, Linkedin, GitHub, MapPin, MessageCircle } from 'react-feat
 
 import {
   BackgroundContainer,
-  FlexContainer,
+  FooterContainer,
   ContentContainer,
   StackContainer,
 } from '../elements/containers';
@@ -28,7 +28,7 @@ const Footer = () => (
   <footer>
     <BackgroundContainer color="footer">
       <ContentContainer>
-        <FlexContainer>
+        <FooterContainer>
           <StackContainer>
             <CardHeader style={{ marginBottom: '0.5rem' }}>Contact</CardHeader>
 
@@ -73,7 +73,7 @@ const Footer = () => (
               &copy; {new Date().getFullYear()} Ethan Blumenthal
             </SubText>
           </StackContainer>
-        </FlexContainer>
+        </FooterContainer>
       </ContentContainer>
     </BackgroundContainer>
   </footer>

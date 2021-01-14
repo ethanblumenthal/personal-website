@@ -107,6 +107,8 @@ export const ScrollButton = styled.button`
 `;
 
 export const ExitButton = styled.button`
+  display: flex;
+  align-items: center;
   font-size: 1.25rem;
   line-height: 1.25rem;
   height: 2rem;

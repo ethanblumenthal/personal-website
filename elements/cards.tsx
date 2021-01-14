@@ -41,7 +41,11 @@ export const ImageCard = styled(Card)`
 
 export const BaseCard = styled(Card)`
   @media ${devices.tablet} {
-    min-height: 16rem;
+    min-height: 28em;
+  }
+
+  @media ${devices.desktop} {
+    min-height: 20rem;
   }
 `;
 
