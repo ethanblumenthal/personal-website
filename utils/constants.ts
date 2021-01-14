@@ -1,5 +1,4 @@
-import { faSchool, faCode } from '@fortawesome/free-solid-svg-icons';
-import { faAws, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { Icon } from 'react-feather';
 
 export const PAGES = [
   { title: 'Home', slug: '/' },
@@ -40,25 +39,25 @@ export const CERTIFICATIONS = [
     title: 'Software Engineering',
     description: 'Fullstack Academy',
     link: `https://www.fullstackacademy.com/`,
-    icon: faCode,
+    icon: '<Icon />',
   },
   {
     title: 'Algorithms Specialization',
     description: 'Stanford (Coursera)',
     link: `https://www.coursera.org/specializations/algorithms/`,
-    icon: faSchool,
+    icon: '<Icon />',
   },
   {
     title: 'Solutions Architect',
     description: 'Amazon Web Services',
     link: `https://aws.amazon.com/certification/certified-solutions-architect-associate/`,
-    icon: faAws,
+    icon: '<Icon />',
   },
   {
     title: 'Cloud Engineer',
     description: 'Google Cloud Platform',
     link: `https://cloud.google.com/certification/cloud-engineer/`,
-    icon: faGoogle,
+    icon: '<Icon />',
   },
 ];
 

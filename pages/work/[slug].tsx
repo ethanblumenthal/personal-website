@@ -2,8 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { ArrowLeft } from 'react-feather';
 
 import Layout from '../../components/layout';
 import { getAllProjectsBySlug, getProjectBySlug, getAllProjects } from '../../api/contentful';
@@ -26,7 +25,7 @@ export default function Project({ project }) {
 
         <Link href="/work">
           <ArrowButtonLeft>
-            <FontAwesomeIcon icon={faArrowLeft} />
+            <ArrowLeft />
             See all projects
           </ArrowButtonLeft>
         </Link>

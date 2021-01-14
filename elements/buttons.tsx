@@ -62,6 +62,8 @@ export const ArrowButton = styled.button`
   background-color: transparent;
   border: none;
   outline: none;
+  display: flex;
+  align-items: center;
 
   & > svg {
     position: relative;

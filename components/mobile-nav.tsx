@@ -1,10 +1,8 @@
-import { useRef, RefObject } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useRef, RefObject } from 'react';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import { Moon, Search, Sun, X } from 'react-feather';
 
 import { SectionHeader, CardHeader, SubText } from '../elements/text';
 import { ExitButton, ThemeButton, OutlineButton } from '../elements/buttons';
@@ -43,7 +41,7 @@ const MobileNav = ({ theme, setTheme }) => {
     <>
       <ModalContainer small ref={node}>
         <ExitButton onClick={() => openModal(false)}>
-          <FontAwesomeIcon icon={faTimes} />
+          <X />
         </ExitButton>
         <UnorderedList>
           {PAGES.map(({ title, slug }) => (
@@ -59,11 +57,7 @@ const MobileNav = ({ theme, setTheme }) => {
           <div>
             <SubText style={{ paddingBottom: '0.5rem' }}>Change Theme</SubText>
             <ThemeButton onClick={() => setTheme('dark')}>
-              <FontAwesomeIcon
-                icon={theme === 'dark' ? faMoon : faSun}
-                size="lg"
-                onClick={setTheme}
-              />
+              {theme === 'dark' ? <Moon /> : <Sun />}
             </ThemeButton>
           </div>
 
@@ -71,7 +65,7 @@ const MobileNav = ({ theme, setTheme }) => {
             <SubText style={{ paddingBottom: '0.5rem' }}>Search Tags</SubText>
             <Link href="/tags">
               <ThemeButton>
-                <FontAwesomeIcon icon={faSearch} size="lg" />
+                <Search />
               </ThemeButton>
             </Link>
           </div>

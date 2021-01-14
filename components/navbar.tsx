@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch, faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { Moon, Search, Sun } from 'react-feather';
 
 import { CardHeader } from '../elements/text';
 import { BackgroundContainer, FlexContainer, IconContainer } from '../elements/containers';
@@ -50,15 +49,11 @@ const NavBar = ({ theme, setTheme }) => {
         <FlexContainer style={{ width: '12rem' }}>
           <Link href="/tags">
             <IconContainer>
-              <FontAwesomeIcon icon={faSearch} size="lg" />
+              <Search />
             </IconContainer>
           </Link>
-          <IconContainer>
-            <FontAwesomeIcon
-              icon={theme === 'dark' ? faMoon : faSun}
-              size="lg"
-              onClick={setTheme}
-            />
+          <IconContainer onClick={() => setTheme(!theme)}>
+            {theme === 'dark' ? <Moon /> : <Sun />}
           </IconContainer>
           <Subscribe />
         </FlexContainer>

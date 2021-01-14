@@ -1,8 +1,7 @@
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { ArrowUp } from 'react-feather';
 import moment from 'moment';
 
 import Layout from '../../components/layout';
@@ -53,7 +52,7 @@ export default function Post({ post, allPosts }) {
       <BlogContainer>{documentToReactComponents(post?.content?.json)}</BlogContainer>
       <RecentPosts allPosts={allPosts} />
       <ScrollButton onClick={() => window.scrollTo(0, 0)}>
-        <FontAwesomeIcon icon={faArrowUp} />
+        <ArrowUp />
       </ScrollButton>
     </Layout>
   );

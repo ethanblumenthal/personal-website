@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { ArrowRight } from 'react-feather';
 
 import { ArrowButtonRight } from '../elements/buttons';
 import { SectionHeader, CardHeader, Text } from '../elements/text';
@@ -24,7 +23,7 @@ const Skillset = () => (
         >
           <ArrowButtonRight>
             View resume
-            <FontAwesomeIcon icon={faArrowRight} />
+            <ArrowRight />
           </ArrowButtonRight>
         </a>
       </HeaderContainer>

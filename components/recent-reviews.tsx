@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { ArrowRight } from 'react-feather';
 
 import { ArrowButtonRight } from '../elements/buttons';
 import { ColorSectionHeader, ColorCardHeader, SubText } from '../elements/text';
@@ -21,7 +20,7 @@ const RecentReviews = ({ allReviews }) => (
         <Link href="/reviews">
           <ArrowButtonRight>
             View all
-            <FontAwesomeIcon icon={faArrowRight} />
+            <ArrowRight />
           </ArrowButtonRight>
         </Link>
       </HeaderContainer>

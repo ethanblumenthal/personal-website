@@ -1,8 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { ArrowLeft, ArrowRight } from 'react-feather';
 
 import Layout from '../../components/layout';
 import Posts from '../../components/posts';
@@ -35,14 +34,14 @@ export default function Tags({ allPosts }) {
         </PageHeader>
         <Link href="/blog">
           <ArrowButtonLeft>
-            <FontAwesomeIcon icon={faArrowLeft} />
+            <ArrowLeft />
             See all articles
           </ArrowButtonLeft>
         </Link>
         <Link href="/tags">
           <ArrowButtonRight>
             Browse all tags
-            <FontAwesomeIcon icon={faArrowRight} />
+            <ArrowRight />
           </ArrowButtonRight>
         </Link>
       </CenterContainer>

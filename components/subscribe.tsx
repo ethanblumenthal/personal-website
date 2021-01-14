@@ -1,14 +1,8 @@
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRef, RefObject } from 'react';
+import { X } from 'react-feather';
 
-import { ExitButton, OutlineButton, ThemeButton } from '../elements/buttons';
-import {
-  ModalContainer,
-  BackdropContainer,
-  MobileWrapper,
-  DesktopWrapper,
-} from '../elements/containers';
+import { ExitButton, OutlineButton } from '../elements/buttons';
+import { ModalContainer, BackdropContainer } from '../elements/containers';
 import useModal from '../hooks/useModal';
 
 const Subscribe = () => {
@@ -19,7 +13,7 @@ const Subscribe = () => {
     <>
       <ModalContainer ref={node}>
         <ExitButton onClick={() => openModal(false)}>
-          <FontAwesomeIcon icon={faTimes} />
+          <X />
         </ExitButton>
 
         <div style={{ paddingTop: '2rem' }}>

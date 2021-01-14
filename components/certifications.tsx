@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import { SmallCard } from '../elements/cards';
 import { SectionHeader, Text, SubText } from '../elements/text';
 import {
@@ -21,11 +19,7 @@ const Certifications = () => (
         {CERTIFICATIONS.map(({ title, description, link, icon }) => (
           <a href={link} target="_blank" key={title}>
             <SmallCard>
-              <FontAwesomeIcon
-                icon={icon}
-                size="2x"
-                style={{ marginBottom: '1rem', color: ' #FFB700' }}
-              />
+              {icon}
               <SubText style={{ marginBottom: '0.5rem' }}>{description}</SubText>
               <Text>{title}</Text>
             </SmallCard>
