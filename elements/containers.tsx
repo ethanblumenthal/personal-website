@@ -124,6 +124,18 @@ export const BackdropContainer = styled.div`
   z-index: 99;
 `;
 
+export const StackContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  @media ${devices.tablet} {
+    align-items: flex-start;
+  }
+`;
+
 export const DesktopWrapper = styled.div`
   @media ${devices.navigation} {
     display: none;

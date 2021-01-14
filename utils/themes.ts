@@ -9,6 +9,7 @@ export const lightTheme = {
     text: '#11446C',
     card: '#dcdcdc',
     background: '#ffffff',
+    footer: '#1f1f1f',
     outline: 'rgba(0, 0, 0, 0.1)',
   },
   transitions: {
@@ -25,8 +26,9 @@ export const darkTheme = {
     grey: '#dcdcdc',
     black: '#000000',
     text: '#ffffff',
-    card: '#1F1F1F',
+    card: '#1f1f1f',
     background: '#141414',
+    footer: '#1f1f1f',
     outline: '#ffffff',
   },
   transitions: {

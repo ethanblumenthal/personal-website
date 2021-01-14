@@ -1,50 +1,79 @@
 import Image from 'next/image';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedinIn, faMediumM, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { Phone, Mail, Linkedin, GitHub, MapPin, MessageCircle } from 'react-feather';
 
 import {
   BackgroundContainer,
   FlexContainer,
   ContentContainer,
-  FlexEvenlyContainer,
+  StackContainer,
 } from '../elements/containers';
-import { SubText } from '../elements/text';
+import { CardHeader, SubText, Text } from '../elements/text';
 
 const Anchor = styled.a`
-  & > svg {
+  display: flex;
+
+  & > * {
     color: ${({ theme }) => theme.colors.grey};
     transition: ${({ theme }) => theme.transitions.ease};
-    margin-right: 1rem;
+    margin: 0 1rem 1rem 0;
   }
 
-  &:hover > svg {
+  &:hover > * {
     color: ${({ theme }) => theme.colors.tertiery};
   }
 `;
 
 const Footer = () => (
   <footer>
-    <BackgroundContainer color="primary">
+    <BackgroundContainer color="footer">
       <ContentContainer>
-        <FlexEvenlyContainer>
-          <Image src={'/logo.svg'} alt={'Ethan Blumenthal'} width={50} height={50} />
-          <SubText>&copy; {new Date().getFullYear()} Ethan Blumenthal</SubText>
+        <FlexContainer>
+          <StackContainer>
+            <CardHeader style={{ marginBottom: '0.5rem' }}>Contact</CardHeader>
 
-          <FlexContainer>
+            <Anchor href="mailto:ethan.blumenthal@gmail.com" target="_blank">
+              <Mail />
+              <Text>ethan.blumenthal@gmail.com</Text>
+            </Anchor>
+
+            <Anchor href="tel:847-373-3778" target="_blank">
+              <Phone />
+              <Text>847-373-3778</Text>
+            </Anchor>
+
+            <Anchor href="https://www.google.com/maps?q=Chicago" target="_blank">
+              <MapPin />
+              <Text>Chicago, IL</Text>
+            </Anchor>
+          </StackContainer>
+
+          <StackContainer>
+            <CardHeader style={{ marginBottom: '0.5rem' }}>Follow Me</CardHeader>
+
             <Anchor href="https://www.linkedin.com/in/ethanblumenthal/" target="_blank">
-              <FontAwesomeIcon icon={faLinkedinIn} size="lg" />
+              <Linkedin />
+              <Text>LinkedIn</Text>
             </Anchor>
 
             <Anchor href="https://medium.com/@ethanblumenthal" target="_blank">
-              <FontAwesomeIcon icon={faMediumM} size="lg" />
+              <MessageCircle />
+              <Text>Medium</Text>
             </Anchor>
 
             <Anchor href="https://github.com/ethanblumenthal" target="_blank">
-              <FontAwesomeIcon icon={faGithub} size="lg" />
+              <GitHub />
+              <Text>GitHub</Text>
             </Anchor>
-          </FlexContainer>
-        </FlexEvenlyContainer>
+          </StackContainer>
+
+          <StackContainer>
+            <Image src={'/logo.svg'} alt={'Ethan Blumenthal'} width={50} height={50} />
+            <SubText style={{ marginTop: '1rem' }}>
+              &copy; {new Date().getFullYear()} Ethan Blumenthal
+            </SubText>
+          </StackContainer>
+        </FlexContainer>
       </ContentContainer>
     </BackgroundContainer>
   </footer>
