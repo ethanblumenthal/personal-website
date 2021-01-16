@@ -30,7 +30,7 @@ const Footer = () => (
       <ContentContainer>
         <FooterContainer>
           <StackContainer>
-            <CardHeader style={{ marginBottom: '0.5rem' }}>Contact</CardHeader>
+            <CardHeader style={{ marginBottom: '0.5rem', color: '#5993C2' }}>Contact</CardHeader>
 
             <Anchor href="mailto:ethan.blumenthal@gmail.com" target="_blank">
               <Mail />
@@ -49,7 +49,7 @@ const Footer = () => (
           </StackContainer>
 
           <StackContainer>
-            <CardHeader style={{ marginBottom: '0.5rem' }}>Follow Me</CardHeader>
+            <CardHeader style={{ marginBottom: '0.5rem', color: '#5993C2' }}>Follow Me</CardHeader>
 
             <Anchor href="https://www.linkedin.com/in/ethanblumenthal/" target="_blank">
               <Linkedin />

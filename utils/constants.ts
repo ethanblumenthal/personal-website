@@ -48,7 +48,7 @@ export const CERTIFICATIONS = [
   {
     title: 'Solutions Architect',
     description: 'Amazon Web Services',
-    link: `https://aws.amazon.com/certification/certified-solutions-architect-associate/`,
+    link: `https://www.youracclaim.com/badges/8a0ce950-5147-4836-b4ea-094199021f76`,
     icon: 'code',
   },
   {
