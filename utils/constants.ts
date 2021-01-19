@@ -6,16 +6,16 @@ export const PAGES = [
 ];
 
 export const BIO = {
-  title: "Hi, I'm Ethan",
+  title: 'About Ethan',
   description:
     'Software engineer with hands-on experience writing clean and maintainable code. Architecting highly available and performant systems at scale. Eager to learn new skills, wear many hats, and collaborate closely with a growing team of people.',
   image: '/ethanblumenthal.jpg',
 };
 
 export const LOGO = {
-  title: 'Software Engineer',
+  title: `Hi, I'm Ethan!`,
   description:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    'A problem solver, interested in building products that help others achieve their goals. I currently work as a software developer for Rightpoint, a global customer experience consultancy. Check out my blog where I discuss technology and its larger impact on society. Some fun facts about me: I collect vinyl records, I love sushi, and enjoy exploring national parks. Feel free to reach out if you want to connect!',
   image: '/logo.svg',
 };
 
