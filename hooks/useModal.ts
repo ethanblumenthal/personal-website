@@ -23,4 +23,5 @@ const useModal = (node) => {
 
   return [modal, openModal];
 };
+
 export default useModal;
