@@ -34,15 +34,15 @@ export const EXPERIENCE = [
 
 export const CERTIFICATIONS = [
   {
-    title: 'Software Engineering',
-    description: 'Fullstack Academy',
-    link: `https://ethanblumenthal.s3.us-east-2.amazonaws.com/ethan_blumenthal_fullstack.pdf`,
+    title: 'Masters, Computer Science',
+    description: 'University of Texas',
+    link: `https://www.cs.utexas.edu/`,
     icon: 'book',
   },
   {
-    title: 'Algorithms Specialization',
-    description: 'Stanford (Coursera)',
-    link: `https://www.coursera.org/specializations/algorithms/`,
+    title: 'Bachelors, Economics',
+    description: 'University of Illinois',
+    link: `https://economics.illinois.edu/`,
     icon: 'book',
   },
   {
