@@ -34,13 +34,13 @@ export const EXPERIENCE = [
 
 export const CERTIFICATIONS = [
   {
-    title: 'Masters, Computer Science',
+    title: 'MS, Computer Science',
     description: 'University of Texas',
     link: `https://www.cs.utexas.edu/`,
     icon: 'book',
   },
   {
-    title: 'Bachelors, Economics',
+    title: 'BA, Economics',
     description: 'University of Illinois',
     link: `https://economics.illinois.edu/`,
     icon: 'book',
@@ -61,19 +61,19 @@ export const CERTIFICATIONS = [
 
 export const SKILLSET = [
   {
-    title: 'Frontend',
-    skills: ['JavaScript', 'TypeScript', 'React', 'Angular', 'Vue', 'HTML', 'CSS'],
+    title: 'Languages',
+    skills: ['TypeScript', 'Python', 'Golang'],
   },
   {
-    title: 'Backend',
-    skills: ['Java', 'Python', 'Golang', 'Node', 'Express', 'GraphQL'],
+    title: 'Fullstack',
+    skills: ['Node', 'GraphQL', 'React'],
   },
   {
-    title: 'Databases',
-    skills: ['PostgreSQL', 'MongoDB', 'Redis', 'Elasticsearch'],
+    title: 'Blockchain',
+    skills: ['Ethereum', 'Solidity', 'Truffle'],
   },
   {
     title: 'DevOps',
-    skills: ['Git', 'Linux', 'Jenkins', 'Docker', 'Kubernetes', 'Terraform'],
+    skills: ['Jenkins', 'Kubernetes', 'Terraform'],
   },
 ];
