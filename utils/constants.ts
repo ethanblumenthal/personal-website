@@ -1,8 +1,10 @@
+import { IProject } from './models';
+
 export const PAGES = [
   { title: 'Home', slug: '/' },
   { title: 'Blog', slug: '/blog' },
   { title: 'About', slug: '/about' },
-  { title: 'Work', slug: '/work' },
+  { title: 'Projects', slug: '/projects' },
 ];
 
 export const BIO = {
@@ -26,9 +28,9 @@ export const EXPERIENCE = [
     link: `https://www.rightpoint.com/`,
   },
   {
-    title: `Pourcast`,
-    description: `Pourcast allows users to manage, track, and enjoy their favorite beverages on tap. The project implements the latest IoT technolgies including Raspberry Pi and Google Cloud Platform as well as slick user interfaces created using React. Additionally, Azure DevOps is used for building and deploying to staging and production environments. Pourcast can be hooked up to any kegerator to give realtime feedback about the state of your tap.`,
-    link: '/work/pourcast',
+    title: `Zeitgeist`,
+    description: `Zeitgeist Artist Management was founded in 1999. Our intention is to help artists develop long-term careers in a manner that is consistent with their creative philosophy and vision. Trusted relationships with our clients and business associates, a forward-thinking approach to opportunities presented in the digital space, and a global perspective are valued by the entire team.`,
+    link: 'http://zeitgeistmanagement.com/',
   },
 ];
 
@@ -62,18 +64,80 @@ export const CERTIFICATIONS = [
 export const SKILLSET = [
   {
     title: 'Languages',
-    skills: ['TypeScript', 'Python', 'Golang'],
+    skills: ['Go', 'TypeScript', 'Solidity', 'Rust'],
   },
   {
     title: 'Fullstack',
-    skills: ['Node', 'GraphQL', 'React'],
+    skills: ['Node', 'Express', 'GraphQL', 'React'],
   },
   {
     title: 'Blockchain',
-    skills: ['Ethereum', 'Solidity', 'Truffle'],
+    skills: ['Truffle', 'OpenZeppelin', 'Web3', 'Substrate'],
   },
   {
     title: 'DevOps',
-    skills: ['Jenkins', 'Kubernetes', 'Terraform'],
+    skills: ['Jenkins', 'Docker', 'Kubernetes', 'Terraform'],
+  },
+];
+
+export const PROJECTS: IProject[] = [
+  {
+    name: 'GoChain',
+    description:
+      'A fully decentralized peer-to-peer blockchain written in Go. Secure database using Bitcoin-like proof of work consensus. The database is fully transparent and fair using a sync algorithm. Uses Ethereum’s cryptographic library to implement user authentication and authorization without any centralized database storing all users’ confidential credentials. Ensures an uncheatable tax audit is possible using a secure hashing function to make the database immutable. Leverages a linked list to optimize database performance. Contains two interfaces to control the blockchain nodes - CLI and HTTP.',
+    image: '/projects/go.png',
+    tags: ['Go', 'Blockchain', 'Crypto'],
+    githubURL: 'https://github.com/ethanblumenthal/gochain',
+    siteURL: '',
+  },
+  {
+    name: 'Crypto Kitties',
+    description:
+      'NFT (ERC-721) marketplace based on the popular CryptoKitties app. Collect and breed digital kitties!',
+    image: '/projects/crypto-kitties.png',
+    tags: ['Solidity', 'ERC-721', 'NFTs'],
+    githubURL: 'https://github.com/ethanblumenthal/crypto-kitties',
+    siteURL: '',
+  },
+  {
+    name: 'UTXO Ledger',
+    description:
+      'UTXO ledger model (Bitcoin-like blockchain) built using Rust, WebAssembly, and Substrate.',
+    image: '/projects/utxo-ledger.png',
+    tags: ['Rust', 'WebAssembly', 'Substrate'],
+    githubURL: '',
+    siteURL: '',
+  },
+  {
+    name: 'Decentralized Exchange',
+    description: '',
+    image: '/projects/decentralized-exchange.png',
+    tags: ['Solidity', 'OpenZeppelin', 'ERC-20'],
+    githubURL: '',
+    siteURL: '',
+  },
+  {
+    name: 'Chainlink Lottery',
+    description: '',
+    image: '/projects/chainlink-lottery.jpg',
+    tags: ['Solidity', 'Truffle', 'Chainlink'],
+    githubURL: '',
+    siteURL: '',
+  },
+  {
+    name: 'Flash Loans',
+    description: '',
+    image: '/projects/flash-loans.png',
+    tags: ['Solidity', 'Aave', 'DeFi'],
+    githubURL: '',
+    siteURL: '',
+  },
+  {
+    name: 'Trading Bot',
+    description: '',
+    image: '/projects/go.png',
+    tags: ['NodeJS', 'Algorithmic Trading'],
+    githubURL: '',
+    siteURL: '',
   },
 ];

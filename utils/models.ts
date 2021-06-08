@@ -2,33 +2,15 @@ export interface IPost {
   date: string;
   title: string;
   excerpt: string;
-  author: IAuthor;
-  coverImage: {
-    url: string;
-  };
-  content: {
-    json: {};
-  };
   slug: string;
+  tags: string[];
+  isPublished: boolean;
 }
-
-export interface IAuthor {
-  name: string;
-  picture: {
-    url: string;
-  };
-}
-
 export interface IProject {
-  date: string;
-  title: string;
-  subtitle: string;
+  name: string;
   description: string;
-  coverImage: {
-    url: string;
-  };
-  content: {
-    json: {};
-  };
-  slug: string;
+  tags: string[];
+  image: string;
+  githubURL: string;
+  siteURL: string;
 }

@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ArrowLeft, ArrowRight } from 'react-feather';
@@ -6,31 +5,18 @@ import { ArrowLeft, ArrowRight } from 'react-feather';
 import Layout from '../../components/layout';
 import Posts from '../../components/posts';
 import { PageHeader } from '../../elements/text';
-import { getAllPosts, getAllTagsBySlug } from '../../api/contentful';
+import { getPostsByTag, getAllTags } from '../../utils/api';
 import { ArrowButtonLeft, ArrowButtonRight } from '../../elements/buttons';
 import { CenterContainer, FlexCenterContainer } from '../../elements/containers';
 
-export default function Tags({ allPosts }) {
+export default function Tags({ taggedPosts }) {
   const router = useRouter();
-  const taggedPosts = [];
-
-  allPosts?.forEach((post) => {
-    post.tagsCollection.items.forEach(({ slug }) => {
-      if (slug === router.query.slug) {
-        taggedPosts.push(post);
-      }
-    });
-  });
 
   return (
-    <Layout>
-      <Head>
-        <title>Tags</title>
-      </Head>
-
+    <Layout pageTitle={'Tags'} description={'Tags'}>
       <CenterContainer>
         <PageHeader style={{ margin: '2rem' }}>
-          {taggedPosts.length} Posts tagged with "{router.query.slug}"
+          {taggedPosts?.length} Posts tagged with "{router.query.slug}"
         </PageHeader>
 
         <FlexCenterContainer>
@@ -54,18 +40,17 @@ export default function Tags({ allPosts }) {
   );
 }
 
-export async function getStaticProps({ preview = false }) {
-  const allPosts = (await getAllPosts(preview)) ?? [];
-
+export async function getStaticProps({ params }) {
+  const taggedPosts = await getPostsByTag(params.slug);
   return {
-    props: { allPosts },
+    props: { taggedPosts },
   };
 }
 
 export async function getStaticPaths() {
-  const allTags = await getAllTagsBySlug();
+  const allTags = await getAllTags();
   return {
-    paths: allTags?.map(({ slug }) => `/tags/${slug}`) ?? [],
+    paths: allTags?.map((tag) => `/tags/${tag}`) ?? [],
     fallback: true,
   };
 }

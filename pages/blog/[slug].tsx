@@ -1,11 +1,10 @@
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { ArrowUp } from 'react-feather';
 import moment from 'moment';
 
 import Layout from '../../components/layout';
-import { getAllPostsBySlug, getPostBySlug, getAllPosts } from '../../api/contentful';
+import { getPostBySlug, getPostSlugs, getAllPosts } from '../../utils/api';
 import { ScrollButton } from '../../elements/buttons';
 import { PageHeader, Text, SubText } from '../../elements/text';
 import {
@@ -17,63 +16,52 @@ import {
 import RecentPosts from '../../components/recent-posts';
 import { RoundImage } from '../../elements/images';
 
-export default function Post({ post, allPosts }) {
+export default ({ post, allPosts }) => {
   const router = useRouter();
 
   if (!router.isFallback && !post) {
     return <ErrorPage statusCode={404} />;
   }
 
-  const fetchTags = () => {
-    let tags = [];
-    post?.tagsCollection.items.forEach(({ name }) => {
-      tags.push(name);
-    });
-    return tags.join(' • ');
-  };
-
   return (
-    <Layout>
+    <Layout pageTitle={post?.title} description={post?.excerpt}>
       <BackgroundContainer color="card">
         <FlexEvenlyContainer>
           <MainContent>
             <SubText>{moment(post?.date).format('MMMM D, YYYY')}</SubText>
             <PageHeader style={{ marginBottom: '0.5rem' }}>{post?.title}</PageHeader>
             <Text style={{ marginBottom: '0.5rem' }}>{post?.excerpt}</Text>
-            <SubText>{fetchTags()}</SubText>
+            <SubText>{post?.tags.join(' • ')}</SubText>
           </MainContent>
 
-          {post ? (
-            <RoundImage src={post?.coverImage.url} alt={post?.title} height={300} width={400} />
-          ) : null}
+          {/* {post ? (
+            <RoundImage src={post?.coverImage.url} alt={title} height={300} width={400} />
+          ) : null} */}
         </FlexEvenlyContainer>
       </BackgroundContainer>
 
-      <BlogContainer>{documentToReactComponents(post?.content?.json)}</BlogContainer>
+      <BlogContainer>{post?.content}</BlogContainer>
       <RecentPosts allPosts={allPosts} />
       <ScrollButton onClick={() => window.scrollTo(0, 0)}>
         <ArrowUp />
       </ScrollButton>
     </Layout>
   );
-}
+};
 
-export async function getStaticProps({ params, preview = false }) {
-  const data = await getPostBySlug(params.slug, preview);
-  const allPosts = (await getAllPosts(preview)) ?? [];
+export async function getStaticProps({ params, onlyMetadata = false }) {
+  const post = (await getPostBySlug(params.slug, onlyMetadata)) ?? [];
+  const allPosts = (await getAllPosts(onlyMetadata)) ?? [];
 
   return {
-    props: {
-      post: data?.post ?? null,
-      allPosts,
-    },
+    props: { post, allPosts },
   };
 }
 
 export async function getStaticPaths() {
-  const allPosts = await getAllPostsBySlug();
+  const allSlugs = await getPostSlugs();
   return {
-    paths: allPosts?.map(({ slug }) => `/blog/${slug}`) ?? [],
+    paths: allSlugs?.map((slug) => `/blog/${slug}`) ?? [],
     fallback: true,
   };
 }

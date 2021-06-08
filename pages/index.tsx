@@ -1,15 +1,10 @@
-import Head from 'next/head';
-
 import Layout from '../components/layout';
 import Header from '../components/logo';
 import RecentPosts from '../components/recent-posts';
-import { getAllPosts } from '../api/contentful';
+import { getAllPosts } from '../utils/api';
 
 const Home = ({ allPosts }) => (
-  <Layout>
-    <Head>
-      <title>Home</title>
-    </Head>
+  <Layout pageTitle="Home" description="Home">
     <Header />
     <RecentPosts allPosts={allPosts} />
   </Layout>
