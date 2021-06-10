@@ -77,6 +77,14 @@ export const FlexEvenlyContainer = styled(FlexContainer)`
   }
 `;
 
+export const FlexStartContainer = styled(FlexContainer)`
+  justify-content: flex-start;
+
+  @media ${devices.tablet} {
+    flex-wrap: nowrap;
+  }
+`;
+
 export const SkillContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.tertiery};
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);

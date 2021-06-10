@@ -6,7 +6,7 @@ import moment from 'moment';
 import Layout from '../../components/layout';
 import { getPostBySlug, getPostSlugs, getAllPosts } from '../../utils/api';
 import { ScrollButton } from '../../elements/buttons';
-import { PageHeader, Text, SubText } from '../../elements/text';
+import { PageHeader, Text, SubText, CardHeader } from '../../elements/text';
 import {
   BlogContainer,
   FlexEvenlyContainer,
@@ -15,6 +15,7 @@ import {
 } from '../../elements/containers';
 import RecentPosts from '../../components/recent-posts';
 import { RoundImage } from '../../elements/images';
+import markdownToHtml from '../../utils/helpers';
 
 export default ({ post, allPosts }) => {
   const router = useRouter();
@@ -40,7 +41,7 @@ export default ({ post, allPosts }) => {
         </FlexEvenlyContainer>
       </BackgroundContainer>
 
-      <BlogContainer>{post?.content}</BlogContainer>
+      <BlogContainer dangerouslySetInnerHTML={{ __html: post?.content }} />
       <RecentPosts allPosts={allPosts} />
       <ScrollButton onClick={() => window.scrollTo(0, 0)}>
         <ArrowUp />
@@ -52,9 +53,16 @@ export default ({ post, allPosts }) => {
 export async function getStaticProps({ params, onlyMetadata = false }) {
   const post = (await getPostBySlug(params.slug, onlyMetadata)) ?? [];
   const allPosts = (await getAllPosts(onlyMetadata)) ?? [];
+  const content = await markdownToHtml(post.content || '');
 
   return {
-    props: { post, allPosts },
+    props: {
+      post: {
+        ...post,
+        content,
+      },
+      allPosts,
+    },
   };
 }
 

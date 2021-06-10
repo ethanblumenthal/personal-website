@@ -18,6 +18,15 @@ export const Button = styled.button`
   }
 `;
 
+export const IconButton = styled(Button)`
+  display: flex;
+  align-items: center;
+
+  & > svg {
+    margin-right: 0.5rem;
+  }
+`;
+
 export const BlackButton = styled(Button)`
   color: ${({ theme }) => theme.colors.white};
   background-color: ${({ theme }) => theme.colors.black};

@@ -14,3 +14,10 @@ export interface IProject {
   githubURL: string;
   siteURL: string;
 }
+
+export interface IService {
+  cta: string;
+  subtext: string;
+  summary: string;
+  link: string;
+}

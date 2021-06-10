@@ -1,4 +1,4 @@
-import { IProject } from './models';
+import { IProject, IService } from './models';
 
 export const PAGES = [
   { title: 'Home', slug: '/' },
@@ -10,14 +10,14 @@ export const PAGES = [
 export const BIO = {
   title: 'About Ethan',
   description:
-    'Software engineer with hands-on experience writing clean and maintainable code. Architecting highly available and performant systems at scale. Eager to learn new skills, wear many hats, and collaborate closely with a growing team of people.',
+    'I am a software engineer specializing in smart contract development and blockchain architecture. I have extensive experience working with peer-to-peer networking, cryptography, and game theory. My mission is to contribute to the development of a more decentralized, transparent, and secure Internet. Together, we can create a more equitable future where everyone can participate in the new global token economy enabled by Web3.',
   image: '/ethanblumenthal.jpg',
 };
 
 export const LOGO = {
   title: `Hi, I'm Ethan!`,
   description:
-    'A problem solver, interested in building products that help others achieve their goals. I currently work as a software developer for Rightpoint, a global customer experience consultancy. Check out my blog where I discuss technology and its larger impact on society. Some fun facts about me: I collect vinyl records, I love sushi, and enjoy exploring national parks. Feel free to reach out if you want to connect!',
+    'The Internet was originally designed to be the ultimate economic leveler as everyone had an equal opportunity to access the world of digital information and commerce with a computer or phone. However, this utopian vision was quickly corrupted when big technology companies realized that they could monopolize the most important resource of the internet age (data) and sell it to the highest bidder. The crypto revolution promises to return the Internet to its original roots by reimagining how humans interact with each other in a trustless environment enabled by blockchain technology. Crypto will be the biggest disrupter of this decade, redistributing the concentration of wealth and power to the masses. Come join me in exploring and building the infinite frontier!',
   image: '/logo.svg',
 };
 
@@ -64,7 +64,7 @@ export const CERTIFICATIONS = [
 export const SKILLSET = [
   {
     title: 'Languages',
-    skills: ['Go', 'TypeScript', 'Solidity', 'Rust'],
+    skills: ['TypeScript', 'Go', 'Rust', 'Solidity'],
   },
   {
     title: 'Fullstack',
@@ -72,7 +72,7 @@ export const SKILLSET = [
   },
   {
     title: 'Blockchain',
-    skills: ['Truffle', 'OpenZeppelin', 'Web3', 'Substrate'],
+    skills: ['Truffle', 'OpenZeppelin', 'web3.js', 'Substrate'],
   },
   {
     title: 'DevOps',
@@ -82,7 +82,16 @@ export const SKILLSET = [
 
 export const PROJECTS: IProject[] = [
   {
-    name: 'GoChain',
+    name: 'NFT Marketplace',
+    description:
+      'A decentralized application (dApp) based on the popular CryptoKitties application. Users can breed kittens as well as sell them to others on the open market. Each kitten is designed according to its verifiably unique encoded DNA string with earlier generation kittens being more valuable. The smart contract implements the ERC-721 token standard for NFTs as well as ERC-165 for interfacing with other contracts. Web3.js is used to communicate between the client and the blockchain. The project was developed locally using Ganache and tested on the Kovan test network.',
+    image: '/projects/crypto-kitties.png',
+    tags: ['Solidity', 'ERC-721', 'NFTs'],
+    githubURL: 'https://github.com/ethanblumenthal/crypto-kitties',
+    siteURL: '',
+  },
+  {
+    name: 'Go Blockchain',
     description:
       'A fully decentralized peer-to-peer blockchain written in Go. Secure database using Bitcoin-like proof of work consensus. The database is fully transparent and fair using a sync algorithm. Uses Ethereum’s cryptographic library to implement user authentication and authorization without any centralized database storing all users’ confidential credentials. Ensures an uncheatable tax audit is possible using a secure hashing function to make the database immutable. Leverages a linked list to optimize database performance. Contains two interfaces to control the blockchain nodes - CLI and HTTP.',
     image: '/projects/go.png',
@@ -91,18 +100,9 @@ export const PROJECTS: IProject[] = [
     siteURL: '',
   },
   {
-    name: 'Crypto Kitties',
+    name: 'Rust Blockchain',
     description:
-      'NFT (ERC-721) marketplace based on the popular CryptoKitties app. Collect and breed digital kitties!',
-    image: '/projects/crypto-kitties.png',
-    tags: ['Solidity', 'ERC-721', 'NFTs'],
-    githubURL: 'https://github.com/ethanblumenthal/crypto-kitties',
-    siteURL: '',
-  },
-  {
-    name: 'UTXO Ledger',
-    description:
-      'UTXO ledger model (Bitcoin-like blockchain) built using Rust, WebAssembly, and Substrate.',
+      'An unspent transaction output (UTXO) ledger model that enables a Bitcoin-like blockchain. The project uses the Substrate framework which is written in Rust and compiled to WebAssembly. Substrate was created by Parity Technologies, the creators of Polkadot. The chain is cryptographically secured against replay attacks using the FRAME pallet composed of blockchain primitives. I also updated the network transaction pool logic to avoid race conditions and configured the genesis block.',
     image: '/projects/utxo-ledger.png',
     tags: ['Rust', 'WebAssembly', 'Substrate'],
     githubURL: '',
@@ -110,34 +110,44 @@ export const PROJECTS: IProject[] = [
   },
   {
     name: 'Decentralized Exchange',
-    description: '',
+    description:
+      'A simple decentralized exchange (DEX) implementation that enables trading of Ether (ETH) for ERC-20 tokens and vis-a-versa. The DEX is based on the order book model and supports both market and limit orders. Bubble sort is used when creating a limit order to ensure proper matching based on price between buyers and sellers. The project uses the Truffle framework and OpenZeppelin library for building smart contracts.',
     image: '/projects/decentralized-exchange.png',
     tags: ['Solidity', 'OpenZeppelin', 'ERC-20'],
     githubURL: '',
     siteURL: '',
   },
   {
-    name: 'Chainlink Lottery',
-    description: '',
+    name: 'Decentralized Lottery',
+    description:
+      'A decentralized lottery that allows users to pool together ETH and randomly select a winner. Chainlink is an oracle service that brings information from the real world on-chain. The lottery consumes a Chainlink price feed to determine the price of ETH when entering the contest as the entry fee is fixed in USD. It also uses Chainlink’s verifiable random function (VRF) to ensure randomness on-chain in a deterministic setting.',
     image: '/projects/chainlink-lottery.jpg',
     tags: ['Solidity', 'Truffle', 'Chainlink'],
     githubURL: '',
     siteURL: '',
   },
+];
+
+export const SERVICES: IService[] = [
+  // {
+  //   cta: 'Subscribe to Tokenomics',
+  //   subtext: 'Substack and Discord Community',
+  //   summary:
+  //     "There are already over 5000 tokens listed on CoinMarketCap. With more being created everyday, finding the right long-term investments in this new economy can be overwhelming. Every week I send out an email newsletter called Tokenomics via Substack where I dive deep into a token that I believe has tremendous potential. I provide you with in-depth research and analysis about the project's mission, team, technology, and outlook so that you fully understand the opportunity. The subscription also includes access to all previous reports as well as my Discord community where we share ideas and discuss potential trade setups.",
+  //   link: 'https://substack.com/',
+  // },
   {
-    name: 'Flash Loans',
-    description: '',
-    image: '/projects/flash-loans.png',
-    tags: ['Solidity', 'Aave', 'DeFi'],
-    githubURL: '',
-    siteURL: '',
+    cta: 'Invest in Small Cap Gems',
+    subtext: 'TokenSet Investment Fund',
+    summary:
+      'Small cap gems are newer projects with a relatively small market cap. These tokens can have massive financial upside if you catch them before they take off. A TokenSet is a portfolio of cryptocurrencies that is represented by a single token which is tradeable on exchanges. It is similar to an index fund in traditional finance as you can invest in multiple stocks within a single asset. I actively manage the TokenSet and reinvest profits into other opportunities. By purchasing my TokenSet, you will gain exposure to the best up and coming projects in the industry while maintaining full transparency over your investment.',
+    link: 'https://www.tokensets.com/',
   },
   {
-    name: 'Trading Bot',
-    description: '',
-    image: '/projects/go.png',
-    tags: ['NodeJS', 'Algorithmic Trading'],
-    githubURL: '',
-    siteURL: '',
+    cta: 'Book a Crypto Consultation',
+    subtext: 'OpenLaw Personal Token',
+    summary:
+      'I offer consulting services focused on blockchain technology, decentralized finance, and derivative trading strategies. I can walk you through core concepts and protocols and how crypto will affect you personally as well as your business. I created a personal token via OpenLaw which you can purchase on exchanges and redeem for my time. This allows for my consultations to be priced according to the market demand for my services. OpenLaw allows you to create real world legal agreements on Ethereum. Please reach out if you would like to discuss how I can be of help but note that I cannot offer any financial advice.',
+    link: 'https://www.openlaw.io/',
   },
 ];
