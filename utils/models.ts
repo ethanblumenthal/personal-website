@@ -7,6 +7,18 @@ export interface IPost {
   tags: string[];
   isPublished: boolean;
 }
+
+export interface ICertification {
+  title: string;
+  description: string;
+  link: string;
+  icon: string;
+}
+
+export interface ISkill {
+  title: string;
+  skills: string[];
+}
 export interface IProject {
   name: string;
   description: string;
@@ -21,4 +33,12 @@ export interface IService {
   subtext: string;
   summary: string;
   link: string;
+}
+
+export interface IHeader {
+  title: string;
+  subtitle: string;
+  summary: string;
+  image: string;
+  substack: string;
 }

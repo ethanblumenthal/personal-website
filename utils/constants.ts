@@ -1,4 +1,4 @@
-import { IProject, IService } from './models';
+import { IProject, IService, IHeader, ISkill, ICertification } from './models';
 
 export const PAGES = [
   { title: 'Home', slug: '/' },
@@ -14,11 +14,14 @@ export const BIO = {
   image: '/ethanblumenthal.jpg',
 };
 
-export const LOGO = {
-  title: `Welcome crypto explorer!`,
-  description:
-    'The Internet was originally designed to be the ultimate economic leveler as everyone had an equal opportunity to access the world of digital information and commerce through their devices. However, this utopian vision was quickly corrupted when big technology companies realized that they could monopolize the most important resource of the internet age, data, and sell it to the highest bidder. The crypto revolution promises to return the Internet to its original roots by reimagining how humans interact with each other in a trustless environment enabled by blockchain technology. Crypto will be the largest disrupter of this decade, redistributing the concentration of wealth and power to the masses. Come join me in exploring and building the infinite frontier!',
+export const HEADER: IHeader = {
+  title: 'Welcome to Cryptonomics!',
+  subtitle: 'Why should you subscribe?',
   image: '/logo.svg',
+  summary:
+    'The Internet was originally designed to be the ultimate economic leveler as everyone had an equal opportunity to access the world of digital information and commerce through their devices. However, this utopian vision was quickly corrupted when big technology companies realized that they could monopolize the most important resource of the internet age, data, and sell it to the highest bidder. The crypto revolution promises to return the Internet to its original roots by reimagining how humans interact with each other in a trustless environment enabled by blockchain technology. Crypto will be the largest disrupter of this decade, redistributing the concentration of wealth and power to the masses. Come join me in exploring and building the infinite frontier!',
+  substack:
+    "There are over 5000 tokens listed on CoinMarketCap already. With more being created everyday, finding the right long-term investments in this new economy can be overwhelming. Every week I send out an email newsletter called Cryptonomics via Substack where I dive deep into a token that I believe has tremendous potential. I provide you with in-depth research and analysis about the project's mission, team, technology, and outlook so that you fully understand the opportunity. The subscription also includes access to all previous reports as well as my Discord community where we share ideas and discuss interesting projects.",
 };
 
 export const EXPERIENCE = [
@@ -34,7 +37,7 @@ export const EXPERIENCE = [
   },
 ];
 
-export const CERTIFICATIONS = [
+export const CERTIFICATIONS: ICertification[] = [
   {
     title: 'MS, Computer Science',
     description: 'University of Texas',
@@ -61,7 +64,7 @@ export const CERTIFICATIONS = [
   },
 ];
 
-export const SKILLSET = [
+export const SKILLSET: ISkill[] = [
   {
     title: 'Languages',
     skills: ['TypeScript', 'Go', 'Rust', 'Solidity'],
@@ -126,13 +129,6 @@ export const PROJECTS: IProject[] = [
 ];
 
 export const SERVICES: IService[] = [
-  // {
-  //   cta: 'Subscribe to Tokenomics',
-  //   subtext: 'Substack Newsletter and Discord Community',
-  //   summary:
-  //     "There are over 5000 tokens listed on CoinMarketCap already. With more being created everyday, finding the right long-term investments in this new economy can be overwhelming. Every week I send out an email newsletter called Tokenomics via Substack where I dive deep into a token that I believe has tremendous potential. I provide you with in-depth research and analysis about the project's mission, team, technology, and outlook so that you fully understand the opportunity. The subscription also includes access to all previous reports as well as my Discord community where we share ideas and discuss interesting projects.",
-  //   link: 'https://substack.com/',
-  // },
   {
     cta: 'Invest in Small Cap Gems',
     subtext: 'TokenSet Investment Fund',

@@ -55,7 +55,7 @@ const NavBar = ({ theme, setTheme }) => {
           <IconContainer onClick={() => setTheme(!theme)}>
             {theme === 'dark' ? <Moon /> : <Sun />}
           </IconContainer>
-          <Subscribe />
+          <Subscribe isOutline />
         </FlexContainer>
       </FlexContainer>
     </BackgroundContainer>

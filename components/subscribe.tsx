@@ -1,11 +1,11 @@
 import { useRef, RefObject } from 'react';
 import { X } from 'react-feather';
 
-import { ExitButton, OutlineButton } from '../elements/buttons';
+import { Button, ExitButton, OutlineButton } from '../elements/buttons';
 import { ModalContainer, BackdropContainer } from '../elements/containers';
 import useModal from '../hooks/useModal';
 
-const Subscribe = () => {
+const Subscribe = ({ isOutline }) => {
   const node: RefObject<any> = useRef();
   const [modal, openModal] = useModal(node);
 
@@ -18,7 +18,7 @@ const Subscribe = () => {
 
         <div style={{ paddingTop: '2rem' }}>
           <iframe
-            src="https://ethanblumenthal.substack.com/embed"
+            src="https://cryptonomics.substack.com/embed"
             width="350"
             height="250"
             frameBorder="0"
@@ -32,7 +32,12 @@ const Subscribe = () => {
 
   return (
     <>
-      <OutlineButton onClick={() => openModal(true)}>Subscribe</OutlineButton>
+      {isOutline ? (
+        <OutlineButton onClick={() => openModal(true)}>Subscribe</OutlineButton>
+      ) : (
+        <Button onClick={() => openModal(true)}>Subscribe</Button>
+      )}
+
       {modal ? renderModal() : null}
     </>
   );
