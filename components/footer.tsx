@@ -42,9 +42,9 @@ const Footer = () => (
               <Text>847-373-3778</Text>
             </Anchor>
 
-            <Anchor href="https://www.google.com/maps?q=Austin" target="_blank">
+            <Anchor href="https://www.google.com/maps?q=Chicago" target="_blank">
               <MapPin />
-              <Text>Austin, TX</Text>
+              <Text>Chicago, IL</Text>
             </Anchor>
           </StackContainer>
 

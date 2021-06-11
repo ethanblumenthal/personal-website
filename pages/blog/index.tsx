@@ -11,7 +11,7 @@ export default ({ allPosts, allTags }) => (
   <Layout pageTitle={'Blog'} description={'Blog'}>
     <CenterContainer>
       <PageHeader style={{ margin: '2rem' }}>Blog</PageHeader>
-      <FlexCenterContainer>
+      <FlexCenterContainer style={{ width: '10rem' }}>
         {allTags.map((tag) => (
           <Link href={`/tags/${tag}`} key={tag}>
             <ThinButton>{tag}</ThinButton>

@@ -33,6 +33,7 @@ export const SkillCard = styled(Card)`
 
 export const ImageCard = styled(Card)`
   padding: 0;
+  max-width: 400px;
 
   @media ${devices.tablet} {
     min-height: 35rem;

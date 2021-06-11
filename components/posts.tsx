@@ -11,10 +11,10 @@ const Posts = ({ allPosts }) => (
   <BackgroundContainer>
     <ContentContainer>
       <GridContainer>
-        {allPosts?.map(({ date, title, excerpt, slug }: IPost) => (
+        {allPosts?.map(({ date, title, excerpt, slug, image }: IPost) => (
           <Link href={`/blog/${slug}`} key={slug}>
             <ImageCard key={title}>
-              {/* <Image src={''} alt={title} width={300} height={200} layout="responsive" /> */}
+              <Image src={image} alt={title} width={300} height={200} layout="responsive" />
               <CardContent>
                 <SubText>{moment(date).format('MMMM D, YYYY')}</SubText>
                 <CardHeader style={{ margin: '1rem 0' }}>{title}</CardHeader>

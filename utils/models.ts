@@ -3,6 +3,7 @@ export interface IPost {
   title: string;
   excerpt: string;
   slug: string;
+  image: string;
   tags: string[];
   isPublished: boolean;
 }
@@ -12,7 +13,7 @@ export interface IProject {
   tags: string[];
   image: string;
   githubURL: string;
-  siteURL: string;
+  appURL?: string;
 }
 
 export interface IService {

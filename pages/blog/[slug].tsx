@@ -35,9 +35,9 @@ export default ({ post, allPosts }) => {
             <SubText>{post?.tags.join(' • ')}</SubText>
           </MainContent>
 
-          {/* {post ? (
-            <RoundImage src={post?.coverImage.url} alt={title} height={300} width={400} />
-          ) : null} */}
+          {post ? (
+            <RoundImage src={post?.image} alt={post?.title} height={300} width={400} />
+          ) : null}
         </FlexEvenlyContainer>
       </BackgroundContainer>
 

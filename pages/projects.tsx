@@ -22,7 +22,7 @@ export default () => (
       <PageHeader style={{ margin: '2rem' }}>Projects</PageHeader>
     </CenterContainer>
 
-    {PROJECTS.map(({ name, description, image, tags, githubURL, siteURL }: IProject, idx) => (
+    {PROJECTS.map(({ name, description, image, tags, githubURL, appURL }: IProject, idx) => (
       <BackgroundContainer key={name} color={idx % 2 === 0 ? 'offset' : null}>
         <ContentContainer>
           <FlexEvenlyContainer style={{ flexDirection: idx % 2 === 0 ? 'row-reverse' : null }}>
@@ -40,12 +40,14 @@ export default () => (
                     Code
                   </IconButton>
                 </a>
-                <a href={siteURL} target="_blank">
-                  <IconButton>
-                    <ExternalLink />
-                    App
-                  </IconButton>
-                </a>
+                {appURL ? (
+                  <a href={appURL} target="_blank">
+                    <IconButton>
+                      <ExternalLink />
+                      App
+                    </IconButton>
+                  </a>
+                ) : null}
               </FlexStartContainer>
             </MainContent>
           </FlexEvenlyContainer>

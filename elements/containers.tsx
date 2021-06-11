@@ -110,6 +110,7 @@ export const GridContainer = styled.div`
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
 `;
 
 export const LgGridContainer = styled.div`
