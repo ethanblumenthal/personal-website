@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowRight } from 'react-feather';
 import Layout from '../../components/layout';
 import Posts from '../../components/posts';
 import { PageHeader } from '../../elements/text';
-import { getPostsByTag, getAllTags } from '../../utils/api';
+import { getPostsByTag, getAllTagsWithCount } from '../../utils/api';
 import { ArrowButtonLeft, ArrowButtonRight } from '../../elements/buttons';
 import { CenterContainer, FlexCenterContainer } from '../../elements/containers';
 
@@ -48,7 +48,8 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const allTags = await getAllTags();
+  const allTagsWithCount = await getAllTagsWithCount();
+  const allTags = Object.keys(allTagsWithCount) || [];
   return {
     paths: allTags?.map((tag) => `/tags/${tag}`) ?? [],
     fallback: true,

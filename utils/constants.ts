@@ -67,15 +67,15 @@ export const CERTIFICATIONS: ICertification[] = [
 export const SKILLSET: ISkill[] = [
   {
     title: 'Languages',
-    skills: ['TypeScript', 'Go', 'Rust', 'Solidity'],
+    skills: [, 'Go', 'Rust', 'TypeScript', 'Solidity'],
   },
   {
-    title: 'Fullstack',
+    title: 'Web',
     skills: ['Node', 'Express', 'GraphQL', 'React'],
   },
   {
     title: 'Blockchain',
-    skills: ['Truffle', 'OpenZeppelin', 'web3.js', 'Substrate'],
+    skills: ['Truffle', 'OpenZeppelin', 'Substrate', 'Cosmos'],
   },
   {
     title: 'DevOps',

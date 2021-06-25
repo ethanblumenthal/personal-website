@@ -5,7 +5,7 @@ import Posts from '../../components/posts';
 import { ThinButton } from '../../elements/buttons';
 import { PageHeader } from '../../elements/text';
 import { CenterContainer, FlexCenterContainer } from '../../elements/containers';
-import { getAllPosts, getAllTags } from '../../utils/api';
+import { getAllPosts, getAllTagsWithCount } from '../../utils/api';
 
 export default ({ allPosts, allTags }) => (
   <Layout pageTitle={'Blog'} description={'Blog'}>
@@ -26,7 +26,8 @@ export default ({ allPosts, allTags }) => (
 
 export async function getStaticProps({ onlyMetadata = true }) {
   const allPosts = (await getAllPosts(onlyMetadata)) ?? [];
-  const allTags = (await getAllTags()) ?? [];
+  const allTagsWithCount = await getAllTagsWithCount();
+  const allTags = Object.keys(allTagsWithCount) || [];
 
   return {
     props: { allPosts, allTags },

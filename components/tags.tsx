@@ -4,23 +4,21 @@ import { TagCard } from '../elements/cards';
 import { CardHeader, Text } from '../elements/text';
 import { BackgroundContainer, ContentContainer, LgGridContainer } from '../elements/containers';
 
-const Tags = ({ allTags }) => {
-  return (
-    <BackgroundContainer>
-      <ContentContainer>
-        <LgGridContainer>
-          {allTags.map((tag) => (
-            <Link href={`/tags/${tag}`} key={tag}>
-              <TagCard>
-                <CardHeader>{tag}</CardHeader>
-                <Text>{3} articles</Text>
-              </TagCard>
-            </Link>
-          ))}
-        </LgGridContainer>
-      </ContentContainer>
-    </BackgroundContainer>
-  );
-};
+const Tags = ({ allTagsWithCount }) => (
+  <BackgroundContainer>
+    <ContentContainer>
+      <LgGridContainer>
+        {Object.keys(allTagsWithCount).map((tag) => (
+          <Link href={`/tags/${tag}`} key={tag}>
+            <TagCard>
+              <CardHeader>{tag}</CardHeader>
+              <Text>{allTagsWithCount[tag]} articles</Text>
+            </TagCard>
+          </Link>
+        ))}
+      </LgGridContainer>
+    </ContentContainer>
+  </BackgroundContainer>
+);
 
 export default Tags;

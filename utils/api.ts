@@ -23,23 +23,22 @@ export function getAllPosts(onlyMetadata) {
   const slugs = getPostSlugs();
   const posts = slugs
     .map((slug) => getPostBySlug(slug, onlyMetadata))
+    .filter((post: IPost) => post.isPublished)
     .sort((post1: IPost, post2: IPost) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }
 
-export async function getAllTags() {
-  const allTags = [];
+export async function getAllTagsWithCount() {
   const allPosts = await getAllPosts(true);
+  const allTagsWithCount = {};
 
   allPosts.forEach((post: IPost) => {
     post.tags.forEach((tag) => {
-      if (!allTags.includes(tag)) {
-        allTags.push(tag);
-      }
+      allTagsWithCount[tag] ? allTagsWithCount[tag]++ : (allTagsWithCount[tag] = 1);
     });
   });
 
-  return allTags;
+  return allTagsWithCount;
 }
 
 export async function getPostsByTag(tag) {
