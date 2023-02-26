@@ -6,7 +6,6 @@ import clsx from 'clsx'
 import { Container } from '@/components/Container'
 import {
   GitHubIcon,
-  InstagramIcon,
   LinkedInIcon,
   TwitterIcon,
 } from '@/components/SocialIcons'
@@ -82,9 +81,6 @@ export default function About() {
               </SocialLink>
               <SocialLink href="https://github.com/ethanblumenthal" icon={GitHubIcon} className="mt-4">
                 Follow on GitHub
-              </SocialLink>
-              <SocialLink href="#" icon={InstagramIcon} className="mt-4">
-                Follow on Medium
               </SocialLink>
               <SocialLink
                 href="mailto:ethan.blumenthal@gmail.com"

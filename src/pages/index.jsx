@@ -8,7 +8,6 @@ import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
   GitHubIcon,
-  InstagramIcon,
   LinkedInIcon,
   TwitterIcon,
 } from '@/components/SocialIcons'
@@ -235,6 +234,8 @@ function Photos() {
               alt=""
               sizes="(min-width: 640px) 18rem, 11rem"
               className="absolute inset-0 h-full w-full object-cover"
+              href="https://www.etsy.com/shop/CarleyBluPhotography"
+              target="_blank"
             />
           </div>
         ))}
@@ -280,11 +281,6 @@ export default function Home({ articles }) {
               href="https://github.com/ethanblumenthal"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
-            />
-            <SocialLink
-              href="#"
-              aria-label="Follow on Medium"
-              icon={InstagramIcon}
             />
           </div>
         </div>
