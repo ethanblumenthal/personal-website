@@ -4,38 +4,51 @@ import Image from 'next/image'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import logoRex from '@/images/logos/rex.jpg'
-import logoZeitgeist from '@/images/logos/zeitgeist.jpg'
+import logoTexas from '@/images/logos/texas.jpg'
+import logoIllinois from '@/images/logos/illinois.jpg'
 import logoRightpoint from '@/images/logos/rightpoint.jpg'
 import logoOwnProp from '@/images/logos/ownprop.jpg'
+import logoFullstack from '@/images/logos/fullstack.jpg'
 
 const projects = [
   {
     name: 'OwnProp',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
+      'OwnProp is democratizing access to commercial real estate investing, enabling new economic opportunities for all to a once inaccessible market.',
+    link: { href: 'http://planetaria.tech', label: 'ownprop.com' },
     logo: logoOwnProp,
   },
   {
     name: 'Rex',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
+      'Rex is a technology, investment and real estate company whose mission is to empower the billions of people who use real estate to work, play, and call home.',
+    link: { href: '#', label: 'rex.com' },
     logo: logoRex,
   },
   {
     name: 'Rightpoint',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
+      'Rightpoint is a global experience leader. Over 700 employees across 12 offices work with clients end-to-end, from defining and enabling vision, to ensuring ongoing market relevance.',
+    link: { href: '#', label: 'rightpoint.com' },
     logo: logoRightpoint,
   },
   {
-    name: 'Zeitgeist Artist Management',
-    description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoZeitgeist,
+    name: 'University of Texas',
+    description: 'MS, Computer Science',
+    link: { href: 'https://www.cs.utexas.edu/', label: 'texas.edu' },
+    logo: logoTexas,
+  },
+  {
+    name: 'University of Illinois',
+    description: 'BA, Economics',
+    link: { href: 'https://economics.illinois.edu/', label: 'illinois.edu' },
+    logo: logoIllinois,
+  },
+  {
+    name: 'Fullstack Academy',
+    description: 'Cert, Software Engineering',
+    link: { href: 'https://www.fullstackacademy.com/', label: 'fullstackacademy.com' },
+    logo: logoFullstack,
   },
 ]
 
