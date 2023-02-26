@@ -249,7 +249,7 @@ export default function Home({ articles }) {
     <>
       <Head>
         <title>
-          Ethan Blumenthal - Blockchain engineer and Web3 entrepreneur
+          Ethan Blumenthal - Blockchain engineer and Web 3.0 entrepreneur
         </title>
         <meta
           name="description"
@@ -259,12 +259,13 @@ export default function Home({ articles }) {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Blockchain engineer and Web3 entrepreneur
+            Blockchain engineer and
+          </h1>
+          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+            Web3 entrepreneur
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Ethan, a software designer and entrepreneur based in Austin, Texas. I’m the former co-founder and CEO of OwnProp, where we develop
-            technologies that empower regular people to explore space on their
-            own terms.
+            I’m Ethan, a software engineer and entrepreneur based in Austin, Texas. I’m the former co-founder and CEO of OwnProp, where we built a marketplace that democratized access to commercial real estate investments.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
