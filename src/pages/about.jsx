@@ -61,13 +61,14 @@ export default function About() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              I’m Ethan Blumenthal. I live in Austin, Texas, where I design the
-              future.
+              Hi, I’m Ethan Blumenthal. I live in Austin, TX and build Web3.
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-              Ethan is the Co-Founder and Engineering Lead of OwnProp, a blockchain based platform that is democratizing access to commercial real estate investing by lowering minimums and improving liquidity. He previously worked as a Software Engineer at Rightpoint where he helped Fortune 500 companies drive business outcomes by implementing scalable technological solutions. He received a BA in Economics from the University of Illinois and is working towards a MS in Computer Science from the University of Texas. Ethan is passionate about the opportunity that smart contracts provide to revolutionize real estate, the largest asset class in the world.
+              Ethan is the former Co-Founder and Engineering Lead of OwnProp, a blockchain based platform that democratizes access to commercial real estate investing. He previously worked as a Software Engineer at Rightpoint where he helped Fortune 500 companies build technology driven solutions.
               </p>
+
+              <p>Ethan received a BA in Economics from the University of Illinois and is working towards a MS in Computer Science from the University of Texas. Ethan is passionate about the opportunity that smart contracts provide to revolutionize real estate, the largest asset class in the world.</p>
 
             </div>
           </div>
