@@ -86,7 +86,7 @@ function ArrowDownIcon(props) {
 function Article({ article }) {
   return (
     <Card as="article">
-      <Card.Title href={`/articles/${article.slug}`}>
+      <Card.Title href={`/blog/${article.slug}`}>
         {article.title}
       </Card.Title>
       <Card.Eyebrow as="time" dateTime={article.date} decorate>
@@ -207,7 +207,7 @@ function Resume() {
           </li>
         ))}
       </ol>
-      <Button href="https://gnbnulopojmwwjwefnxp.supabase.co/storage/v1/object/public/personal-website/Ethan%20Blumenthal%20Resume.pdf" variant="secondary" className="group mt-6 w-full">
+      <Button target="_blank" href="https://gnbnulopojmwwjwefnxp.supabase.co/storage/v1/object/public/personal-website/Ethan%20Blumenthal%20Resume.pdf" variant="secondary" className="group mt-6 w-full">
         Download Resume
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
@@ -249,7 +249,7 @@ export default function Home({ articles }) {
     <>
       <Head>
         <title>
-          Ethan Blumenthal - Blockchain engineer and Web 3.0 entrepreneur
+          Ethan Blumenthal - Blockchain Engineer and Web3 Entrepreneur
         </title>
         <meta
           name="description"
@@ -259,13 +259,13 @@ export default function Home({ articles }) {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Blockchain engineer and
+            Blockchain Engineer and
           </h1>
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Web3 entrepreneur
+            Web3 Entrepreneur
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Ethan, a software engineer and entrepreneur based in Austin, Texas. I’m the former co-founder and CEO of OwnProp, where we built a marketplace that democratized access to commercial real estate investments.
+            I’m Ethan, a software engineer and entrepreneur based in Austin, Texas. I’m the former co-founder and CEO of OwnProp, where we built a marketplace that democratized access to commercial real estate investments using tokenization. Feel free to get in touch!
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink

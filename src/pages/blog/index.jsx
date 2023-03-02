@@ -9,7 +9,7 @@ function Article({ article }) {
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">
-        <Card.Title href={`/articles/${article.slug}`}>
+        <Card.Title href={`/blog/${article.slug}`}>
           {article.title}
         </Card.Title>
         <Card.Eyebrow
@@ -34,19 +34,19 @@ function Article({ article }) {
   )
 }
 
-export default function ArticlesIndex({ articles }) {
+export default function index({ articles }) {
   return (
     <>
       <Head>
-        <title>Articles - Ethan Blumenthal</title>
+        <title>Blog - Ethan Blumenthal</title>
         <meta
           name="description"
-          content="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
+          content="Learnings and Reflections"
         />
       </Head>
       <SimpleLayout
-        title="Writing on software design, company building, and the aerospace industry."
-        intro="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
+        title="Learnings and Reflections"
+        intro="My thoughts on cryptocurrency investing, blockchain engineering, and tokenized real estate."
       >
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
           <div className="flex max-w-3xl flex-col space-y-16">
