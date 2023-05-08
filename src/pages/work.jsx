@@ -8,9 +8,17 @@ import logoTexas from '@/images/logos/texas.jpg'
 import logoIllinois from '@/images/logos/illinois.jpg'
 import logoRightpoint from '@/images/logos/rightpoint.jpg'
 import logoOwnProp from '@/images/logos/ownprop.jpg'
+import logoNada from '@/images/logos/nada.jpg'
 import logoFullstack from '@/images/logos/fullstack.jpg'
 
 const work = [
+  {
+    name: 'Nada',
+    description:
+      'Nada is unlocking the $27 trillion home equity market for retail investors and homeowners.',
+    link: { href: 'https://www.nada.co', label: 'nada.co' },
+    logo: logoNada,
+  },
   {
     name: 'OwnProp',
     description:

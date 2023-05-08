@@ -65,7 +65,7 @@ export default function About() {
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-              Ethan is the former Co-Founder and Engineering Lead of OwnProp, a blockchain based platform that democratizes access to commercial real estate investing. He previously worked as a Software Engineer at Rightpoint where he helped Fortune 500 companies build technology driven solutions.
+              Ethan is the VP of Engineering at Nada, a PropTech platform unlocking the $27 trillion home equity market for retail investors and homeowners. He previously co-founded OwnProp, a blockchain based platform that democratizes access to commercial real estate investing. Prior to that, Ethan worked as a Software Engineer at Rightpoint where he helped Fortune 500 companies build technology driven solutions.
               </p>
 
               <p>Ethan received a BA in Economics from the University of Illinois and is working towards a MS in Computer Science from the University of Texas. Ethan is passionate about the opportunity that smart contracts provide to revolutionize real estate, the largest asset class in the world.</p>
