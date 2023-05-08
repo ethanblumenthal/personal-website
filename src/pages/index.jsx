@@ -14,6 +14,7 @@ import {
 import logoRex from '@/images/logos/rex.jpg'
 import logoRightpoint from '@/images/logos/rightpoint.jpg'
 import logoOwnProp from '@/images/logos/ownprop.jpg'
+import logoNada from '@/images/logos/nada.jpg'
 import logoZeitgeist from '@/images/logos/zeitgeist.jpg'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
@@ -139,8 +140,8 @@ function Resume() {
   let resume = [
     {
       company: 'Nada',
-      title: 'VP Engineering',
-      logo: logoOwnProp,
+      title: 'VP of Engineering',
+      logo: logoNada,
       start: '2023',
       end: 'Present',
     },
