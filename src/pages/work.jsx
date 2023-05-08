@@ -15,7 +15,7 @@ const work = [
   {
     name: 'Nada',
     description:
-      'Nada is unlocking the $27 trillion home equity market for retail investors and homeowners.',
+      'Nada is unlocking the $27 trillion home equity market for retail investors via CityFunds and homeowners via HomeShares.',
     link: { href: 'https://www.nada.co', label: 'nada.co' },
     logo: logoNada,
   },
