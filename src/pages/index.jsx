@@ -267,13 +267,13 @@ export default function Home({ articles }) {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            VP Engineering @ Nada
+            Stealth Mode
           </h1>
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
             Tech & Real Estate
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Ethan, a software engineer and entrepreneur based in Austin, Texas. I’m the VP of Engineering at Nada, where we are building a marketplace for residential home equity. Feel free to get in touch!
+            I’m Ethan, a software engineer and entrepreneur based in Austin, Texas. I’m currently building something new that I’m excited to share very soon. Feel free to get in touch!
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
